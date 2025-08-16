@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "jp.ac.neec.it.k023c0024.questionnaire_app"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "jp.ac.neec.it.k023c0024.questionnaire_app"

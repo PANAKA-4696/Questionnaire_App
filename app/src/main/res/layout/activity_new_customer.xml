@@ -14,6 +14,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/tv_new_customer"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="@string/tv_new_customer_name"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextText2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etNewCustomerName"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -32,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="@string/tv_new_customer_kana"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextText"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etNewCustomerKana"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -43,41 +44,40 @@
         android:layout_marginTop="8dp"
         android:text="@string/tv_new_customer_birth"
         app:layout_constraintStart_toEndOf="@+id/rgNewCustomerSex"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintTop_toBottomOf="@+id/etNewCustomerName" />
 
     <TextView
         android:id="@+id/tvNewCustomerTel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:text="@string/tv_new_customer_tel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgNewCustomerSex" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/etNewCustomerTel"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/etNewCustomerKana"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:text="フリガナを入力してください"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNewCustomer" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/etNewCustomerName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:text="名前を入力してください"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/etNewCustomerKana" />
 
     <RadioGroup
         android:id="@+id/rgNewCustomerSex"
@@ -87,7 +87,7 @@
         android:layout_marginTop="8dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7">
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerSex">
 
         <RadioButton
             android:id="@+id/rbNewCustomerMale"
@@ -106,14 +106,14 @@
     </RadioGroup>
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/tvNewCustomerSex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/tv_new_customer_sex"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintTop_toBottomOf="@+id/etNewCustomerName" />
 
     <RadioGroup
         android:id="@+id/rgNewCustomerEra"
@@ -125,7 +125,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvNewCustomerBirth"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2">
+        app:layout_constraintTop_toBottomOf="@+id/etNewCustomerName">
 
         <RadioButton
             android:id="@+id/rbNewCustomerReiwa"
@@ -155,37 +155,229 @@
     </RadioGroup>
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/tvNewCustomerOld"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="@string/tv_new_customer_old"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerBirth" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/tvNewCustomerDay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/tv_new_customer_day"
-        tools:layout_editor_absoluteX="333dp"
-        tools:layout_editor_absoluteY="176dp" />
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/etNewCustomerOld"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerBirth" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/tvNewCustomerMonth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/tv_new_customer_month"
-        tools:layout_editor_absoluteX="262dp"
-        tools:layout_editor_absoluteY="176dp" />
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/etNewCustomerDay"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerBirth" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/tvNewCustomerYear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/tv_new_customer_year"
-        tools:layout_editor_absoluteX="210dp"
-        tools:layout_editor_absoluteY="176dp" />
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/etNewCustomerMonth"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerBirth" />
+
+    <EditText
+        android:id="@+id/etNewCustomerOld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="2"
+        android:inputType="number"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvNewCustomerOld"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerBirth" />
+
+    <EditText
+        android:id="@+id/etNewCustomerDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="2"
+        android:inputType="number"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvNewCustomerDay"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerBirth" />
+
+    <EditText
+        android:id="@+id/etNewCustomerMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="2"
+        android:inputType="number"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvNewCustomerMonth"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerBirth" />
+
+    <EditText
+        android:id="@+id/etNewCustomerYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="2"
+        android:inputType="number"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvNewCustomerYear"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerBirth" />
+
+    <EditText
+        android:id="@+id/etNewCustomerTel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgNewCustomerSex" />
+
+    <TextView
+        android:id="@+id/tvNewCustomerAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_new_customer_address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNewCustomerTel" />
+
+    <EditText
+        android:id="@+id/etNewCustomerZip2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="4"
+        android:inputType="number"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/tvNewCustomerHyphen"
+        app:layout_constraintTop_toBottomOf="@+id/etNewCustomerTel" />
+
+    <TextView
+        android:id="@+id/tvNewCustomerHyphen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_new_customer_hyphen"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/etNewCustomerZip1"
+        app:layout_constraintTop_toBottomOf="@+id/etNewCustomerTel" />
+
+    <EditText
+        android:id="@+id/etNewCustomerZip1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="3"
+        android:inputType="number"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/tvNewCustomerZip"
+        app:layout_constraintTop_toBottomOf="@+id/etNewCustomerTel" />
+
+    <TextView
+        android:id="@+id/tvNewCustomerZip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_new_customer_zip"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/tvNewCustomerAddress"
+        app:layout_constraintTop_toBottomOf="@+id/etNewCustomerTel" />
+
+    <EditText
+        android:id="@+id/etNewCustomerAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="住所を入力してください"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNewCustomerZip2" />
+
+    <TextView
+        android:id="@+id/tvNewCustomerMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/tv_new_customer_mail"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etNewCustomerMail"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etNewCustomerMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNewCustomerAddress" />
+
+    <TextView
+        android:id="@+id/tvNewCustomerRole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/tv_new_customer_role"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etNewCustomerRole"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etNewCustomerRole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="職業を入力してください"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNewCustomerMail" />
+
+    <Button
+        android:id="@+id/btPutInfomation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/bt_put_information"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

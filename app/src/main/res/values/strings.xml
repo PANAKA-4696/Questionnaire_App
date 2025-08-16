@@ -3,4 +3,18 @@
     <string name="main_name">会社名</string>
     <string name="bt_new">新規登録</string>
     <string name="bt_member">情報追記</string>
+    <string name="tv_new_customer">個人情報入力</string>
+    <string name="tv_new_customer_name">氏名</string>
+    <string name="tv_new_customer_kana">フリガナ</string>
+    <string name="tv_new_customer_sex">性別</string>
+    <string name="tv_new_customer_live">住所</string>
+    <string name="tv_new_customer_zip">〒</string>
+    <string name="tv_new_customer_birth">生年月日</string>
+    <string name="tv_new_customer_year">年</string>
+    <string name="tv_new_customer_month">月</string>
+    <string name="tv_new_customer_day">日 (</string>
+    <string name="tv_new_customer_old">歳)</string>
+    <string name="tv_new_customer_tel">電話番号</string>
+    <string name="tv_new_customer_mail">メールアドレス</string>
+    <string name="tv_new_customer_role">職業</string>
 </resources>

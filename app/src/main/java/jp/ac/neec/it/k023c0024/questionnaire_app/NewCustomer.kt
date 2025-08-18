@@ -44,30 +44,19 @@ class NewCustomer : AppCompatActivity() {
             val mail = findViewById<EditText>(R.id.etNewCustomerMail).text.toString()
             val role = findViewById<EditText>(R.id.etNewCustomerRole).text.toString()
 
+            //選択されたRadioButtonのIDを取得
+            val sexId = preSex.checkedRadioButtonId
+            val eraId = preEra.checkedRadioButtonId
+
+            //IDからRadioButtonのビューを取得し、テキストを代入
+            val sex = findViewById<RadioButton>(sexId).text.toString()
+            val era = findViewById<RadioButton>(eraId).text.toString()
+
             val PutInformation = Intent(this@NewCustomer, NewCustomerConfirm::class.java)
             PutInformation.putExtra("kana", kana)
             PutInformation.putExtra("name", name)
-            //RadioGroupの選択が変更されたときのリスナーを設定
-            preSex.setOnCheckedChangeListener { group, checkedId ->
-                //選択されたRadioButtonのidからビューを取得
-                val rbSex = findViewById<RadioButton>(checkedId)
-
-                //もしRadioButtonが選択されていれば、そのテキストを取得して表示
-                if (rbSex != null) {
-                    val sex = rbSex.text.toString()
-                    PutInformation.putExtra("sex", sex)
-                }
-            }
-            preEra.setOnCheckedChangeListener { group, checkedId ->
-                //選択されたRadioButtonのidからビューを取得
-                val rbEra = findViewById<RadioButton>(checkedId)
-
-                //もしRadioButtonが選択されていれば、そのテキストを取得して表示
-                if (rbEra != null) {
-                    val era = rbEra.text.toString()
-                    PutInformation.putExtra("era", era)
-                }
-            }
+            PutInformation.putExtra("sex", sex)
+            PutInformation.putExtra("era", era)
             PutInformation.putExtra("year", year)
             PutInformation.putExtra("month", month)
             PutInformation.putExtra("day", day)

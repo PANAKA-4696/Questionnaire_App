@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,6 +19,8 @@ class NewCustomer : AppCompatActivity() {
         setContentView(R.layout.activity_new_customer)
 
         val bt_put_information = findViewById<Button>(R.id.btPutInfomation)
+        val bt_clear = findViewById<Button>(R.id.btClear)
+        bt_put_information.setOnClickListener(ClickPutInformationListener())
     }
 
     private inner class ClickPutInformationListener : View.OnClickListener {
@@ -68,8 +71,45 @@ class NewCustomer : AppCompatActivity() {
             PutInformation.putExtra("tel", tel)
             PutInformation.putExtra("address", address)
             PutInformation.putExtra("mail", mail)
+            PutInformation.putExtra("role", role)
 
             startActivity(PutInformation)
+        }
+    }
+
+    private inner class ClickClearListener : View.OnClickListener {
+        override fun onClick(v: View?) {
+            val etKana = findViewById<EditText>(R.id.etNewCustomerKana)
+            val etName = findViewById<EditText>(R.id.etNewCustomerName)
+            val etYear = findViewById<EditText>(R.id.etNewCustomerYear)
+            val etMonth = findViewById<EditText>(R.id.etNewCustomerMonth)
+            val etDay = findViewById<EditText>(R.id.etNewCustomerDay)
+            val etOld = findViewById<EditText>(R.id.etNewCustomerOld)
+            val etZip1 = findViewById<EditText>(R.id.etNewCustomerZip1)
+            val etZip2 = findViewById<EditText>(R.id.etNewCustomerZip2)
+            val etTel = findViewById<EditText>(R.id.etNewCustomerTel)
+            val etAddress = findViewById<EditText>(R.id.etNewCustomerAddress)
+            val etMail = findViewById<EditText>(R.id.etNewCustomerMail)
+            val etRole = findViewById<EditText>(R.id.etNewCustomerRole)
+
+            val rgSex = findViewById<RadioGroup>(R.id.rgNewCustomerSex)
+            val rgEra = findViewById<RadioGroup>(R.id.rgNewCustomerEra)
+
+            etKana.setText("")
+            etName.setText("")
+            etYear.setText("")
+            etMonth.setText("")
+            etDay.setText("")
+            etOld.setText("")
+            etZip1.setText("")
+            etZip2.setText("")
+            etTel.setText("")
+            etAddress.setText("")
+            etMail.setText("")
+            etRole.setText("")
+
+            rgSex.clearCheck()
+            rgEra.clearCheck()
         }
     }
 }

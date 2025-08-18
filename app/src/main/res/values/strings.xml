@@ -25,6 +25,7 @@
     <string name="tv_new_customer_tel">電話番号</string>
     <string name="tv_new_customer_mail">メールアドレス</string>
     <string name="tv_new_customer_role">職業</string>
+    <string name="btClear">クリア</string>
     <string name="bt_put_information">確認画面へ</string>
     <string name="tv_new_customer_confirm">登録内容確認画面</string>
     <string name="tv_new_customer_confirm_name">名前</string>

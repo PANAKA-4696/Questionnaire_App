@@ -22,6 +22,7 @@ class NewCustomer : AppCompatActivity() {
         val bt_put_information = findViewById<Button>(R.id.btPutInfomation)
         val bt_clear = findViewById<Button>(R.id.btClear)
         bt_put_information.setOnClickListener(ClickPutInformationListener())
+        bt_clear.setOnClickListener(ClickClearListener())
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }

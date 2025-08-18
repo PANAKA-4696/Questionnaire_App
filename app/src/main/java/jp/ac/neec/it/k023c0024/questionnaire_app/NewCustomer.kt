@@ -110,6 +110,9 @@ class NewCustomer : AppCompatActivity() {
 
             rgSex.clearCheck()
             rgEra.clearCheck()
+
+            val msg = "クリアしました"
+            Toast.makeText(this@NewCustomer, msg, Toast.LENGTH_LONG).show()
         }
     }
 }

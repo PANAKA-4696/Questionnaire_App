@@ -26,4 +26,5 @@
     <string name="tv_new_customer_role">職業</string>
     <string name="bt_put_information">確認画面へ</string>
     <string name="tv_new_customer_confirm">登録内容確認画面</string>
+    <string name="tv_new_customer_confirm_name">名前</string>"
 </resources>

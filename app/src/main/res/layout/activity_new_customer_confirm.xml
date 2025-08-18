@@ -187,7 +187,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/tvNewCustomerConfirmTel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -205,7 +205,7 @@
         android:text="@string/tv_new_customer_confirm_address"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerConfirmTel" />
 
     <TextView
         android:id="@+id/textView19"
@@ -216,7 +216,7 @@
         android:text="@string/tv_new_customer_confirm_zip"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textView18"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerConfirmTel" />
 
     <TextView
         android:id="@+id/tvNewCustomerConfirmZip1"
@@ -226,7 +226,7 @@
         android:layout_marginTop="8dp"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textView19"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerConfirmTel" />
 
     <TextView
         android:id="@+id/textView21"
@@ -237,7 +237,7 @@
         android:text="@string/tv_new_customer_confirm_hyphen"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/tvNewCustomerConfirmZip1"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerConfirmTel" />
 
     <TextView
         android:id="@+id/tvNewCustomerConfirmZip2"
@@ -247,7 +247,7 @@
         android:layout_marginTop="8dp"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textView21"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerConfirmTel" />
 
     <TextView
         android:id="@+id/tvNewCustomerConfirmAddress"

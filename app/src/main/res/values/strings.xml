@@ -9,6 +9,7 @@
     <string name="tv_new_customer_sex">性別</string>
     <string name="rb_new_customer_male">男</string>
     <string name="rb_new_customer_female">女</string>
+    <string name="rb_new_customer_other">他</string>
     <string name="tv_new_customer_address">住所</string>
     <string name="tv_new_customer_zip">〒</string>
     <string name="tv_new_customer_hyphen">ー</string>
@@ -26,5 +27,20 @@
     <string name="tv_new_customer_role">職業</string>
     <string name="bt_put_information">確認画面へ</string>
     <string name="tv_new_customer_confirm">登録内容確認画面</string>
-    <string name="tv_new_customer_confirm_name">名前</string>"
+    <string name="tv_new_customer_confirm_name">名前</string>
+    <string name="tv_new_customer_confirm_sex">性別</string>
+    <string name="tv_new_customer_confirm_birth">生年月日</string>
+    <string name="tv_new_customer_confirm_year">年</string>
+    <string name="tv_new_customer_confirm_month">月</string>
+    <string name="tv_new_customer_confirm_day">日 (</string>
+    <string name="tv_new_customer_confirm_old">歳)</string>
+    <string name="tv_new_customer_confirm_tel">電話番号</string>
+    <string name="tv_new_customer_confirm_address">住所</string>
+    <string name="tv_new_customer_confirm_zip">〒</string>
+    <string name="tv_new_customer_confirm_hyphen">ー</string>
+    <string name="tv_new_customer_confirm_mail">メールアドレス</string>
+    <string name="tv_new_customer_confirm_role">職業</string>
+    <string name="bt_save">登録</string>
+    <string name="bt_cancel">キャンセル</string>
+
 </resources>

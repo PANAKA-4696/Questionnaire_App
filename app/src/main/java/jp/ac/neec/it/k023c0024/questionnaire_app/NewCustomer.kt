@@ -2,6 +2,7 @@ package jp.ac.neec.it.k023c0024.questionnaire_app
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -21,6 +22,8 @@ class NewCustomer : AppCompatActivity() {
         val bt_put_information = findViewById<Button>(R.id.btPutInfomation)
         val bt_clear = findViewById<Button>(R.id.btClear)
         bt_put_information.setOnClickListener(ClickPutInformationListener())
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private inner class ClickPutInformationListener : View.OnClickListener {
@@ -114,5 +117,18 @@ class NewCustomer : AppCompatActivity() {
             val msg = "クリアしました"
             Toast.makeText(this@NewCustomer, msg, Toast.LENGTH_LONG).show()
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean{
+        //戻り値用の変数を初期値trueで用意
+        var returnVal = true
+        //選択されたメニューが「戻る」の場合、アクティビティを終了
+        if(item.itemId == android.R.id.home){
+            finish()
+        }else{
+            //それ以外の場合、戻り値用の変数をfalseに設定
+            returnVal = super.onOptionsItemSelected(item)
+        }
+        return returnVal
     }
 }

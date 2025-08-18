@@ -55,6 +55,7 @@ class NewCustomer : AppCompatActivity() {
                 //もしRadioButtonが選択されていれば、そのテキストを取得して表示
                 if (rbSex != null) {
                     val sex = rbSex.text.toString()
+                    PutInformation.putExtra("sex", sex)
                 }
             }
             preEra.setOnCheckedChangeListener { group, checkedId ->
@@ -64,6 +65,7 @@ class NewCustomer : AppCompatActivity() {
                 //もしRadioButtonが選択されていれば、そのテキストを取得して表示
                 if (rbEra != null) {
                     val era = rbEra.text.toString()
+                    PutInformation.putExtra("era", era)
                 }
             }
             PutInformation.putExtra("year", year)

@@ -2,6 +2,8 @@ package jp.ac.neec.it.k023c0024.questionnaire_app
 
 import android.app.AlertDialog
 import android.app.Dialog
+import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
 
@@ -23,5 +25,25 @@ class ConfirmDialogFragment: DialogFragment() {
         }
         //生成したダイアログオブジェクトをリターン。
         return dialog ?: throw IllegalStateException("アクティビティがnullです")
+    }
+
+    //ダイアログのアクションボタンがタップされたときの処理が記述されたメンバクラス
+    private inner class DialogBunttonClickListener : DialogInterface.OnClickListener {
+        override fun onClick(dialog: DialogInterface, which: Int) {
+            //タップされたアクションボタンで分岐
+            when(which){
+                //Positive Button
+                DialogInterface.BUTTON_POSITIVE ->{
+                    //カルテの画面に名前情報を持って遷移
+                    //TODO
+                }
+                //Negative Button
+                DialogInterface.BUTTON_NEGATIVE -> {
+                    //トップ画面に遷移
+                    val intent = Intent(activity, MainActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+        }
     }
 }

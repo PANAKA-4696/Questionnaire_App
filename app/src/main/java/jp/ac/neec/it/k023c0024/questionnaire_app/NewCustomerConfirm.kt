@@ -71,8 +71,8 @@ class NewCustomerConfirm : AppCompatActivity() {
 
     private inner class ClickSaveListener : View.OnClickListener {
         override fun onClick(v: View?) {
-            val dialogFragment = CompleteDialogFragment()
-            dialogFragment.show(supportFragmentManager, "CompleteDialogFragment")
+            val dialogFragment = ConfirmDialogFragment()
+            dialogFragment.show(supportFragmentManager, "ConfirmDialogFragment")
 
             val msg = "保存しました"
             Toast.makeText(this@NewCustomerConfirm, msg, Toast.LENGTH_LONG).show()

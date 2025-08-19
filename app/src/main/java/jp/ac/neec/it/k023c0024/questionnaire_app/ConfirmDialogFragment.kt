@@ -16,10 +16,14 @@ class ConfirmDialogFragment: DialogFragment() {
             builder.setTitle(R.string.complete_dialog_title)
             //ダイアログのメッセージを設定
             builder.setMessage(R.string.complete_dialog_msg)
+
+            //Positive ButtonとNegative Buttonにリスナーを設定
+            val listener = DialogBunttonClickListener()
+
             //Positive Buttonを設定
-            builder.setPositiveButton(R.string.complete_dialog_btn_ok, null)
+            builder.setPositiveButton(R.string.complete_dialog_btn_ok, listener)
             //Negative Buttonを設定
-            builder.setNegativeButton(R.string.complete_dialog_btn_ng, null)
+            builder.setNegativeButton(R.string.complete_dialog_btn_ng, listener)
             //生成したAlertDialogオブジェクトを返す
             builder.create()
         }

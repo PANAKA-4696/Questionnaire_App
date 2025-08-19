@@ -43,5 +43,8 @@
     <string name="tv_new_customer_confirm_role">職業</string>
     <string name="bt_save">登録</string>
     <string name="bt_cancel">キャンセル</string>
-
+    <string name="complete_dialog_title">登録完了</string>
+    <string name="complete_dialog_msg">登録が完了しました。/n トップ画面に戻るか、次のページに行くか選択してください。</string>
+    <string name="complete_dialog_btn_ok">カルテへ</string>
+    <string name="complete_dialog_btn_ng">トップ画面へ</string>
 </resources>

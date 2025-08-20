@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         val bt_member = findViewById<Button>(R.id.btMember)
 
         bt_new.setOnClickListener(ClickNewCustomerListener())
-        bt_member.setOnClickListener(ClickAddCustomerInformationListener())
+        bt_member.setOnClickListener(ClickLoginCustomerListener())
     }
 
     private inner class ClickNewCustomerListener : View.OnClickListener {
@@ -28,10 +28,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private inner class ClickAddCustomerInformationListener : View.OnClickListener {
+    private inner class ClickLoginCustomerListener : View.OnClickListener {
         override fun onClick(v: View?) {
-            val AddCustomerInformation = Intent(this@MainActivity, AddCustomerInformation::class.java)
-            startActivity(AddCustomerInformation)
+            val ClickLoginCustomerListener = Intent(this@MainActivity, LoginCustomer::class.java)
+            startActivity(ClickLoginCustomerListener)
         }
     }
 }

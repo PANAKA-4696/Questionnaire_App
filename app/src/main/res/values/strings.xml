@@ -47,4 +47,8 @@
     <string name="complete_dialog_msg">登録が完了しました。\nトップ画面に戻るか、次のページに行くか選択してください。</string>
     <string name="complete_dialog_btn_ok">カルテへ</string>
     <string name="complete_dialog_btn_ng">トップ画面へ</string>
+    <string name="tv_login_customer_title">顧客選択</string>
+    <string name="tv_login_customer_search">検索</string>
+    <string name="tv_login_customer_kana">フリガナ</string>
+    <string name="tv_login_customer_id">ID</string>
 </resources>

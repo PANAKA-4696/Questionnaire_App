@@ -19,7 +19,7 @@
             android:name=".NewCustomerConfirm"
             android:exported="false" />
         <activity
-            android:name=".AddCustomerInformation"
+            android:name=".Questionnaire"
             android:exported="false" />
         <activity
             android:name=".NewCustomer"

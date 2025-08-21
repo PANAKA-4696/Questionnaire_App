@@ -51,4 +51,26 @@
     <string name="tv_login_customer_search">検索</string>
     <string name="tv_login_customer_kana">フリガナ</string>
     <string name="tv_login_customer_id">ID</string>
+    <string name="tv_questionnaire_title">問診票</string>
+    <string name="tv_questionnaire_daytime">現在の日時</string>
+    <string name="tv_questionnaire_kana">フリガナ</string>
+    <string name="tv_questionnaire_name">名前</string>
+    <string name="tv_questionnaire_old">年齢</string>
+    <string name="tv_questionnaire_age">歳</string>
+    <string name="tv_questionnaire_role">職業</string>
+    <string name="tv_questionnaire_question">質問事項</string>
+    <string name="tv_questionnaire_question1">■ どうされましたか？辛いところはありますか？</string>
+    <string name="tv_questionnaire_question2">■ いつ頃からの症状ですか？</string>
+    <string name="tv_questionnaire_question3">■ 原因、きっかけはありますか？</string>
+    <string name="tv_questionnaire_question4">■ 現在、通院されていたり、薬を処方されていますか？</string>
+    <string name="tv_questionnaire_question5">■ 今までに大きなけがや病気をされたことがありますか？</string>
+    <string name="tv_questionnaire_question6">■ 当店をなにで知りましたか？</string>
+    <string name="rb_questionnaire_homepage">ホームページ</string>
+    <string name="rb_questionnaire_mouth">口コミ</string>
+    <string name="rb_questionnaire_way">通りがかり</string>
+    <string name="rb_questionnaire_townpage">タウンページ</string>
+    <string name="rb_questionnaire_introduce">紹介</string>
+    <string name="rb_questionnaire_other">その他</string>
+    <string name="tv_questionnaire_comment">紹介者がいる場合紹介者名を記述してください。\nその他を選んだ方はこちらに記述してください。</string>
+    <string name="bt_questionnaire_next">次の画面へ</string>
 </resources>

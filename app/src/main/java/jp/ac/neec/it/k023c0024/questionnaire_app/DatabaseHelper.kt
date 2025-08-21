@@ -14,6 +14,24 @@ class DatabaseHelper (context: Context): SQLiteOpenHelper(context, DATABASE_NAME
     }
 
     override fun onCreate(db: SQLiteDatabase){
+        //テーブル作成用SQL文字列の作成
+        val sb = StringBuilder()
+        sb.append("CREATE TABLE customer (")
+        sb.append("_id INTEGER PRIMARY KEY,")
+        sb.append("name TEXT,")
+        sb.append("kana TEXT,")
+        sb.append("sex INTEGER,")
+        sb.append("birth TEXT,")
+        sb.append("zip TEXT,")
+        sb.append("address TEXT,")
+        sb.append("tel TEXT,")
+        sb.append("mail TEXT,")
+        sb.append("role INTEGER")
+        sb.append(");")
+        val sql = sb.toString()
+
+        //SQLの実行
+        db.execSQL(sql)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int){}

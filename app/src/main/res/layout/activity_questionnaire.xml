@@ -139,7 +139,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvQuestionnaireName" />
 
     <TextView
-        android:id="@+id/textView29"
+        android:id="@+id/tvQuestionnaireQuestion1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -149,7 +149,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvQuestionnaireQuestion" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/etQuestionnaireQuestion1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -161,20 +161,20 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView29" />
+        app:layout_constraintTop_toBottomOf="@+id/tvQuestionnaireQuestion1" />
 
     <TextView
-        android:id="@+id/textView30"
+        android:id="@+id/tvQuestionnaireQuestion2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/tv_questionnaire_question2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/etQuestionnaireQuestion1" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/etQuestionnaireQuestion2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -186,20 +186,20 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+        app:layout_constraintTop_toBottomOf="@+id/tvQuestionnaireQuestion2" />
 
     <TextView
-        android:id="@+id/textView31"
+        android:id="@+id/tvQuestionnaireQuestion3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/tv_questionnaire_question3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintTop_toBottomOf="@+id/etQuestionnaireQuestion2" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/etQuestionnaireQuestion3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -211,20 +211,20 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView31" />
+        app:layout_constraintTop_toBottomOf="@+id/tvQuestionnaireQuestion3" />
 
     <TextView
-        android:id="@+id/textView32"
+        android:id="@+id/tvQuestionnaireQuestion4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/tv_questionnaire_question4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+        app:layout_constraintTop_toBottomOf="@+id/etQuestionnaireQuestion3" />
 
     <EditText
-        android:id="@+id/editTextText4"
+        android:id="@+id/etQuestionnaireQuestion4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -236,20 +236,20 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView32" />
+        app:layout_constraintTop_toBottomOf="@+id/tvQuestionnaireQuestion4" />
 
     <TextView
-        android:id="@+id/textView33"
+        android:id="@+id/tvQuestionnaireQuestion5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/tv_questionnaire_question5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+        app:layout_constraintTop_toBottomOf="@+id/etQuestionnaireQuestion4" />
 
     <EditText
-        android:id="@+id/editTextText5"
+        android:id="@+id/etQuestionnaireQuestion5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -261,17 +261,17 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+        app:layout_constraintTop_toBottomOf="@+id/tvQuestionnaireQuestion5" />
 
     <TextView
-        android:id="@+id/textView34"
+        android:id="@+id/tvQuestionnaireQuestion6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/tv_questionnaire_question6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText5" />
+        app:layout_constraintTop_toBottomOf="@+id/etQuestionnaireQuestion5" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -281,7 +281,7 @@
         android:layout_marginTop="8dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView34">
+        app:layout_constraintTop_toBottomOf="@+id/tvQuestionnaireQuestion6">
 
         <RadioButton
             android:id="@+id/rbQuestionnaireHomepage"
@@ -328,7 +328,7 @@
     </RadioGroup>
 
     <TextView
-        android:id="@+id/textView35"
+        android:id="@+id/tvQuestionnaireComment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -339,7 +339,7 @@
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <EditText
-        android:id="@+id/editTextText6"
+        android:id="@+id/etQuestionnaireComment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -351,11 +351,11 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView35"
+        app:layout_constraintStart_toEndOf="@+id/tvQuestionnaireComment"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btQuestionnaireNext"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

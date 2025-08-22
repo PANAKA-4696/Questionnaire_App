@@ -73,4 +73,22 @@
     <string name="rb_questionnaire_other">その他</string>
     <string name="tv_questionnaire_comment">紹介者がいる場合紹介者名を記述してください。\nその他を選んだ方はこちらに記述してください。</string>
     <string name="bt_questionnaire_next">次の画面へ</string>
+    <string name="tv_questionnaire2_title">問診票</string>
+    <string name="tv_questionnaire2_image">(気になる所に印を付けてください)</string>
+    <string name="tv_questionnaire2_Disclaimer">《 免 責 事 項 》</string>
+    <string name="cb_questionnaire2">事項内容を確認し、承諾しました。</string>
+    <string name="tv_questionnaire2_Disclaimer_box">以下に当てはまる方は、当店の施術を受けられない場合があります。\n1. 飲酒及び多量の食事を取った直後、妊娠、風、極度の日焼けをした方。
+        \n2. 24時間以内に注射(予防接種)などを受けられた方。
+        \n3. 電線小皮膚炎、重度の水虫、半年以内に手術された方。
+        \n4. てんかん、骨粗鬆症、狭心症、ペースメーカー使用など心疾患がある方、多量もしくは強力な薬物を服用されている方。
+        \n
+        \nより快適にお客様に過ごしていただくため、上記以外でも当店の判断で施術途中でもお断りする場合がございます。ご了承ください。
+        \n当店の駐車場でのトラブルやお預かり品のトラブルは、一切責任を負いません。貴重品などは自己管理をして頂く用お願いいたします。
+        \n
+        \n施術について
+        \n当店では最新の注意を払っておりますが、お客様の要望で強い力を加えた場合、皮膚が赤くなったりすることがあります。
+        \nまた、もみ返し等で翌日のだるさや、痛みを感じる等の症状が出ることもございます。施術中はお客様の責任においてご要望ください。
+        \n施術後の怪我や痛みや不調に関して、当店の施術が原因であると明確にならない限りは、いかなる場合も返金・賠償には一切応じません。
+        \n施術中の痛みは我慢せず必ずお伝えください。</string>
+    <string name="tv_questionnaire_confirm">確認画面へ</string>
 </resources>

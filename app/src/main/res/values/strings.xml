@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Questionnaire_App</string>
     <string name="main_name">会社名</string>
+    <string name="bt_check">情報を見る</string>
     <string name="bt_new">新規登録</string>
     <string name="bt_member">情報追記</string>
     <string name="tv_new_customer">個人情報入力</string>

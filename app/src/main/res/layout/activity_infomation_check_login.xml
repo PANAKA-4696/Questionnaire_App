@@ -7,4 +7,84 @@
     android:layout_height="match_parent"
     tools:context=".InfomationCheckLogin">
 
+    <TextView
+        android:id="@+id/tvInformationCheckLoginTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_login_customer_title"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvInformationCheckLoginSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_login_customer_search"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInformationCheckLoginTitle" />
+
+    <TextView
+        android:id="@+id/tvInformationCheckLoginKana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/tv_login_customer_kana"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etInformationCheckLoginKana"
+        app:layout_constraintStart_toEndOf="@+id/tvInformationCheckLoginSearch" />
+
+    <TextView
+        android:id="@+id/tvInformationCheckLoginID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/tv_login_customer_id"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etInformationCheckLoginID"
+        app:layout_constraintStart_toEndOf="@+id/tvInformationCheckLoginSearch" />
+
+    <EditText
+        android:id="@+id/etInformationCheckLoginKana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="カナで名前を入力"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInformationCheckLoginSearch" />
+
+    <EditText
+        android:id="@+id/etInformationCheckLoginID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="IDを入力"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etInformationCheckLoginKana" />
+
+    <ListView
+        android:id="@+id/lvInformationCheckLogin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etInformationCheckLoginID" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

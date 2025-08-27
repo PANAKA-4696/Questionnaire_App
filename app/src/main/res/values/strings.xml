@@ -92,4 +92,20 @@
         \n施術後の怪我や痛みや不調に関して、当店の施術が原因であると明確にならない限りは、いかなる場合も返金・賠償には一切応じません。
         \n施術中の痛みは我慢せず必ずお伝えください。</string>
     <string name="tv_questionnaire_confirm">確認画面へ</string>
+    <string name="tv_customer_information_confirm">登録内容確認画面</string>
+    <string name="tv_customer_information_confirm_name">名前</string>
+    <string name="tv_customer_information_confirm_sex">性別</string>
+    <string name="tv_customer_information_confirm_birth">生年月日</string>
+    <string name="tv_customer_information_confirm_year">年</string>
+    <string name="tv_customer_information_confirm_month">月</string>
+    <string name="tv_customer_information_confirm_day">日 (</string>
+    <string name="tv_customer_information_confirm_old">歳)</string>
+    <string name="tv_customer_information_confirm_tel">電話番号</string>
+    <string name="tv_customer_information_confirm_address">住所</string>
+    <string name="tv_customer_information_confirm_zip">〒</string>
+    <string name="tv_customer_information_confirm_hyphen">ー</string>
+    <string name="tv_customer_information_confirm_mail">メールアドレス</string>
+    <string name="tv_customer_information_confirm_role">職業</string>
+    <string name="bt_reenter">再登録する</string>　
+    <string name="bt_back">キャンセル</string>
 </resources>

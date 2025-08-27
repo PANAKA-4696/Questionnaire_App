@@ -107,5 +107,5 @@
     <string name="tv_customer_information_confirm_mail">メールアドレス</string>
     <string name="tv_customer_information_confirm_role">職業</string>
     <string name="bt_reenter">再登録する</string>　
-    <string name="bt_back">キャンセル</string>
+    <string name="bt_back">戻る</string>
 </resources>

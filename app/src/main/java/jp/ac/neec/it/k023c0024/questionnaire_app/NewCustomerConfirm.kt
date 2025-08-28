@@ -74,60 +74,65 @@ class NewCustomerConfirm : AppCompatActivity() {
 
     private inner class ClickSaveListener : View.OnClickListener {
         override fun onClick(v: View?) {
-            val dialogFragment = ConfirmDialogFragment()
-            dialogFragment.show(supportFragmentManager, "ConfirmDialogFragment")
 
             //DBに保存する
             val kana = intent.getStringExtra("kana")
             val name = intent.getStringExtra("name")
             val sex = intent.getStringExtra("sex")
-            val era = intent.getStringExtra("era")
-            val year = intent.getStringExtra("year")
-            val month = intent.getStringExtra("month")
-            val day = intent.getStringExtra("day")
-            val old = intent.getStringExtra("old")
-            val zip1 = intent.getStringExtra("zip1")
-            val zip2 = intent.getStringExtra("zip2")
-            val tel = intent.getStringExtra("tel")
+            val era = intent.getStringExtra("era")?.toIntOrNull()
+            val year = intent.getStringExtra("year")?.toIntOrNull()
+            val month = intent.getStringExtra("month")?.toIntOrNull()
+            val day = intent.getStringExtra("day")?.toIntOrNull()
+            val old = intent.getStringExtra("old")?.toIntOrNull()
+            val zip1 = intent.getStringExtra("zip1")?.toIntOrNull()
+            val zip2 = intent.getStringExtra("zip2")?.toIntOrNull()
             val address = intent.getStringExtra("address")
+            val tel = intent.getStringExtra("tel")
             val mail = intent.getStringExtra("mail")
             val role = intent.getStringExtra("role")
 
-            val puKana =findViewById<TextView>(R.id.tvNewCustomerConfirmKana)
-            puKana.text = kana
-            val puName =findViewById<TextView>(R.id.tvNewCustomerConfirmName)
-            puName.text = name
-            val puSex =findViewById<TextView>(R.id.tvNewCustomerConfirmSex)
-            puSex.text = sex
-            val puEra =findViewById<TextView>(R.id.tvNewCustomerConfirmEra)
-            puEra.text = era
-            val puYear =findViewById<TextView>(R.id.tvNewCustomerConfirmYear)
-            puYear.text = year
-            val puMonth =findViewById<TextView>(R.id.tvNewCustomerConfirmMonth)
-            puMonth.text = month
-            val puDay =findViewById<TextView>(R.id.tvNewCustomerConfirmDay)
-            puDay.text = day
-            val puOld =findViewById<TextView>(R.id.tvNewCustomerConfirmOld)
-            puOld.text = old
-            val puZip1 =findViewById<TextView>(R.id.tvNewCustomerConfirmZip1)
-            puZip1.text = zip1
-            val puZip2 =findViewById<TextView>(R.id.tvNewCustomerConfirmZip2)
-            puZip2.text = zip2
-            val puTel =findViewById<TextView>(R.id.tvNewCustomerConfirmTel)
-            puTel.text = tel
-            val puAddress =findViewById<TextView>(R.id.tvNewCustomerConfirmAddress)
-            puAddress.text = address
-            val puMail =findViewById<TextView>(R.id.tvNewCustomerConfirmMail)
-            puMail.text = mail
-            val puRole =findViewById<TextView>(R.id.tvNewCustomerConfirmRole)
-            puRole.text = role
-
             val db = _helper.writableDatabase
 
+            try{
+                if(kana != null && name != null && sex != null && era != null && year != null && month != null && day != null &&
+                    old != null && zip1 != null && zip2 != null && tel != null && address != null && mail != null && role != null){
 
+                    //インサート用文字列の用意
+                    val sqlInsert = "INSERT INTO customer (kana, name, sex, era, year, month, day, old, zip1, zip2, tel, address, mail, role) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                    //SQL文字列をもとにプリペアードステートメントを取得
+                    var stmt = db.compileStatement(sqlInsert)
+                    //変数のバインド
+                    stmt.bindString(1, kana)
+                    stmt.bindString(2, name)
+                    stmt.bindString(3, sex)
+                    stmt.bindLong(4, era.toLong())
+                    stmt.bindLong(5, year.toLong())
+                    stmt.bindLong(6, month.toLong())
+                    stmt.bindLong(7, day.toLong())
+                    stmt.bindLong(8, old.toLong())
+                    stmt.bindLong(9, zip1.toLong())
+                    stmt.bindLong(10, zip2.toLong())
+                    stmt.bindString(11, tel)
+                    stmt.bindString(12, address)
+                    stmt.bindString(13, mail)
+                    stmt.bindString(14, role)
+                    //SQLの実行
+                    stmt.executeInsert()
 
-            val msg = "保存しました"
-            Toast.makeText(this@NewCustomerConfirm, msg, Toast.LENGTH_LONG).show()
+                    val msg = "保存しました"
+                    Toast.makeText(this@NewCustomerConfirm, msg, Toast.LENGTH_LONG).show()
+
+                    val dialogFragment = ConfirmDialogFragment()
+                    dialogFragment.show(supportFragmentManager, "ConfirmDialogFragment")
+
+                }else{
+                    val msg = "保存に失敗しました"
+                    Toast.makeText(this@NewCustomerConfirm, msg, Toast.LENGTH_LONG).show()
+                }
+            }finally{
+                //try-finallyブロックでデータベース接続を必ず閉じる
+                db.close()
+            }
         }
     }
 

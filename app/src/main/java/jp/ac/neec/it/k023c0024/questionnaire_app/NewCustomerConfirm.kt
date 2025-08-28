@@ -12,6 +12,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class NewCustomerConfirm : AppCompatActivity() {
+    //データベースヘルパーオブジェクト
+    private val _helper = DatabaseHelper(this@NewCustomerConfirm)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_customer_confirm)
@@ -73,6 +76,55 @@ class NewCustomerConfirm : AppCompatActivity() {
         override fun onClick(v: View?) {
             val dialogFragment = ConfirmDialogFragment()
             dialogFragment.show(supportFragmentManager, "ConfirmDialogFragment")
+
+            //DBに保存する
+            val kana = intent.getStringExtra("kana")
+            val name = intent.getStringExtra("name")
+            val sex = intent.getStringExtra("sex")
+            val era = intent.getStringExtra("era")
+            val year = intent.getStringExtra("year")
+            val month = intent.getStringExtra("month")
+            val day = intent.getStringExtra("day")
+            val old = intent.getStringExtra("old")
+            val zip1 = intent.getStringExtra("zip1")
+            val zip2 = intent.getStringExtra("zip2")
+            val tel = intent.getStringExtra("tel")
+            val address = intent.getStringExtra("address")
+            val mail = intent.getStringExtra("mail")
+            val role = intent.getStringExtra("role")
+
+            val puKana =findViewById<TextView>(R.id.tvNewCustomerConfirmKana)
+            puKana.text = kana
+            val puName =findViewById<TextView>(R.id.tvNewCustomerConfirmName)
+            puName.text = name
+            val puSex =findViewById<TextView>(R.id.tvNewCustomerConfirmSex)
+            puSex.text = sex
+            val puEra =findViewById<TextView>(R.id.tvNewCustomerConfirmEra)
+            puEra.text = era
+            val puYear =findViewById<TextView>(R.id.tvNewCustomerConfirmYear)
+            puYear.text = year
+            val puMonth =findViewById<TextView>(R.id.tvNewCustomerConfirmMonth)
+            puMonth.text = month
+            val puDay =findViewById<TextView>(R.id.tvNewCustomerConfirmDay)
+            puDay.text = day
+            val puOld =findViewById<TextView>(R.id.tvNewCustomerConfirmOld)
+            puOld.text = old
+            val puZip1 =findViewById<TextView>(R.id.tvNewCustomerConfirmZip1)
+            puZip1.text = zip1
+            val puZip2 =findViewById<TextView>(R.id.tvNewCustomerConfirmZip2)
+            puZip2.text = zip2
+            val puTel =findViewById<TextView>(R.id.tvNewCustomerConfirmTel)
+            puTel.text = tel
+            val puAddress =findViewById<TextView>(R.id.tvNewCustomerConfirmAddress)
+            puAddress.text = address
+            val puMail =findViewById<TextView>(R.id.tvNewCustomerConfirmMail)
+            puMail.text = mail
+            val puRole =findViewById<TextView>(R.id.tvNewCustomerConfirmRole)
+            puRole.text = role
+
+            val db = _helper.writableDatabase
+
+
 
             val msg = "保存しました"
             Toast.makeText(this@NewCustomerConfirm, msg, Toast.LENGTH_LONG).show()

@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
     private inner class ClickCheckCustomerListener : View.OnClickListener {
         override fun onClick(v: View?) {
-            val ClickCheckCustomerListener = Intent(this@MainActivity, CustomerInformationConfirm::class.java)
+            val ClickCheckCustomerListener = Intent(this@MainActivity, InfomationCheckLogin::class.java)
             startActivity(ClickCheckCustomerListener)
         }
     }

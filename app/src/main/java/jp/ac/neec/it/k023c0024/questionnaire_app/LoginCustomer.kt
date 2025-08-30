@@ -1,6 +1,9 @@
 package jp.ac.neec.it.k023c0024.questionnaire_app
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ListView
 import android.widget.SimpleAdapter
 import androidx.activity.enableEdgeToEdge
@@ -30,6 +33,7 @@ class LoginCustomer : AppCompatActivity() {
         )
 
         lvCustomer.adapter = adapter
+        lvCustomer.onItemClickListener = ListItemClickListener()
     }
 
     private fun createCustomerList(): MutableList<MutableMap<String, String>> {
@@ -82,5 +86,21 @@ class LoginCustomer : AppCompatActivity() {
 
         lvCustomer.adapter = adapter
 
+    }
+
+    private inner class ListItemClickListener : AdapterView.OnItemClickListener {
+        override fun onItemClick(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+            val Item = parent.getItemAtPosition(position) as MutableMap<String, String>
+
+            val id = Item["id"] as String
+
+            val intentQuestionnaire = Intent(this@LoginCustomer, Questionnaire::class.java)
+
+            intentQuestionnaire.putExtra("id", id)
+
+            startActivity(intentQuestionnaire)
+            //現在の画面を終了
+            finish()
+        }
     }
 }

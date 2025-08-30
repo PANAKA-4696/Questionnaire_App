@@ -63,4 +63,24 @@ class LoginCustomer : AppCompatActivity() {
 
         return _customerList
     }
+
+    override fun onResume() {
+        super.onResume()
+
+        //最新のデータベース内容を取得
+        _customerList = createCustomerList()
+
+        //リストビューに新しいリストをセットし直す
+        val lvCustomer = findViewById<ListView>(R.id.lvCustomer)
+        var adapter = SimpleAdapter(
+            this@LoginCustomer,
+            _customerList,
+            android.R.layout.simple_list_item_2,
+            arrayOf("id", "name"),
+            intArrayOf(android.R.id.text1, android.R.id.text2)
+        )
+
+        lvCustomer.adapter = adapter
+
+    }
 }

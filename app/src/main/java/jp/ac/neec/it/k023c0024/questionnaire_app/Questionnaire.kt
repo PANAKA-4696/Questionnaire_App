@@ -19,7 +19,7 @@ class Questionnaire : AppCompatActivity() {
         override fun onClick(v: View?) {
             val id = intent.getStringExtra("id")
 
-            val ClickQuestionnaireNextListener = Intent(this@Questionnaire, LoginCustomer::class.java)
+            val ClickQuestionnaireNextListener = Intent(this@Questionnaire, Questionnaire2::class.java)
 
             ClickQuestionnaireNextListener.putExtra("id", id)
 

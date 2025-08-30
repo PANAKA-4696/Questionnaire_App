@@ -92,22 +92,6 @@ class NewCustomerConfirm : AppCompatActivity() {
             val mail = intent.getStringExtra("mail")
             val role = intent.getStringExtra("role")
 
-            // ★★★デバッグ用のログを追加★★★
-            Log.d("DEBUG_TAG", "kana: $kana")
-            Log.d("DEBUG_TAG", "name: $name")
-            Log.d("DEBUG_TAG", "sex: $sex")
-            Log.d("DEBUG_TAG", "era: $era") // ここがnullになっていないか？
-            Log.d("DEBUG_TAG", "year: $year") // ここがnullになっていないか？
-            Log.d("DEBUG_TAG", "month: $month")
-            Log.d("DEBUG_TAG", "day: $day")
-            Log.d("DEBUG_TAG", "old: $old")
-            Log.d("DEBUG_TAG", "zip1: $zip1")
-            Log.d("DEBUG_TAG", "zip2: $zip2")
-            Log.d("DEBUG_TAG", "tel: $tel")
-            Log.d("DEBUG_TAG", "address: $address")
-            Log.d("DEBUG_TAG", "mail: $mail")
-            Log.d("DEBUG_TAG", "role: $role")
-
             val db = _helper.writableDatabase
 
             try{
@@ -122,7 +106,7 @@ class NewCustomerConfirm : AppCompatActivity() {
                     stmt.bindString(1, kana)
                     stmt.bindString(2, name)
                     stmt.bindString(3, sex)
-                    stmt.bindLong(4, era.toLong())
+                    stmt.bindString(4, era)
                     stmt.bindLong(5, year.toLong())
                     stmt.bindLong(6, month.toLong())
                     stmt.bindLong(7, day.toLong())

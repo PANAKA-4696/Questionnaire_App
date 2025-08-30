@@ -1,6 +1,7 @@
 package jp.ac.neec.it.k023c0024.questionnaire_app
 
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
@@ -79,7 +80,7 @@ class NewCustomerConfirm : AppCompatActivity() {
             val kana = intent.getStringExtra("kana")
             val name = intent.getStringExtra("name")
             val sex = intent.getStringExtra("sex")
-            val era = intent.getStringExtra("era")?.toIntOrNull()
+            val era = intent.getStringExtra("era")
             val year = intent.getStringExtra("year")?.toIntOrNull()
             val month = intent.getStringExtra("month")?.toIntOrNull()
             val day = intent.getStringExtra("day")?.toIntOrNull()
@@ -90,6 +91,22 @@ class NewCustomerConfirm : AppCompatActivity() {
             val tel = intent.getStringExtra("tel")
             val mail = intent.getStringExtra("mail")
             val role = intent.getStringExtra("role")
+
+            // ★★★デバッグ用のログを追加★★★
+            Log.d("DEBUG_TAG", "kana: $kana")
+            Log.d("DEBUG_TAG", "name: $name")
+            Log.d("DEBUG_TAG", "sex: $sex")
+            Log.d("DEBUG_TAG", "era: $era") // ここがnullになっていないか？
+            Log.d("DEBUG_TAG", "year: $year") // ここがnullになっていないか？
+            Log.d("DEBUG_TAG", "month: $month")
+            Log.d("DEBUG_TAG", "day: $day")
+            Log.d("DEBUG_TAG", "old: $old")
+            Log.d("DEBUG_TAG", "zip1: $zip1")
+            Log.d("DEBUG_TAG", "zip2: $zip2")
+            Log.d("DEBUG_TAG", "tel: $tel")
+            Log.d("DEBUG_TAG", "address: $address")
+            Log.d("DEBUG_TAG", "mail: $mail")
+            Log.d("DEBUG_TAG", "role: $role")
 
             val db = _helper.writableDatabase
 

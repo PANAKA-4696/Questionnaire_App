@@ -21,7 +21,7 @@ class DatabaseHelper (context: Context): SQLiteOpenHelper(context, DATABASE_NAME
         sb.append("kana TEXT,")
         sb.append("name TEXT,")
         sb.append("sex TEXT,")
-        sb.append("era INTEGER,")
+        sb.append("era TEXT,")
         sb.append("year INTEGER,")
         sb.append("month INTEGER,")
         sb.append("day INTEGER,")

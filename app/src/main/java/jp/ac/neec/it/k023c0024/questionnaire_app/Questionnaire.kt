@@ -17,8 +17,12 @@ class Questionnaire : AppCompatActivity() {
 
     private inner class ClickQuestionnaireNextListener : View.OnClickListener {
         override fun onClick(v: View?) {
-            val ClickQuestionnaireNextListener =
-                Intent(this@Questionnaire, LoginCustomer::class.java)
+            val id = intent.getStringExtra("id")
+
+            val ClickQuestionnaireNextListener = Intent(this@Questionnaire, LoginCustomer::class.java)
+
+            ClickQuestionnaireNextListener.putExtra("id", id)
+
             startActivity(ClickQuestionnaireNextListener)
         }
     }

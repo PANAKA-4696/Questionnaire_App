@@ -108,8 +108,12 @@ class Questionnaire : AppCompatActivity() {
 
             val etComment = findViewById<EditText>(R.id.etQuestionnaireComment).text.toString()
 
+            val time = findViewById<TextView>(R.id.tvQuestionnaireNowDayTime).text.toString()
+
+
             val ClickQuestionnaireNextListener = Intent(this@Questionnaire, Questionnaire2::class.java)
 
+            ClickQuestionnaireNextListener.putExtra("time", time)
             ClickQuestionnaireNextListener.putExtra("id", id)
             ClickQuestionnaireNextListener.putExtra("Question1", Question1)
             ClickQuestionnaireNextListener.putExtra("Question2", Question2)

@@ -108,4 +108,8 @@
     <string name="tv_customer_information_confirm_role">職業</string>
     <string name="bt_reenter">再登録する</string>　
     <string name="bt_back">戻る</string>
+    <string name="questionnaire_dialog_title">回答提出</string>
+    <string name="questionnaire_dialog_msg">回答提出してよろしいですか？</string>
+    <string name="questionnaire_dialog_btn_ok">登録する</string>
+    <string name="questionnaire_dialog_btn_ng">キャンセル</string>
 </resources>

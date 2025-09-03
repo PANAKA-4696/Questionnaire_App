@@ -15,7 +15,7 @@ class DatabaseHelper (context: Context): SQLiteOpenHelper(context, DATABASE_NAME
 
     override fun onCreate(db: SQLiteDatabase){
         //テーブル作成用SQL文字列の作成
-        val sb = StringBuilder()
+        var sb = StringBuilder()
         sb.append("CREATE TABLE customer (")
         sb.append("_id INTEGER PRIMARY KEY,")
         sb.append("kana TEXT,")
@@ -33,9 +33,25 @@ class DatabaseHelper (context: Context): SQLiteOpenHelper(context, DATABASE_NAME
         sb.append("mail TEXT,")
         sb.append("role TEXT")
         sb.append(");")
-        val sql = sb.toString()
+        var sql = sb.toString()
 
         //SQLの実行
+        db.execSQL(sql)
+
+        sb = StringBuilder()
+        sb.append("CREATE TABLE questionnaire (")
+        sb.append("time TEXT PRIMARY KEY,")
+        sb.append("_id INTEGER,")
+        sb.append("Question1 TEXT,")
+        sb.append("Question2 TEXT,")
+        sb.append("Question3 TEXT,")
+        sb.append("Question4 TEXT,")
+        sb.append("Question5 TEXT,")
+        sb.append("Question6 TEXT,")
+        sb.append("etComment TEXT")
+        sb.append(");")
+        sql = sb.toString()
+
         db.execSQL(sql)
     }
 

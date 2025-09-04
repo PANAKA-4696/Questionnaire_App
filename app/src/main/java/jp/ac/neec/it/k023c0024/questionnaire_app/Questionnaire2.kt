@@ -39,14 +39,15 @@ class Questionnaire2 : AppCompatActivity() {
                 val Question6 = intent.getStringExtra("Question6")
                 val etComment = intent.getStringExtra("etComment")
 
+                val idAsLong = id?.toLongOrNull()
+
                 try {
-                    if (time != null && id != null && Question1 != null && Question2 != null && Question3 != null && Question4 != null && Question5 != null && Question6 != null && etComment != null) {
-                        val sqlInsert =
-                            "INSERT INTO questionnaire (time, id, Question1, Question2, Question3, Question4, Question5, Question6, etComment) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+                    if (time != null && idAsLong != null && Question1 != null && Question2 != null && Question3 != null && Question4 != null && Question5 != null && Question6 != null && etComment != null) {
+                        val sqlInsert = "INSERT INTO questionnaire (time, _id, Question1, Question2, Question3, Question4, Question5, Question6, etComment) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
                         val stmt = db.compileStatement(sqlInsert)
 
                         stmt.bindString(1, time)
-                        stmt.bindString(2, id)
+                        stmt.bindLong(2, idAsLong)
                         stmt.bindString(3, Question1)
                         stmt.bindString(4, Question2)
                         stmt.bindString(5, Question3)

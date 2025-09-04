@@ -3,6 +3,7 @@ package jp.ac.neec.it.k023c0024.questionnaire_app
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -34,7 +35,7 @@ class Questionnaire : AppCompatActivity() {
         tvTime.text = formattedDateTime
 
         //データベースヘルパーオブジェクトからデータベース接続オブジェクトを取得
-        val  db = _helper.readableDatabase
+        val db = _helper.readableDatabase
         //主キーによる検索SQL文字列の用意
         val sql = "SELECT * FROM customer WHERE _id = ${id}"
         //SQLの実行
@@ -45,9 +46,9 @@ class Questionnaire : AppCompatActivity() {
         var old = 0
         var role = ""
 
-        try{//tryブロックで例外発生に備える
+        try {//tryブロックで例外発生に備える
             //カーソルを最初の行に移動させる
-            if(cursor.moveToFirst()) {
+            if (cursor.moveToFirst()) {
                 //カラムのインデックス値を取得(カラム名が正しいかを確認)
                 val idxKana = cursor.getColumnIndex("kana")
                 val idxName = cursor.getColumnIndex("name")
@@ -67,14 +68,14 @@ class Questionnaire : AppCompatActivity() {
                 if (idxRole >= 0) {
                     role = cursor.getString(idxRole)
                 }
-            }else{
+            } else {
                 //データが見つからなかった場合の処理
                 Log.w("tag", "データが見つかりませんでした")
             }
-        }catch (e: Exception){
+        } catch (e: Exception) {
             Log.e("tag", "例外が発生しました", e)
             //エラー発生時の処理
-        }finally {
+        } finally {
             //必ずカーソルをクローズする
             cursor.close()
         }
@@ -90,6 +91,8 @@ class Questionnaire : AppCompatActivity() {
 
         val bt_QuestionnaireNext = findViewById<Button>(R.id.btQuestionnaireNext)
         bt_QuestionnaireNext.setOnClickListener(ClickQuestionnaireNextListener())
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private inner class ClickQuestionnaireNextListener : View.OnClickListener {
@@ -111,7 +114,8 @@ class Questionnaire : AppCompatActivity() {
             val time = findViewById<TextView>(R.id.tvQuestionnaireNowDayTime).text.toString()
 
 
-            val ClickQuestionnaireNextListener = Intent(this@Questionnaire, Questionnaire2::class.java)
+            val ClickQuestionnaireNextListener =
+                Intent(this@Questionnaire, Questionnaire2::class.java)
 
             ClickQuestionnaireNextListener.putExtra("time", time)
             ClickQuestionnaireNextListener.putExtra("id", id)
@@ -125,5 +129,18 @@ class Questionnaire : AppCompatActivity() {
 
             startActivity(ClickQuestionnaireNextListener)
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        //戻り値用の変数を初期値trueで用意
+        var returnVal = true
+        //選択されたメニューが「戻る」の場合、アクティビティを終了
+        if (item.itemId == android.R.id.home) {
+            finish()
+        } else {
+            //それ以外の場合、戻り値用の変数をfalseに設定
+            returnVal = super.onOptionsItemSelected(item)
+        }
+        return returnVal
     }
 }

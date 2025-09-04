@@ -1,6 +1,7 @@
 package jp.ac.neec.it.k023c0024.questionnaire_app
 
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.CheckBox
@@ -18,6 +19,8 @@ class Questionnaire2 : AppCompatActivity() {
 
         val bt_questionnaire_confirm = findViewById<Button>(R.id.btQuestionnaireConfirm)
         bt_questionnaire_confirm.setOnClickListener(QuestionnaireConfirmListener())
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private inner class QuestionnaireConfirmListener : View.OnClickListener {
@@ -65,5 +68,18 @@ class Questionnaire2 : AppCompatActivity() {
                 Toast.makeText(this@Questionnaire2, "同意が必要です", Toast.LENGTH_LONG).show()
             }
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean{
+        //戻り値用の変数を初期値trueで用意
+        var returnVal = true
+        //選択されたメニューが「戻る」の場合、アクティビティを終了
+        if(item.itemId == android.R.id.home){
+            finish()
+        }else{
+            //それ以外の場合、戻り値用の変数をfalseに設定
+            returnVal = super.onOptionsItemSelected(item)
+        }
+        return returnVal
     }
 }

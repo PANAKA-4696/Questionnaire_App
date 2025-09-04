@@ -53,14 +53,9 @@ class Questionnaire2 : AppCompatActivity() {
                         stmt.bindString(9, etComment)
 
                         stmt.executeInsert()
-
-                        val dialogFragment = ConfirmDialogFragment()
-                        dialogFragment.show(supportFragmentManager, "ConfirmDialogFragment")
-
                         Toast.makeText(this@Questionnaire2, "回答を提出しました", Toast.LENGTH_LONG).show()
                     } else {
-                        Toast.makeText(this@Questionnaire2, "回答に失敗しました", Toast.LENGTH_LONG)
-                            .show()
+                        Toast.makeText(this@Questionnaire2, "回答に失敗しました", Toast.LENGTH_LONG).show()
                     }
                 }finally {
                     db.close()

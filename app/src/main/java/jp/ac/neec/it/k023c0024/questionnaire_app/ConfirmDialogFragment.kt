@@ -8,6 +8,19 @@ import android.os.Bundle
 import androidx.fragment.app.DialogFragment
 
 class ConfirmDialogFragment: DialogFragment() {
+
+    companion object {
+        private  const val ARG_ITEM_ID = "customer_id"//引数のキー
+        fun newInstance(id: Long): ConfirmDialogFragment {
+            val fragment = ConfirmDialogFragment()
+            val args = Bundle()
+
+            args.putLong(ARG_ITEM_ID, id)//BundleにIDをセット
+            fragment.arguments = args
+            return fragment
+        }
+    }
+
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         //アクティビティがnullでないならアバダイアログオブジェクトを生成。
         val dialog = activity?.let {

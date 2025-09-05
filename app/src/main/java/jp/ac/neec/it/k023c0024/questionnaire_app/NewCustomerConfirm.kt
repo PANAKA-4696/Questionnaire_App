@@ -123,8 +123,18 @@ class NewCustomerConfirm : AppCompatActivity() {
                     val msg = "保存しました"
                     Toast.makeText(this@NewCustomerConfirm, msg, Toast.LENGTH_LONG).show()
 
-                    val dialogFragment = ConfirmDialogFragment()
-                    dialogFragment.show(supportFragmentManager, "ConfirmDialogFragment")
+                    val id = stmt.executeInsert()//この戻り値がID
+
+                    if(id != -1L){
+                        //newInstanceを使ってIDを渡す
+                        val dialogFragment = ConfirmDialogFragment.newInstance(id)
+                        dialogFragment.show(supportFragmentManager, "ConfirmDialogFragment")
+                    }else{
+                        //挿入失敗処理
+                        Toast.makeText(this@NewCustomerConfirm, "IDの取得に失敗しました", Toast.LENGTH_LONG).show()
+                    }
+
+
 
                 }else{
                     val msg = "保存に失敗しました"

@@ -5,6 +5,7 @@ import android.app.Dialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 
 class ConfirmDialogFragment: DialogFragment() {
@@ -51,8 +52,18 @@ class ConfirmDialogFragment: DialogFragment() {
             when(which){
                 //Positive Button
                 DialogInterface.BUTTON_POSITIVE ->{
-                    //カルテの画面に名前情報を持って遷移
-                    //TODO
+                    val id = arguments?.getLong(ARG_ITEM_ID)
+
+                    if (id != null) {
+                        val intent = Intent(activity, Questionnaire::class.java)
+                        intent.putExtra("id", id.toString())
+                        startActivity(intent)
+                        //現在のアクティビティを終了
+                        activity?.finish()
+                    }else{
+                        val msg = "IDが取得できませんでした"
+                        Toast.makeText(activity, msg, Toast.LENGTH_LONG).show()
+                    }
                 }
                 //Negative Button
                 DialogInterface.BUTTON_NEGATIVE -> {

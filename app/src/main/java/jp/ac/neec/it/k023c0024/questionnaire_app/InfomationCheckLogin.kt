@@ -78,7 +78,7 @@ class InfomationCheckLogin : AppCompatActivity() {
         _customerList = createCustomerList()
 
         //リストビューに新しいリストをセットし直す
-        val lvCustomer = findViewById<ListView>(R.id.lvCustomer)
+        val lvCustomer = findViewById<ListView>(R.id.lvInformationCheckLogin)
         var adapter = SimpleAdapter(
             this@InfomationCheckLogin,
             _customerList,

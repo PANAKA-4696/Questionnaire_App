@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReEnterCustomerInformation">
+
+    <TextView
+        android:id="@+id/tvNewCustomer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_new_customer"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNewCustomerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/tv_new_customer_name"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etReEnterName"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNewCustomerKana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/tv_new_customer_kana"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etReEnterKana"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNewCustomerBirth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_new_customer_birth"
+        app:layout_constraintStart_toEndOf="@+id/rgReEnterSex"
+        app:layout_constraintTop_toBottomOf="@+id/etReEnterName" />
+
+    <TextView
+        android:id="@+id/tvNewCustomerTel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/tv_new_customer_tel"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etReEnterTel"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etReEnterKana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="フリガナを入力"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomer" />
+
+    <EditText
+        android:id="@+id/etReEnterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="名前を入力"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etReEnterKana" />
+
+    <RadioGroup
+        android:id="@+id/rgReEnterSex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerSex">
+
+        <RadioButton
+            android:id="@+id/rbReEnterMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rb_new_customer_male" />
+
+        <RadioButton
+            android:id="@+id/rbReEnterFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rb_new_customer_female" />
+
+        <RadioButton
+            android:id="@+id/rbReEnterOther"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rb_new_customer_other" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvNewCustomerSex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_new_customer_sex"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etReEnterName" />
+
+    <RadioGroup
+        android:id="@+id/rgReEnterEra"
+        android:layout_width="0dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="2dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvNewCustomerBirth"
+        app:layout_constraintTop_toBottomOf="@+id/etReEnterName">
+
+        <RadioButton
+            android:id="@+id/rbReEnterReiwa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rb_new_customer_reiwa" />
+
+        <RadioButton
+            android:id="@+id/rbReEnterHeisei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rb_new_customer_heisei" />
+
+        <RadioButton
+            android:id="@+id/rbReEnterShowa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rb_new_customer_showa" />
+
+        <RadioButton
+            android:id="@+id/rbReEnterTaisho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rb_new_customer_taisho" />
+
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvNewCustomerOld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/tv_new_customer_old"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerBirth" />
+
+    <TextView
+        android:id="@+id/tvNewCustomerDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/tv_new_customer_day"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/etReEnterOld"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerBirth" />
+
+    <TextView
+        android:id="@+id/tvNewCustomerMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/tv_new_customer_month"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/etReEnterDay"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerBirth" />
+
+    <TextView
+        android:id="@+id/tvNewCustomerYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/tv_new_customer_year"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/etReEnterMonth"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerBirth" />
+
+    <EditText
+        android:id="@+id/etReEnterOld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="2"
+        android:inputType="number"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvNewCustomerOld"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerBirth" />
+
+    <EditText
+        android:id="@+id/etReEnterDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="2"
+        android:inputType="number"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvNewCustomerDay"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerBirth" />
+
+    <EditText
+        android:id="@+id/etReEnterMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="2"
+        android:inputType="number"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvNewCustomerMonth"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerBirth" />
+
+    <EditText
+        android:id="@+id/etReEnterYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="2"
+        android:inputType="number"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvNewCustomerYear"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewCustomerBirth" />
+
+    <EditText
+        android:id="@+id/etReEnterTel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="電話番号を入力"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgReEnterSex" />
+
+    <TextView
+        android:id="@+id/tvNewCustomerAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_new_customer_address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etReEnterTel" />
+
+    <EditText
+        android:id="@+id/etReEnterZip2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="4"
+        android:inputType="number"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/tvNewCustomerHyphen"
+        app:layout_constraintTop_toBottomOf="@+id/etReEnterTel" />
+
+    <TextView
+        android:id="@+id/tvNewCustomerHyphen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_new_customer_hyphen"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/etReEnterZip1"
+        app:layout_constraintTop_toBottomOf="@+id/etReEnterTel" />
+
+    <EditText
+        android:id="@+id/etReEnterZip1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="3"
+        android:inputType="number"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/tvNewCustomerZip"
+        app:layout_constraintTop_toBottomOf="@+id/etReEnterTel" />
+
+    <TextView
+        android:id="@+id/tvNewCustomerZip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_new_customer_zip"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/tvNewCustomerAddress"
+        app:layout_constraintTop_toBottomOf="@+id/etReEnterTel" />
+
+    <EditText
+        android:id="@+id/etReEnterAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="住所を入力"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etReEnterZip2" />
+
+    <TextView
+        android:id="@+id/tvNewCustomerMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/tv_new_customer_mail"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etReEnterMail"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etReEnterMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="メールアドレスを入力"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etReEnterAddress" />
+
+    <TextView
+        android:id="@+id/tvNewCustomerRole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/tv_new_customer_role"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etReEnterRole"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etReEnterRole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="職業を入力"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etReEnterMail" />
+
+    <Button
+        android:id="@+id/btPutInfomation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/bt_put_information"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/btClear"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etReEnterRole" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

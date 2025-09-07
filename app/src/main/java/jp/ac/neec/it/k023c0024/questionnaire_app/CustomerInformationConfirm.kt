@@ -143,7 +143,7 @@ class CustomerInformationConfirm : AppCompatActivity() {
 
     private inner class ClickCustomerInformationConfirmReEnterListener : View.OnClickListener {
         override fun onClick(v: View?) {
-            val ClickCustomerInformationConfirmReEnterListener = Intent(this@CustomerInformationConfirm, NewCustomer::class.java)
+            val ClickCustomerInformationConfirmReEnterListener = Intent(this@CustomerInformationConfirm, ReEnterCustomerInformation::class.java)
             startActivity(ClickCustomerInformationConfirmReEnterListener)
         }
     }

@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/puCustomerInformationConfirmKana"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -40,14 +40,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/puCustomerInformationConfirmName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/puCustomerInformationConfirmKana" />
 
     <TextView
         android:id="@+id/textView17"
@@ -58,10 +58,10 @@
         android:text="@string/tv_customer_information_confirm_sex"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/puCustomerInformationConfirmName" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/puCustomerInformationConfirmSex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -79,7 +79,7 @@
         android:text="@string/tv_customer_information_confirm_birth"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+        app:layout_constraintTop_toBottomOf="@+id/puCustomerInformationConfirmSex" />
 
     <TextView
         android:id="@+id/textView23"
@@ -93,7 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
     <TextView
-        android:id="@+id/textView25"
+        android:id="@+id/puCustomerInformationConfirmOld"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -110,11 +110,11 @@
         android:layout_marginEnd="8dp"
         android:text="@string/tv_customer_information_confirm_day"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/textView25"
+        app:layout_constraintEnd_toStartOf="@+id/puCustomerInformationConfirmOld"
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
     <TextView
-        android:id="@+id/textView28"
+        android:id="@+id/puCustomerInformationConfirmDay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -131,11 +131,11 @@
         android:layout_marginEnd="8dp"
         android:text="@string/tv_customer_information_confirm_month"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/textView28"
+        app:layout_constraintEnd_toStartOf="@+id/puCustomerInformationConfirmDay"
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
     <TextView
-        android:id="@+id/textView30"
+        android:id="@+id/puCustomerInformationConfirmMonth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -152,11 +152,11 @@
         android:layout_marginEnd="8dp"
         android:text="@string/tv_customer_information_confirm_year"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/textView30"
+        app:layout_constraintEnd_toStartOf="@+id/puCustomerInformationConfirmMonth"
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
     <TextView
-        android:id="@+id/textView32"
+        android:id="@+id/puCustomerInformationConfirmYear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -166,13 +166,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
     <TextView
-        android:id="@+id/textView33"
+        android:id="@+id/puCustomerInformationConfirmEra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/textView32"
+        app:layout_constraintEnd_toStartOf="@+id/puCustomerInformationConfirmYear"
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
     <TextView
@@ -187,7 +187,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
     <TextView
-        android:id="@+id/textView35"
+        android:id="@+id/puCustomerInformationConfirmTel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -205,7 +205,7 @@
         android:text="@string/tv_customer_information_confirm_address"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView35" />
+        app:layout_constraintTop_toBottomOf="@+id/puCustomerInformationConfirmTel" />
 
     <TextView
         android:id="@+id/textView37"
@@ -216,17 +216,17 @@
         android:text="@string/tv_customer_information_confirm_zip"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textView36"
-        app:layout_constraintTop_toBottomOf="@+id/textView35" />
+        app:layout_constraintTop_toBottomOf="@+id/puCustomerInformationConfirmTel" />
 
     <TextView
-        android:id="@+id/textView38"
+        android:id="@+id/puCustomerInformationConfirmZip1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textView37"
-        app:layout_constraintTop_toBottomOf="@+id/textView35" />
+        app:layout_constraintTop_toBottomOf="@+id/puCustomerInformationConfirmTel" />
 
     <TextView
         android:id="@+id/textView39"
@@ -236,21 +236,21 @@
         android:layout_marginTop="8dp"
         android:text="@string/tv_customer_information_confirm_hyphen"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/textView38"
-        app:layout_constraintTop_toBottomOf="@+id/textView35" />
+        app:layout_constraintStart_toEndOf="@+id/puCustomerInformationConfirmZip1"
+        app:layout_constraintTop_toBottomOf="@+id/puCustomerInformationConfirmTel" />
 
     <TextView
-        android:id="@+id/textView40"
+        android:id="@+id/puCustomerInformationConfirmZip2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textView39"
-        app:layout_constraintTop_toBottomOf="@+id/textView35" />
+        app:layout_constraintTop_toBottomOf="@+id/puCustomerInformationConfirmTel" />
 
     <TextView
-        android:id="@+id/textView41"
+        android:id="@+id/puCustomerInformationConfirmAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -268,10 +268,10 @@
         android:text="@string/tv_customer_information_confirm_mail"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView41" />
+        app:layout_constraintTop_toBottomOf="@+id/puCustomerInformationConfirmAddress" />
 
     <TextView
-        android:id="@+id/textView43"
+        android:id="@+id/puCustomerInformationConfirmMail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -289,10 +289,10 @@
         android:text="@string/tv_customer_information_confirm_role"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView43" />
+        app:layout_constraintTop_toBottomOf="@+id/puCustomerInformationConfirmMail" />
 
     <TextView
-        android:id="@+id/textView45"
+        android:id="@+id/puCustomerInformationConfirmRole"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -302,7 +302,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView44" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btCustomerInformationConfirmReEnter"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -310,12 +310,12 @@
         android:layout_marginBottom="8dp"
         android:text="@string/bt_reenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintEnd_toStartOf="@+id/btCustomerInformationCondfirmBack"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btCustomerInformationCondfirmBack"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -325,5 +325,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button3" />
+        app:layout_constraintStart_toEndOf="@+id/btCustomerInformationConfirmReEnter" />
 </androidx.constraintlayout.widget.ConstraintLayout>

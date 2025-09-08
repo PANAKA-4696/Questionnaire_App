@@ -45,10 +45,39 @@
         app:layout_constraintStart_toEndOf="@+id/btNew" />
 
     <Button
-        android:id="@+id/btCheck"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/bt_check"
-        tools:layout_editor_absoluteX="295dp"
-        tools:layout_editor_absoluteY="382dp" />
+        app:layout_constraintBottom_toTopOf="@+id/btInGoogleDrive"
+        app:layout_constraintEnd_toStartOf="@+id/btOutGoogleDrive"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btOutGoogleDrive"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/bt_out_google_drive"
+        app:layout_constraintBottom_toTopOf="@+id/btNew"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btInGoogleDrive" />
+
+    <Button
+        android:id="@+id/btInGoogleDrive"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/bt_in_google_drive"
+        app:layout_constraintBottom_toTopOf="@+id/btNew"
+        app:layout_constraintEnd_toStartOf="@+id/btOutGoogleDrive"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

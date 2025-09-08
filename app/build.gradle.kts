@@ -51,6 +51,7 @@ dependencies {
     implementation(libs.googleAuth)
     implementation(libs.googleApiClient)
     implementation(libs.googleDriveApi)
+    implementation(libs.google.http.client.android)
 
     //json
     implementation(libs.gson)

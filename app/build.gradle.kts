@@ -51,4 +51,7 @@ dependencies {
     implementation(libs.googleAuth)
     implementation(libs.googleApiClient)
     implementation(libs.googleDriveApi)
+
+    //json
+    implementation(libs.gson)
 }

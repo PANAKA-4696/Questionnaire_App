@@ -54,4 +54,7 @@ dependencies {
 
     // Coroutinesを追加
     implementation(libs.kotlinx.coroutines.android)
+
+    implementation(libs.googleApiClient)
+    implementation(libs.googleDriveApi)
 }

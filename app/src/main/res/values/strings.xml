@@ -4,6 +4,8 @@
     <string name="bt_check">情報を見る</string>
     <string name="bt_new">新規登録</string>
     <string name="bt_member">情報追記</string>
+    <string name="bt_in_google_drive">GoogleDriveに保存</string>
+    <string name="bt_out_google_drive">GoogleDriveから取得</string>
     <string name="tv_new_customer">個人情報入力</string>
     <string name="tv_new_customer_name">名前</string>
     <string name="tv_new_customer_kana">フリガナ</string>

@@ -182,9 +182,28 @@ class MainActivity : AppCompatActivity() {
                 // アップロードするファイル本体のコンテンツを作成
                 val mediaContent = FileContent("application/json", tempFile)
 
-                Log.d("MY_APP_TRACE", "5. Drive APIを呼び出してファイルをアップロードします。")
-                // Drive APIを使ってファイルを新規作成（アップロード）
-                driveService.files().create(fileMetadata, mediaContent).execute()
+                // 1. 既存のバックアップファイルを検索
+                val searchResult = driveService.files().list()
+                    .setSpaces("appDataFolder")
+                    .setQ("name = 'QuestionnaireBackup.json'")
+                    .setFields("files(id, name)")
+                    .execute()
+
+                val existingFile = searchResult.files.firstOrNull()
+
+                if (existingFile == null) {
+                    // 2a. ファイルが存在しない場合：新規作成
+                    Log.d("MY_APP_TRACE", "5a. ファイルが見つからないため、新規作成します。")
+                    val fileMetadata = File().apply {
+                        name = "QuestionnaireBackup.json"
+                        parents = listOf("appDataFolder")
+                    }
+                    driveService.files().create(fileMetadata, mediaContent).execute()
+                } else {
+                    // 2b. ファイルが存在する場合：更新
+                    Log.d("MY_APP_TRACE", "5b. 既存ファイル(${existingFile.id})を更新します。")
+                    driveService.files().update(existingFile.id, null, mediaContent).execute()
+                }
 
                 withContext(Dispatchers.Main) {
                     Log.d("BACKUP_SUCCESS", "データベースのバックアップに成功しました。")

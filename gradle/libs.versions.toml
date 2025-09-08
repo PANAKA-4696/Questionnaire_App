@@ -23,6 +23,7 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
 googleApiClient = { group = "com.google.api-client", name = "google-api-client-android", version = "2.4.0" }
 googleDriveApi = { group = "com.google.apis", name = "google-api-services-drive", version = "v3-rev20240725-2.0.0" }
+googleAuth = { group = "com.google.android.gms", name = "play-services-auth", version = "21.2.0" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

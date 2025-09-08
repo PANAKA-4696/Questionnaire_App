@@ -27,8 +27,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
         jvmTarget = "17"
@@ -36,13 +36,7 @@ android {
 }
 
 dependencies {
-    // この一行があるか確認
-    implementation("com.google.android.gms:play-services-auth:21.2.0") // 括弧を追加
-
-    // Drive APIも後で使うので必要
-    implementation("com.google.api-client:google-api-client-android:2.4.0") // 括弧を追加
-    implementation("com.google.apis:google-api-services-drive:v3-rev20240725-2.0.0") // 括弧を追加
-
+    // AndroidX や Coroutines のライブラリ ...
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -51,10 +45,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    // Coroutinesを追加
     implementation(libs.kotlinx.coroutines.android)
 
+    // Google関連ライブラリ (こちらに統一)
+    implementation(libs.googleAuth)
     implementation(libs.googleApiClient)
     implementation(libs.googleDriveApi)
 }

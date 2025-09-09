@@ -93,8 +93,19 @@ class LoginCustomer : AppCompatActivity() {
 
     private inner class ListItemClickListener : AdapterView.OnItemClickListener {
         override fun onItemClick(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-            val Item = parent.getItemAtPosition(position) as MutableMap<String, String>
-            val id = Item["id"] as String
+            // as? を使って安全に型変換します
+            val item = parent.getItemAtPosition(position) as? MutableMap<String, String>
+
+            // itemがnullでなければ（＝型変換が成功すれば）letブロックの中の処理が実行されます
+            item?.let {
+                // マップから値を取り出す際も、キーが存在しない可能性を考慮して
+                // getメソッドを使うか、安全なキャストを推奨します
+                val id = it["id"]
+
+                if (id != null) {
+                    // ここでidを使った処理を実行する
+                }
+            }
 
             val intentQuestionnaire = Intent(this@LoginCustomer, Questionnaire::class.java)
 

@@ -16,9 +16,6 @@
             android:name=".ReEnterCustomerInformation"
             android:exported="false" />
         <activity
-            android:name=".QuestionnaireConfirm"
-            android:exported="false" />
-        <activity
             android:name=".CustomerInformationConfirm"
             android:exported="false" />
         <activity

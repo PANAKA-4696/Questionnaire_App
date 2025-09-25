@@ -21,6 +21,8 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
+
+#GoogleAPI等の取得のためのlibraries
 googleApiClient = { group = "com.google.api-client", name = "google-api-client-android", version = "2.4.0" }
 googleDriveApi = { group = "com.google.apis", name = "google-api-services-drive", version = "v3-rev20220815-2.0.0" }
 googleAuth = { group = "com.google.android.gms", name = "play-services-auth", version = "21.2.0" }

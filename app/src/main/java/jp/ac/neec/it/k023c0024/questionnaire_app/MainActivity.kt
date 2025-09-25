@@ -166,6 +166,8 @@ class MainActivity : AppCompatActivity() {
                 // DatabaseHelperからDB内容を文字列として取得
                 val dbDataAsString = _helper.exportToString()
                 if (dbDataAsString.isBlank()) {
+                    //データベースの存在を確認。
+                    withContext(Dispatchers.Main) { Toast.makeText(this@MainActivity, "バックアップするデータがありません", Toast.LENGTH_SHORT).show() }
                     Log.d("BACKUP_INFO", "バックアップするデータがありません。")
                     return@launch
                 }
@@ -174,14 +176,16 @@ class MainActivity : AppCompatActivity() {
                 val tempFile = java.io.File(cacheDir, "db_backup.json")
                 tempFile.writeText(dbDataAsString)
 
-                // Driveにアップロードするファイルのメタデータ（情報）を作成
-                val fileMetadata = File().apply {
-                    name = "QuestionnaireBackup.json" // Drive上でのファイル名
-                    parents = listOf("appDataFolder")
-                }
 
-                // アップロードするファイル本体のコンテンツを作成
-                val mediaContent = FileContent("application/json", tempFile)
+                //より信頼度の高いものにするための変更
+//                // Driveにアップロードするファイルのメタデータ（情報）を作成
+//                val fileMetadata = File().apply {
+//                    name = "QuestionnaireBackup.json" // Drive上でのファイル名
+//                    parents = listOf("appDataFolder")
+//                }
+//
+//                // アップロードするファイル本体のコンテンツを作成
+//                val mediaContent = FileContent("application/json", tempFile)
 
                 // 1. 既存のバックアップファイルを検索
                 val searchResult = driveService.files().list()
@@ -192,23 +196,41 @@ class MainActivity : AppCompatActivity() {
 
                 val existingFile = searchResult.files.firstOrNull()
 
-                if (existingFile == null) {
-                    // 2a. ファイルが存在しない場合：新規作成
-                    Log.d("MY_APP_TRACE", "5a. ファイルが見つからないため、新規作成します。")
-                    val fileMetadata = File().apply {
-                        name = "QuestionnaireBackup.json"
-                        parents = listOf("appDataFolder")
-                    }
-                    driveService.files().create(fileMetadata, mediaContent).execute()
-                } else {
-                    // 2b. ファイルが存在する場合：更新
-                    Log.d("MY_APP_TRACE", "5b. 既存ファイル(${existingFile.id})を更新します。")
-                    driveService.files().update(existingFile.id, null, mediaContent).execute()
+                //より信頼度の高いものにするための変更
+//                if (existingFile == null) {
+//                    // 2a. ファイルが存在しない場合：新規作成
+//                    Log.d("MY_APP_TRACE", "5a. ファイルが見つからないため、新規作成します。")
+//                    val fileMetadata = File().apply {
+//                        name = "QuestionnaireBackup.json"
+//                        parents = listOf("appDataFolder")
+//                    }
+//                    driveService.files().create(fileMetadata, mediaContent).execute()
+//                } else {
+//                    // 2b. ファイルが存在する場合：更新
+//                    Log.d("MY_APP_TRACE", "5b. 既存ファイル(${existingFile.id})を更新します。")
+//                    driveService.files().update(existingFile.id, null, mediaContent).execute()
+//                }
+
+                //ファイルが見つかった際削除
+                searchResult.files.firstOrNull()?.id?.let { fileId ->
+                    Log.d("BACKUP_INFO", "古いファイル($fileId)を削除します。")
+                    driveService.files().delete(fileId).execute()
                 }
+
+                //新しいファイルを作成。(ある場合は新しいファイルとして作成。)
+                val fileMetadata = File().apply {
+                    name = "QuestionnaireBackup.json"
+                    parents = listOf("appDataFolder")
+                }
+                val mediaContent = FileContent("application/json", tempFile)
+                Log.d("BACKUP_INFO", "新しいファイルを作成します。")
+                driveService.files().create(fileMetadata, mediaContent).execute()
+
 
                 withContext(Dispatchers.Main) {
                     Log.d("BACKUP_SUCCESS", "データベースのバックアップに成功しました。")
-                    // ここでToastを表示するなど
+                    // 成功をToast表示
+                    Toast.makeText(this@MainActivity, "バックアップに成功しました", Toast.LENGTH_SHORT).show()
                 }
 
             } catch (e: Exception) {

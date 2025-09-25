@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -213,7 +214,8 @@ class MainActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
                     Log.e("BACKUP_ERROR", "バックアップに失敗しました。", e)
-                    // ここでToastを表示するなど
+                    // バックアップ失敗時に失敗した旨を表示
+                    Toast.makeText(this@MainActivity, "バックアップ失敗: ${e.message}", Toast.LENGTH_LONG).show()
                 }
             }
         }
@@ -271,6 +273,8 @@ class MainActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
                     Log.e("RESTORE_ERROR", "復元に失敗しました。", e)
+                    //バックアップ取得失敗時に失敗した旨を表示
+                    Toast.makeText(this@MainActivity, "復元失敗: ${e.message}", Toast.LENGTH_LONG).show()
                 }
             }
         }

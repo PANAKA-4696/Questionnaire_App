@@ -164,7 +164,9 @@ class DatabaseHelper (context: Context): SQLiteOpenHelper(context, DATABASE_NAME
         sb.append("Question4 TEXT,")
         sb.append("Question5 TEXT,")
         sb.append("Question6 TEXT,")
-        sb.append("etComment TEXT")
+        sb.append("etComment TEXT,")
+        //外部キーの追加
+        sb.append("FOREIGN KEY(_id) REFERENCES customer(_id)")
         sb.append(");")
         sql = sb.toString()
 

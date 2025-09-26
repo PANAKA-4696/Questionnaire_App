@@ -37,9 +37,9 @@ class Questionnaire : AppCompatActivity() {
         //データベースヘルパーオブジェクトからデータベース接続オブジェクトを取得
         val db = _helper.readableDatabase
         //主キーによる検索SQL文字列の用意
-        val sql = "SELECT * FROM customer WHERE _id = ${id}"
+        val sql = "SELECT * FROM customer WHERE _id = ?"
         //SQLの実行
-        val cursor = db.rawQuery(sql, null)
+        val cursor = db.rawQuery(sql, arrayOf(id))
         //データベースから取得した値を格納する変数の用意。データが無かった時のための初期値も用意
         var kana = ""
         var name = ""

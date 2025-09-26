@@ -289,14 +289,15 @@ class MainActivity : AppCompatActivity() {
                 _helper.importFromString(fileContent)
 
                 withContext(Dispatchers.Main) {
-                    Log.d("RESTORE_SUCCESS", "データベースの復元に成功しました。")
+                    Log.d("RESTORE_SUCCESS", "データベースの取得に成功しました。")
+                    Toast.makeText(this@MainActivity, "取得に成功しました", Toast.LENGTH_SHORT).show()
                 }
 
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
-                    Log.e("RESTORE_ERROR", "復元に失敗しました。", e)
+                    Log.e("RESTORE_ERROR", "取得失敗しました。", e)
                     //バックアップ取得失敗時に失敗した旨を表示
-                    Toast.makeText(this@MainActivity, "復元失敗: ${e.message}", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@MainActivity, "取得失敗: ${e.message}", Toast.LENGTH_LONG).show()
                 }
             }
         }

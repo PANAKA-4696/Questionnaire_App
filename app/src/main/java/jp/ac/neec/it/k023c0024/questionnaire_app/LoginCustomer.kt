@@ -59,7 +59,7 @@ class LoginCustomer : AppCompatActivity() {
             val idxid = cursor.getColumnIndex("_id")
             val idxname = cursor.getColumnIndex("name")
             //カラムのインデックス値を元に実際のデータを取得
-            id = cursor.getString(idxid)
+            id = cursor.getLong(idxid).toString()//getLong()でLong型を、toString()で文字列型に変換
             name = cursor.getString(idxname)
             //取得したデータをリストに追加
             _customerList.add(mutableMapOf("id" to id, "name" to name))
@@ -93,24 +93,16 @@ class LoginCustomer : AppCompatActivity() {
 
     private inner class ListItemClickListener : AdapterView.OnItemClickListener {
         override fun onItemClick(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-            // as? を使って安全に型変換します
-            val item = parent.getItemAtPosition(position) as? MutableMap<String, String>
+            //_customerListから、タップした行のデータを指定
+            val item = _customerList[position]
+            //マップから"id"というキーを使って、目的の顧客ID(文字列)を取得
+            val customerID = item["id"]
 
-            // itemがnullでなければ（＝型変換が成功すれば）letブロックの中の処理が実行されます
-            item?.let {
-                // マップから値を取り出す際も、キーが存在しない可能性を考慮して
-                // getメソッドを使うか、安全なキャストを推奨します
-                val id = it["id"]
-
-                if (id != null) {
-                    // ここでidを使った処理を実行する
-                }
-            }
-
+            // Questionnaireアクティビティへのインテントを作成
             val intentQuestionnaire = Intent(this@LoginCustomer, Questionnaire::class.java)
-
-            intentQuestionnaire.putExtra("id", id)
-
+            //取得した顧客ID（文字列）をインテントに詰める
+            intentQuestionnaire.putExtra("id", customerID)
+            // Questionnaireアクティビティを起動
             startActivity(intentQuestionnaire)
             //現在の画面を終了
             finish()

@@ -141,7 +141,7 @@ class MainActivity : AppCompatActivity() {
         // Drive APIを操作するための認証情報を作成
         val credential = GoogleAccountCredential.usingOAuth2(
             this,
-            setOf(DriveScopes.DRIVE_FILE)
+            setOf(DriveScopes.DRIVE_APPDATA)//正しい権限に修正。
         )
         credential.selectedAccount = account.account
 
@@ -247,7 +247,7 @@ class MainActivity : AppCompatActivity() {
     private fun handleSignInSuccessForRestore(account: GoogleSignInAccount) {
         val credential = GoogleAccountCredential.usingOAuth2(
             this,
-            setOf(DriveScopes.DRIVE_FILE)
+            setOf(DriveScopes.DRIVE_APPDATA)//正しい権限に修正
         )
         credential.selectedAccount = account.account
 

@@ -145,11 +145,11 @@ class CustomerInformationConfirm : AppCompatActivity() {
         override fun onClick(v: View?) {
             val id = intent.getStringExtra("id")
 
-            val ClickCustomerInformationConfirmReEnterListener = Intent(this@CustomerInformationConfirm, ReEnterCustomerInformation::class.java)
+            val reEnterIntent  = Intent(this@CustomerInformationConfirm, ReEnterCustomerInformation::class.java)
 
-            intent.putExtra("id", id)
+            reEnterIntent.putExtra("id", id)
 
-            startActivity(ClickCustomerInformationConfirmReEnterListener)
+            startActivity(reEnterIntent)
         }
     }
 

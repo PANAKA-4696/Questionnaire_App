@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
         // Googleサインインのオプションを設定
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail()
-            .requestScopes(Scope(DriveScopes.DRIVE_FILE))
+            .requestScopes(Scope(DriveScopes.DRIVE_APPDATA))//DRIVE_APPDATA：「アプリのプライベートなデータフォルダ（appDataFolder）への全アクセス」を許可する権限
             .build()
 
         // サインインクライアントを作成

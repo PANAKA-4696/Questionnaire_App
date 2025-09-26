@@ -93,23 +93,14 @@ class InfomationCheckLogin : AppCompatActivity() {
 
     private inner class ListItemClickListener : AdapterView.OnItemClickListener {
         override fun onItemClick(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-            // as? を使って安全に型変換します
-            val item = parent.getItemAtPosition(position) as? MutableMap<String, String>
-
-            // itemがnullでなければ（＝型変換が成功すれば）letブロックの中の処理が実行されます
-            item?.let {
-                // マップから値を取り出す際も、キーが存在しない可能性を考慮して
-                // getメソッドを使うか、安全なキャストを推奨します
-                val id = it["id"]
-
-                if (id != null) {
-                    // ここでidを使った処理を実行する
-                }
-            }
+            //_customerListから、タップした行のデータを指定
+            val item = _customerList[position]
+            //マップから"id"というキーを使って、目的の顧客ID(文字列)を取得
+            val customerID = item["id"]
 
             val intentCustomerInformation = Intent(this@InfomationCheckLogin, CustomerInformationConfirm::class.java)
 
-            intentCustomerInformation.putExtra("id", id)
+            intentCustomerInformation.putExtra("id", customerID)
 
             startActivity(intentCustomerInformation)
             //現在の画面を終了

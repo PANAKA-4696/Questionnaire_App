@@ -110,4 +110,6 @@
     <string name="tv_customer_information_confirm_role">職業</string>
     <string name="bt_reenter">再登録する</string>　
     <string name="bt_back">戻る</string>
+    <string name="bt_customer_confirm_update">更新する</string>
+    <string name="bt_customer_confirm_cancel">キャンセルする</string>
 </resources>

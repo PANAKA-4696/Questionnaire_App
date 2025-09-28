@@ -205,6 +205,8 @@ class ReEnterCustomerInformation : AppCompatActivity() {
 
     private inner class ClickPutInformationListener : View.OnClickListener {
         override fun onClick(v: View?) {
+            val id = intent.getStringExtra("id")
+
             val kana = findViewById<EditText>(R.id.etReEnterKana).text.toString()
             val name = findViewById<EditText>(R.id.etReEnterName).text.toString()
             val preSex = findViewById<RadioGroup>(R.id.rgReEnterSex)
@@ -244,6 +246,8 @@ class ReEnterCustomerInformation : AppCompatActivity() {
             PutInformation.putExtra("address", address)
             PutInformation.putExtra("mail", mail)
             PutInformation.putExtra("role", role)
+
+            PutInformation.putExtra("id", id)
 
             startActivity(PutInformation)
         }

@@ -5,10 +5,7 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import android.view.View
 
 class CustomerConfirm : AppCompatActivity() {
@@ -20,10 +17,10 @@ class CustomerConfirm : AppCompatActivity() {
         setContentView(R.layout.activity_customer_confirm)
 
         // 汎用的なIDに変更
-        val bt_save = findViewById<Button>(R.id.btConfirmSave)
+        val bt_save = findViewById<Button>(R.id.btConfirmUpdate)
         val bt_cancel = findViewById<Button>(R.id.btConfirmCancel)
 
-        bt_save.setOnClickListener(ClickSaveListener())
+        bt_save.setOnClickListener(ClickUpdateListener())
         bt_cancel.setOnClickListener(ClickCancelListener())
 
         val kana = intent.getStringExtra("kana")
@@ -74,8 +71,10 @@ class CustomerConfirm : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    private inner class ClickSaveListener : View.OnClickListener {
+    private inner class ClickUpdateListener : View.OnClickListener {
         override fun onClick(v: View?) {
+            val idToUpdate = intent.getStringExtra("id")
+
             //DBに保存するロジックは変更なし
             val kana = intent.getStringExtra("kana")
             val name = intent.getStringExtra("name")
@@ -96,11 +95,11 @@ class CustomerConfirm : AppCompatActivity() {
 
             try {
                 if (kana != null && name != null && sex != null && era != null && year != null && month != null && day != null &&
-                    old != null && zip1 != null && zip2 != null && tel != null && address != null && mail != null && role != null
+                    old != null && zip1 != null && zip2 != null && tel != null && address != null && mail != null && role != null && idToUpdate != null
                 ) {
-                    val sqlInsert =
-                        "INSERT INTO customer (kana, name, sex, era, year, month, day, old, zip1, zip2, tel, address, mail, role) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
-                    val stmt = db.compileStatement(sqlInsert)
+                    val sqlUpdate =
+                        "UPDATE customer SET kana = ?, name = ?, sex = ?, era = ?, year = ?, month = ?, day = ?, old = ?, zip1 = ?, zip2 = ?, tel = ?, address = ?, mail = ?, role = ? WHERE _id = ?"
+                    val stmt = db.compileStatement(sqlUpdate)
                     stmt.bindString(1, kana)
                     stmt.bindString(2, name)
                     stmt.bindString(3, sex)
@@ -115,18 +114,20 @@ class CustomerConfirm : AppCompatActivity() {
                     stmt.bindString(12, address)
                     stmt.bindString(13, mail)
                     stmt.bindString(14, role)
+                    stmt.bindLong(15, idToUpdate.toLong())
 
-                    val id = stmt.executeInsert()
+                    //UPDATEを実行し、影響のあった行数を取得
+                    val affectedRows = stmt.executeUpdateDelete()
 
-                    if (id != -1L) {
-                        Toast.makeText(this@CustomerConfirm, "保存しました", Toast.LENGTH_LONG).show()
-                        val dialogFragment = ConfirmDialogFragment.newInstance(id)
-                        dialogFragment.show(supportFragmentManager, "ConfirmDialogFragment")
+                    if (affectedRows > 0) {
+                        Toast.makeText(this@CustomerConfirm, "更新しました", Toast.LENGTH_LONG).show()
+                        finish()
                     } else {
-                        Toast.makeText(this@CustomerConfirm, "保存に失敗しました", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@CustomerConfirm, "更新に失敗しました", Toast.LENGTH_LONG).show()
                     }
+
                 } else {
-                    Toast.makeText(this@CustomerConfirm, "保存に失敗しました", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@CustomerConfirm, "更新に失敗しました", Toast.LENGTH_LONG).show()
                 }
             } finally {
                 db.close()

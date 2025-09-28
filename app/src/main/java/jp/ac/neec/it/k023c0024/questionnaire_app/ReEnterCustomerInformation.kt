@@ -228,7 +228,7 @@ class ReEnterCustomerInformation : AppCompatActivity() {
             val sex = findViewById<RadioButton>(sexId).text.toString()
             val era = findViewById<RadioButton>(eraId).text.toString()
 
-            val PutInformation = Intent(this@ReEnterCustomerInformation, NewCustomerConfirm::class.java)
+            val PutInformation = Intent(this@ReEnterCustomerInformation, CustomerConfirm::class.java)
 
             PutInformation.putExtra("kana", kana)
             PutInformation.putExtra("name", name)

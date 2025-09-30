@@ -113,4 +113,7 @@
     <string name="bt_back">戻る</string>
     <string name="bt_customer_confirm_update">更新する</string>
     <string name="bt_customer_confirm_cancel">キャンセルする</string>
+    <string name="tv_question_confirm_login_title">日付選択</string>
+    <string name="tv_question_confirm_login_search">検索</string>
+    <string name="tv_question_confirm_login_date">日付</string>
 </resources>

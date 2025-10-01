@@ -160,6 +160,11 @@ class CustomerInformationConfirm : AppCompatActivity() {
         override fun onClick(v: View?) {
             val id = intent.getStringExtra("id")
 
+            val QuestionLogin = Intent(this@CustomerInformationConfirm, QuestionConfirmLogin::class.java)
+
+            QuestionLogin.putExtra("id", id)
+
+            startActivity(QuestionLogin)
         }
     }
 

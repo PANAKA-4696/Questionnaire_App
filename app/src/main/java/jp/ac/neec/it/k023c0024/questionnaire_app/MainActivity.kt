@@ -27,7 +27,7 @@ import com.google.api.client.http.FileContent
 import com.google.api.services.drive.model.File
 
 class MainActivity : AppCompatActivity() {
-    val _helper = DatabaseHelper(this@MainActivity)
+    private val _helper = DatabaseHelper(this@MainActivity)
 
     private lateinit var googleSignInClient: GoogleSignInClient
 

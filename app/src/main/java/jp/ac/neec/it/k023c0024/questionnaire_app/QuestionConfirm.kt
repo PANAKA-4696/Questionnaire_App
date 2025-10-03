@@ -7,7 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class QuestionConfirm : AppCompatActivity() {
-    val _databaseHelper = DatabaseHelper(this@QuestionConfirm)
+    private val _helper = DatabaseHelper(this@QuestionConfirm)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

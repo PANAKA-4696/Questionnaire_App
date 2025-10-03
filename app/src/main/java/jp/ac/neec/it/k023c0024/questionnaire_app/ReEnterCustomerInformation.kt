@@ -16,7 +16,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class ReEnterCustomerInformation : AppCompatActivity() {
-    val _helper = DatabaseHelper(this@ReEnterCustomerInformation)
+    private val _helper = DatabaseHelper(this@ReEnterCustomerInformation)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -116,4 +116,12 @@
     <string name="tv_question_confirm_login_title">日付選択</string>
     <string name="tv_question_confirm_login_search">検索</string>
     <string name="tv_question_confirm_login_date">日付</string>
+    <string name="tv_question_confirm_title">問診票内容確認</string>
+    <string name="tv_question_confirm_question1">どうされましたか？辛いところはありますか？</string>
+    <string name="tv_question_confirm_question2">いつ頃からの症状ですか？</string>
+    <string name="tv_question_confirm_question3">原因、きっかけはありますか？</string>
+    <string name="tv_question_confirm_question4">現在、通院されていたり、薬を処方されていますか？</string>
+    <string name="tv_question_confirm_question5">今までに大きなけがや病気をされたことはありますか？</string>
+    <string name="tv_question_confirm_question6">当店をなにで知りましたか？</string>
+    <string name="tv_question_confirm_comment">その他・紹介者</string>
 </resources>

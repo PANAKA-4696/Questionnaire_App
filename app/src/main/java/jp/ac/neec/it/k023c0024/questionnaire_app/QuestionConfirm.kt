@@ -18,6 +18,11 @@ class QuestionConfirm : AppCompatActivity() {
         val id = intent.getStringExtra("id")
         val date = intent.getStringExtra("date")
 
+        val QuestionConfrimId = findViewById<TextView>(R.id.tvQuestionConfirmId)
+        QuestionConfrimId.text = id
+        val QuestionConfrimDate = findViewById<TextView>(R.id.tvQuestionConfirmDate)
+        QuestionConfrimDate.text = date
+
         val db = _helper.readableDatabase
         val sql = "SELECT * FROM questionnaire WHERE _id = ? AND time = ?"
 

@@ -329,12 +329,12 @@
 
     <Button
         android:id="@+id/btQuestion"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Button"
+        android:text="@string/bt_question"
         app:layout_constraintBottom_toTopOf="@+id/btCustomerInformationConfirmReEnter"
         app:layout_constraintEnd_toStartOf="@+id/btCustomerInformationCondfirmBack"
         app:layout_constraintStart_toStartOf="parent" />

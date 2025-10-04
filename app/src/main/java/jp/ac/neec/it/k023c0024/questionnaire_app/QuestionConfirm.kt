@@ -1,5 +1,6 @@
 package jp.ac.neec.it.k023c0024.questionnaire_app
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -7,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.util.Log
+import android.view.View
+import android.widget.Button
 
 class QuestionConfirm : AppCompatActivity() {
     private val _helper = DatabaseHelper(this@QuestionConfirm)
@@ -90,5 +93,31 @@ class QuestionConfirm : AppCompatActivity() {
         puQuestion6.text = question6
         val puQuestionComment = findViewById<TextView>(R.id.etQuestionConfirmComment)
         puQuestionComment.text = questionComment
+
+        val btReQuestion = findViewById<Button>(R.id.btReQuetion)
+        btReQuestion.setOnClickListener(ClickReQuestionListener())
+
+        val btQuestionConfirmBack = findViewById<Button>(R.id.btQuestionConfrimBack)
+        btQuestionConfirmBack.setOnClickListener(ClickQuestionConfirmBackListener())
+    }
+
+    private inner class ClickReQuestionListener : View.OnClickListener{
+        override fun onClick(v: View?) {
+            val id = intent.getStringExtra("id")
+            val date = intent.getStringExtra("date")
+
+            val reQuestionnaire = Intent(this@QuestionConfirm, ReQuestionnaire::class.java)
+
+            reQuestionnaire.putExtra("id", id)
+            reQuestionnaire.putExtra("date", date)
+
+            startActivity(reQuestionnaire)
+        }
+    }
+
+    private inner class ClickQuestionConfirmBackListener : View.OnClickListener{
+        override fun onClick(v: View?) {
+            finish()
+        }
     }
 }

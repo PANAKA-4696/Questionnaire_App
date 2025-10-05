@@ -94,10 +94,10 @@ class QuestionConfirm : AppCompatActivity() {
         val puQuestionComment = findViewById<TextView>(R.id.etQuestionConfirmComment)
         puQuestionComment.text = questionComment
 
-        val btReQuestion = findViewById<Button>(R.id.btReQuetion)
+        val btReQuestion = findViewById<Button>(R.id.btReQuestion)
         btReQuestion.setOnClickListener(ClickReQuestionListener())
 
-        val btQuestionConfirmBack = findViewById<Button>(R.id.btQuestionConfrimBack)
+        val btQuestionConfirmBack = findViewById<Button>(R.id.btQuestionConfirmBack)
         btQuestionConfirmBack.setOnClickListener(ClickQuestionConfirmBackListener())
     }
 

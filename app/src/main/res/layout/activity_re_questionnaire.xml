@@ -264,7 +264,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etReQuestionnaireQuestion5" />
 
     <RadioGroup
-        android:id="@+id/rgQuestionnaireQuestion6"
+        android:id="@+id/rgReQuestionnaireQuestion6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -326,7 +326,7 @@
         android:text="@string/tv_questionnaire_comment"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgQuestionnaireQuestion6" />
+        app:layout_constraintTop_toBottomOf="@+id/rgReQuestionnaireQuestion6" />
 
     <EditText
         android:id="@+id/etReQuestionnaireComment"
@@ -341,10 +341,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/tvReQuestionnaireComment"
-        app:layout_constraintTop_toBottomOf="@+id/rgQuestionnaireQuestion6" />
+        app:layout_constraintTop_toBottomOf="@+id/rgReQuestionnaireQuestion6" />
 
     <Button
-        android:id="@+id/btQuestionnaireNext"
+        android:id="@+id/btReQuestionnaireNext"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

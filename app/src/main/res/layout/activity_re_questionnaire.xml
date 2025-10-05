@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="@string/tv_questionnaire_daytime"
+        android:text="@string/tv_re_questionnaire_time"
         app:layout_constraintEnd_toStartOf="@+id/tvReQuestionnaireNowDayTime"
         app:layout_constraintTop_toTopOf="parent" />
 

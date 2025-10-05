@@ -7,4 +7,352 @@
     android:layout_height="match_parent"
     tools:context=".ReQuestionnaire">
 
+    <TextView
+        android:id="@+id/tvReQuestionnaireTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_questionnaire_title"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvReQuestionnaireNowDayTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvReQuestionnaireDayTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/tv_questionnaire_daytime"
+        app:layout_constraintEnd_toStartOf="@+id/tvReQuestionnaireNowDayTime"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvReQuestionnaireKana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/tv_questionnaire_kana"
+        app:layout_constraintEnd_toStartOf="@+id/tvReQuestionnairePutKana"
+        app:layout_constraintTop_toBottomOf="@+id/tvReQuestionnaireTitle" />
+
+    <TextView
+        android:id="@+id/tvReQuestionnairePutKana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvReQuestionnaireOld"
+        app:layout_constraintTop_toBottomOf="@+id/tvReQuestionnaireTitle" />
+
+    <TextView
+        android:id="@+id/tvReQuestionnaireName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/tv_questionnaire_name"
+        app:layout_constraintEnd_toStartOf="@+id/tvReQuestionnairePutName"
+        app:layout_constraintTop_toBottomOf="@+id/tvReQuestionnaireKana" />
+
+    <TextView
+        android:id="@+id/tvReQuestionnairePutName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvReQuestionnaireOld"
+        app:layout_constraintTop_toBottomOf="@+id/tvReQuestionnairePutKana" />
+
+    <TextView
+        android:id="@+id/tvReQuestionnaireOld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/tv_questionnaire_old"
+        app:layout_constraintEnd_toStartOf="@+id/tvReQuestionnairePutOld"
+        app:layout_constraintTop_toBottomOf="@+id/tvReQuestionnaireTitle" />
+
+    <TextView
+        android:id="@+id/tvReQuestionnairePutOld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvReQuestionnaireAge"
+        app:layout_constraintTop_toBottomOf="@+id/tvReQuestionnaireTitle" />
+
+    <TextView
+        android:id="@+id/tvReQuestionnaireAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/tv_questionnaire_age"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReQuestionnaireTitle" />
+
+    <TextView
+        android:id="@+id/tvReQuestionnaireRole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/tv_questionnaire_role"
+        app:layout_constraintEnd_toStartOf="@+id/tvReQuestionnairePutRole"
+        app:layout_constraintTop_toBottomOf="@+id/tvReQuestionnaireOld" />
+
+    <TextView
+        android:id="@+id/tvReQuestionnairePutRole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReQuestionnaireOld" />
+
+    <TextView
+        android:id="@+id/tvReQuestionnaireQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_questionnaire_question"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReQuestionnaireName" />
+
+    <TextView
+        android:id="@+id/tvReQuestionnaireQuestion1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_questionnaire_question1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReQuestionnaireQuestion" />
+
+    <EditText
+        android:id="@+id/etQuestionnaireQuestion1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReQuestionnaireQuestion1" />
+
+    <TextView
+        android:id="@+id/tvReQuestionnaireQuestion2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_questionnaire_question2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etQuestionnaireQuestion1" />
+
+    <EditText
+        android:id="@+id/etQuestionnaireQuestion2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReQuestionnaireQuestion2" />
+
+    <TextView
+        android:id="@+id/tvReQuestionnaireQuestion3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_questionnaire_question3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etQuestionnaireQuestion2" />
+
+    <EditText
+        android:id="@+id/etQuestionnaireQuestion3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReQuestionnaireQuestion3" />
+
+    <TextView
+        android:id="@+id/tvReQuestionnaireQuestion4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_questionnaire_question4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etQuestionnaireQuestion3" />
+
+    <EditText
+        android:id="@+id/etQuestionnaireQuestion4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReQuestionnaireQuestion4" />
+
+    <TextView
+        android:id="@+id/tvReQuestionnaireQuestion5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_questionnaire_question5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etQuestionnaireQuestion4" />
+
+    <EditText
+        android:id="@+id/etQuestionnaireQuestion5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReQuestionnaireQuestion5" />
+
+    <TextView
+        android:id="@+id/tvReQuestionnaireQuestion6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_questionnaire_question6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etQuestionnaireQuestion5" />
+
+    <RadioGroup
+        android:id="@+id/rgQuestionnaireQuestion6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReQuestionnaireQuestion6">
+
+        <RadioButton
+            android:id="@+id/rbQuestionnaireHomepage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rb_questionnaire_homepage"
+            android:textSize="8sp" />
+
+        <RadioButton
+            android:id="@+id/rbQuestionnaireMouth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rb_questionnaire_mouth"
+            android:textSize="8sp" />
+
+        <RadioButton
+            android:id="@+id/rbQuestionnaireWay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rb_questionnaire_way"
+            android:textSize="8sp" />
+
+        <RadioButton
+            android:id="@+id/rbQuestionnaireTownpage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rb_questionnaire_townpage"
+            android:textSize="8sp" />
+
+        <RadioButton
+            android:id="@+id/rbQuestionnaireIntroduce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rb_questionnaire_introduce"
+            android:textSize="8sp" />
+
+        <RadioButton
+            android:id="@+id/rbQuestionnaireOther"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rb_questionnaire_other"
+            android:textSize="8sp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvReQuestionnaireComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_questionnaire_comment"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgQuestionnaireQuestion6" />
+
+    <EditText
+        android:id="@+id/etQuestionnaireComment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tvReQuestionnaireComment"
+        app:layout_constraintTop_toBottomOf="@+id/rgQuestionnaireQuestion6" />
+
+    <Button
+        android:id="@+id/btQuestionnaireNext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/bt_questionnaire_next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

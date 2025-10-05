@@ -144,7 +144,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvReQuestionnaireQuestion" />
 
     <EditText
-        android:id="@+id/etQuestionnaireQuestion1"
+        android:id="@+id/etReQuestionnaireQuestion1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -165,10 +165,10 @@
         android:layout_marginTop="8dp"
         android:text="@string/tv_questionnaire_question2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etQuestionnaireQuestion1" />
+        app:layout_constraintTop_toBottomOf="@+id/etReQuestionnaireQuestion1" />
 
     <EditText
-        android:id="@+id/etQuestionnaireQuestion2"
+        android:id="@+id/etReQuestionnaireQuestion2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -189,10 +189,10 @@
         android:layout_marginTop="8dp"
         android:text="@string/tv_questionnaire_question3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etQuestionnaireQuestion2" />
+        app:layout_constraintTop_toBottomOf="@+id/etReQuestionnaireQuestion2" />
 
     <EditText
-        android:id="@+id/etQuestionnaireQuestion3"
+        android:id="@+id/etReQuestionnaireQuestion3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -213,10 +213,10 @@
         android:layout_marginTop="8dp"
         android:text="@string/tv_questionnaire_question4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etQuestionnaireQuestion3" />
+        app:layout_constraintTop_toBottomOf="@+id/etReQuestionnaireQuestion3" />
 
     <EditText
-        android:id="@+id/etQuestionnaireQuestion4"
+        android:id="@+id/etReQuestionnaireQuestion4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -237,10 +237,10 @@
         android:layout_marginTop="8dp"
         android:text="@string/tv_questionnaire_question5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etQuestionnaireQuestion4" />
+        app:layout_constraintTop_toBottomOf="@+id/etReQuestionnaireQuestion4" />
 
     <EditText
-        android:id="@+id/etQuestionnaireQuestion5"
+        android:id="@+id/etReQuestionnaireQuestion5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -261,7 +261,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/tv_questionnaire_question6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etQuestionnaireQuestion5" />
+        app:layout_constraintTop_toBottomOf="@+id/etReQuestionnaireQuestion5" />
 
     <RadioGroup
         android:id="@+id/rgQuestionnaireQuestion6"
@@ -329,7 +329,7 @@
         app:layout_constraintTop_toBottomOf="@+id/rgQuestionnaireQuestion6" />
 
     <EditText
-        android:id="@+id/etQuestionnaireComment"
+        android:id="@+id/etReQuestionnaireComment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

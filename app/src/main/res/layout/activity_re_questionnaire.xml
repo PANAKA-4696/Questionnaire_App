@@ -274,42 +274,42 @@
         app:layout_constraintTop_toBottomOf="@+id/tvReQuestionnaireQuestion6">
 
         <RadioButton
-            android:id="@+id/rbQuestionnaireHomepage"
+            android:id="@+id/rbReQuestionnaireHomepage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/rb_questionnaire_homepage"
             android:textSize="8sp" />
 
         <RadioButton
-            android:id="@+id/rbQuestionnaireMouth"
+            android:id="@+id/rbReQuestionnaireMouth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/rb_questionnaire_mouth"
             android:textSize="8sp" />
 
         <RadioButton
-            android:id="@+id/rbQuestionnaireWay"
+            android:id="@+id/rbReQuestionnaireWay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/rb_questionnaire_way"
             android:textSize="8sp" />
 
         <RadioButton
-            android:id="@+id/rbQuestionnaireTownpage"
+            android:id="@+id/rbReQuestionnaireTownpage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/rb_questionnaire_townpage"
             android:textSize="8sp" />
 
         <RadioButton
-            android:id="@+id/rbQuestionnaireIntroduce"
+            android:id="@+id/rbReQuestionnaireIntroduce"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/rb_questionnaire_introduce"
             android:textSize="8sp" />
 
         <RadioButton
-            android:id="@+id/rbQuestionnaireOther"
+            android:id="@+id/rbReQuestionnaireOther"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/rb_questionnaire_other"

@@ -138,22 +138,40 @@ class ReQuestionnaire : AppCompatActivity() {
             cursor.close()
         }
 
-        val puQuestion1 = findViewById<EditText>(R.id.etQuestionnaireQuestion1)
-        puQuestion1.text = question1
-        val puQuestion2 = findViewById<EditText>(R.id.etQuestionnaireQuestion2)
-        puQuestion2.text = question2
-        val puQuestion3 = findViewById<EditText>(R.id.etQuestionnaireQuestion3)
-        puQuestion3.text = question3
-        val puQuestion4 = findViewById<EditText>(R.id.etQuestionnaireQuestion4)
-        puQuestion4.text = question4
-        val puQuestion5 = findViewById<EditText>(R.id.etQuestionnaireQuestion5)
-        puQuestion5.text = question5
-        val puQuestion6 = findViewById<EditText>(R.id.etQuestionnaireComment)
-        puQuestion6.text = question6
-        val puQuestionComment = findViewById<EditText>(R.id.etReQuestionnaireComment)
-        puQuestionComment.text = questionComment
+        val puQuestion1 = findViewById<EditText>(R.id.etReQuestionnaireQuestion1)
+        puQuestion1.setText(question1)
+        val puQuestion2 = findViewById<EditText>(R.id.etReQuestionnaireQuestion2)
+        puQuestion2.setText(question2)
+        val puQuestion3 = findViewById<EditText>(R.id.etReQuestionnaireQuestion3)
+        puQuestion3.setText(question3)
+        val puQuestion4 = findViewById<EditText>(R.id.etReQuestionnaireQuestion4)
+        puQuestion4.setText(question4)
+        val puQuestion5 = findViewById<EditText>(R.id.etReQuestionnaireQuestion5)
+        puQuestion5.setText(question5)
+        val puQuestion6 = findViewById<RadioGroup>(R.id.rgReQuestionnaireQuestion6)
+        if(question6 == "ホームぺージ"){
+            puQuestion6.check(R.id.rbReQuestionnaireHomepage)
+        }
+        if(question6 == "口コミ"){
+            puQuestion6.check(R.id.rbReQuestionnaireMouth)
+        }
+        if(question6 == "通りがかり"){
+            puQuestion6.check(R.id.rbReQuestionnaireWay)
+        }
+        if(question6 == "タウンページ"){
+            puQuestion6.check(R.id.rbReQuestionnaireTownpage)
+        }
+        if(question6 == "紹介"){
+            puQuestion6.check(R.id.rbReQuestionnaireIntroduce)
+        }
+        if(question6 == "その他"){
+            puQuestion6.check(R.id.rbReQuestionnaireOther)
+        }
 
-        val bt_QuestionnaireNext = findViewById<Button>(R.id.btQuestionnaireNext)
+        val puQuestionComment = findViewById<EditText>(R.id.etReQuestionnaireComment)
+        puQuestionComment.setText(questionComment)
+
+        val bt_QuestionnaireNext = findViewById<Button>(R.id.btReQuestionnaireNext)
         bt_QuestionnaireNext.setOnClickListener(ClickQuestionnaireNextListener())
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -163,11 +181,11 @@ class ReQuestionnaire : AppCompatActivity() {
         override fun onClick(v: View?) {
             val id = intent.getStringExtra("id")
 
-            val Question1 = findViewById<EditText>(R.id.etQuestionnaireQuestion1).text.toString()
-            val Question2 = findViewById<EditText>(R.id.etQuestionnaireQuestion2).text.toString()
-            val Question3 = findViewById<EditText>(R.id.etQuestionnaireQuestion3).text.toString()
-            val Question4 = findViewById<EditText>(R.id.etQuestionnaireQuestion4).text.toString()
-            val Question5 = findViewById<EditText>(R.id.etQuestionnaireQuestion5).text.toString()
+            val Question1 = findViewById<EditText>(R.id.etReQuestionnaireQuestion1).text.toString()
+            val Question2 = findViewById<EditText>(R.id.etReQuestionnaireQuestion2).text.toString()
+            val Question3 = findViewById<EditText>(R.id.etReQuestionnaireQuestion3).text.toString()
+            val Question4 = findViewById<EditText>(R.id.etReQuestionnaireQuestion4).text.toString()
+            val Question5 = findViewById<EditText>(R.id.etReQuestionnaireQuestion5).text.toString()
 
             val rgQuestion6 = findViewById<RadioGroup>(R.id.rgQuestionnaireQuestion6)
             val question6Id = rgQuestion6.checkedRadioButtonId

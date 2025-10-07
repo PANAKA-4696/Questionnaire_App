@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Questionnaire_App"
         tools:targetApi="31">
         <activity
+            android:name=".ReQuestionnaire2"
+            android:exported="false" />
+        <activity
             android:name=".ReQuestionnaire"
             android:exported="false" />
         <activity

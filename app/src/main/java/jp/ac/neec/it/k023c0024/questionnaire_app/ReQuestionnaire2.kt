@@ -20,19 +20,20 @@ class ReQuestionnaire2 : AppCompatActivity() {
         setContentView(R.layout.activity_re_questionnaire2)
 
         val bt_re_questionnaire_confirm = findViewById<Button>(R.id.btReQuestionnaireConfirm)
-        bt_re_questionnaire_confirm.setOnClickListener(ReQuestionnaireConfirmListener())
+        bt_re_questionnaire_confirm.setOnClickListener(ReQuestionnaireConfirmUpdateListener())
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    private inner class ReQuestionnaireConfirmListener : View.OnClickListener{
+    private inner class ReQuestionnaireConfirmUpdateListener : View.OnClickListener{
         override fun onClick(v: View?) {
             val cb_requestionnaire2 = findViewById<CheckBox>(R.id.cbReQuestionnaire2)
             if (cb_requestionnaire2.isChecked) {
 
-                val db = _helper.writableDatabase
-                val time = intent.getStringExtra("time")
-                val id = intent.getStringExtra("id")
+                val timeToUpdate = intent.getStringExtra("time")
+                val idToUpdate = intent.getStringExtra("id")
+
+                //DBに保存するロジックは変更なし
                 val Question1 = intent.getStringExtra("Question1")
                 val Question2 = intent.getStringExtra("Question2")
                 val Question3 = intent.getStringExtra("Question3")
@@ -41,35 +42,37 @@ class ReQuestionnaire2 : AppCompatActivity() {
                 val Question6 = intent.getStringExtra("Question6")
                 val etComment = intent.getStringExtra("etComment")
 
-                val idAsLong = id?.toLongOrNull()
+                val db = _helper.writableDatabase
 
-                try {
-                    if (time != null && idAsLong != null && Question1 != null && Question2 != null && Question3 != null && Question4 != null && Question5 != null && Question6 != null && etComment != null) {
-                        val sqlInsert = "INSERT INTO questionnaire (time, _id, Question1, Question2, Question3, Question4, Question5, Question6, etComment) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
-                        val stmt = db.compileStatement(sqlInsert)
+                try{
+                    if (timeToUpdate != null && idToUpdate != null && Question1 != null && Question2 != null && Question3 != null && Question4 != null && Question5 != null && Question6 != null){
 
-                        stmt.bindString(1, time)
-                        stmt.bindLong(2, idAsLong)
-                        stmt.bindString(3, Question1)
-                        stmt.bindString(4, Question2)
-                        stmt.bindString(5, Question3)
-                        stmt.bindString(6, Question4)
-                        stmt.bindString(7, Question5)
-                        stmt.bindString(8, Question6)
-                        stmt.bindString(9, etComment)
+                        val sqlUpdate = "UPDATE questionnaire SET Question1 = ?, Question2 = ?, Question3 = ?, Question4 = ?, Question5 = ?, Question6 = ?, etComment = ? WHERE time = ? AND _id = ?"
+                        val stmt = db.compileStatement(sqlUpdate)
 
-                        stmt.executeInsert()
-                        Toast.makeText(this@ReQuestionnaire2, "回答を提出しました", Toast.LENGTH_LONG).show()
+                        stmt.bindString(1, Question1)
+                        stmt.bindString(2, Question2)
+                        stmt.bindString(3, Question3)
+                        stmt.bindString(4, Question4)
+                        stmt.bindString(5, Question5)
+                        stmt.bindString(6, Question6)
+                        stmt.bindString(7, etComment)
+                        stmt.bindString(8, timeToUpdate)
+                        stmt.bindString(9, idToUpdate)
 
-                        //MainActivityに遷移
-                        val intent = Intent(this@ReQuestionnaire2, MainActivity::class.java)
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
-                        startActivity(intent)
-                        finish()
+                        //UPDATEを実行し、影響のあった行数を取得
+                        val affectedRows = stmt.executeUpdateDelete()
 
-                    } else {
-                        Toast.makeText(this@ReQuestionnaire2, "回答に失敗しました", Toast.LENGTH_LONG).show()
+                        if(affectedRows > 0){
+                            Toast.makeText(this@ReQuestionnaire2, "更新しました", Toast.LENGTH_LONG).show()
+                            finish()
+                        }else{
+                            Toast.makeText(this@ReQuestionnaire2, "更新に失敗しました", Toast.LENGTH_LONG).show()
+                        }
+                    }else{
+                        Toast.makeText(this@ReQuestionnaire2, "更新に失敗しました", Toast.LENGTH_LONG).show()
                     }
+
                 }finally {
                     db.close()
                 }

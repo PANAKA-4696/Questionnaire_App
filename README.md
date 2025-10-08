@@ -3,7 +3,7 @@
 これは、紙媒体で管理されていた問診票をDX化するために制作したAndroidアプリです。顧客情報と問診内容をデジタルで管理し、Google Driveへのバックアップ・復元機能を備えています。
 
 
-![アプリのメイン画面](<img width="382" height="679" alt="スクリーンショット 2025-09-10 092723" src="https://github.com/user-attachments/assets/1a413eca-8144-4892-8411-db7d05eea408" />)
+![アプリのメイン画面](https://github.com/user-attachments/assets/1a413eca-8144-4892-8411-db7d05eea408)
 
 ## 目次
 - [プロジェクトの背景](#プロジェクトの背景)

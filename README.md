@@ -75,3 +75,12 @@
 
 ## 製作者
 田中 潮音 (Shion Tanaka)
+
+---
+
+## 詳細資料 (Detailed Documentation)
+
+このプロジェクトに関するより詳細な情報（画面ごとの詳しい使い方、API設定の背景など）は、以下の説明書にまとめてあります。
+情報の追記頻度が遅めのためverが違うことがありますご了承ください。
+
+[➡️ Questionnaire説明書はこちら](https://docs.google.com/presentation/d/1xqYt9AdNYIFBNOu1SfC3jbIsnh-Z6TQV/edit?usp=drive_link&ouid=100060518070943536625&rtpof=true&sd=true)

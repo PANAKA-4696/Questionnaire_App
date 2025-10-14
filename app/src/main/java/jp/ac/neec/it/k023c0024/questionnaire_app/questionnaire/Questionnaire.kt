@@ -1,4 +1,4 @@
-package jp.ac.neec.it.k023c0024.questionnaire_app
+package jp.ac.neec.it.k023c0024.questionnaire_app.questionnaire
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,8 +11,9 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import jp.ac.neec.it.k023c0024.questionnaire_app.R
+import jp.ac.neec.it.k023c0024.questionnaire_app.data.db.DatabaseHelper
 import java.time.LocalDateTime
-import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 
 class Questionnaire : AppCompatActivity() {

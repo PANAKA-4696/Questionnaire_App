@@ -10,12 +10,9 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
+import jp.ac.neec.it.k023c0024.questionnaire_app.data.db.DatabaseHelper
+import jp.ac.neec.it.k023c0024.questionnaire_app.questionnaire.Questionnaire2
 
 class ReQuestionnaire : AppCompatActivity() {
     val _helper = DatabaseHelper(this@ReQuestionnaire)

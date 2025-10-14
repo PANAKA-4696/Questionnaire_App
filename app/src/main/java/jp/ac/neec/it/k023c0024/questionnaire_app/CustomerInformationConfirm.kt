@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import jp.ac.neec.it.k023c0024.questionnaire_app.data.db.DatabaseHelper
 
 class CustomerInformationConfirm : AppCompatActivity() {
     private val _helper = DatabaseHelper(this@CustomerInformationConfirm)

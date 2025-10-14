@@ -40,22 +40,22 @@
             android:name=".InfomationCheckLogin"
             android:exported="false" />
         <activity
-            android:name=".Questionnaire2"
+            android:name=".questionnaire.Questionnaire2"
             android:exported="false" />
         <activity
             android:name=".LoginCustomer"
             android:exported="false" />
         <activity
-            android:name=".NewCustomerConfirm"
+            android:name=".customer.NewCustomerConfirm"
             android:exported="false" />
         <activity
-            android:name=".Questionnaire"
+            android:name=".questionnaire.Questionnaire"
             android:exported="false" />
         <activity
-            android:name=".NewCustomer"
+            android:name=".customer.NewCustomer"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

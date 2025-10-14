@@ -7,10 +7,9 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ListView
 import android.widget.SimpleAdapter
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import jp.ac.neec.it.k023c0024.questionnaire_app.data.db.DatabaseHelper
+import jp.ac.neec.it.k023c0024.questionnaire_app.questionnaire.Questionnaire
 
 class LoginCustomer : AppCompatActivity() {
     //データベースヘルパーオブジェクト

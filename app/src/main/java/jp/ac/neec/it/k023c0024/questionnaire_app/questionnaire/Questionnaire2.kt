@@ -1,4 +1,4 @@
-package jp.ac.neec.it.k023c0024.questionnaire_app
+package jp.ac.neec.it.k023c0024.questionnaire_app.questionnaire
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,9 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import jp.ac.neec.it.k023c0024.questionnaire_app.R
+import jp.ac.neec.it.k023c0024.questionnaire_app.data.db.DatabaseHelper
+import jp.ac.neec.it.k023c0024.questionnaire_app.main.MainActivity
 
 class Questionnaire2 : AppCompatActivity() {
 

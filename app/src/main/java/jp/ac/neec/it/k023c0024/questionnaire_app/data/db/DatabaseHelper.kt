@@ -1,4 +1,4 @@
-package jp.ac.neec.it.k023c0024.questionnaire_app
+package jp.ac.neec.it.k023c0024.questionnaire_app.data.db
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase

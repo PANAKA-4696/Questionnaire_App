@@ -1,6 +1,5 @@
-package jp.ac.neec.it.k023c0024.questionnaire_app
+package jp.ac.neec.it.k023c0024.questionnaire_app.main
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -25,6 +24,11 @@ import kotlinx.coroutines.withContext
 import com.google.api.client.extensions.android.http.AndroidHttp
 import com.google.api.client.http.FileContent
 import com.google.api.services.drive.model.File
+import jp.ac.neec.it.k023c0024.questionnaire_app.data.db.DatabaseHelper
+import jp.ac.neec.it.k023c0024.questionnaire_app.InfomationCheckLogin
+import jp.ac.neec.it.k023c0024.questionnaire_app.LoginCustomer
+import jp.ac.neec.it.k023c0024.questionnaire_app.customer.NewCustomer
+import jp.ac.neec.it.k023c0024.questionnaire_app.R
 
 class MainActivity : AppCompatActivity() {
     private val _helper = DatabaseHelper(this@MainActivity)

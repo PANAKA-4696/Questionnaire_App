@@ -1,16 +1,15 @@
-    package jp.ac.neec.it.k023c0024.questionnaire_app
+    package jp.ac.neec.it.k023c0024.questionnaire_app.customer
 
     import android.os.Bundle
-    import android.util.Log
     import android.view.MenuItem
     import android.view.View
     import android.widget.Button
     import android.widget.TextView
     import android.widget.Toast
-    import androidx.activity.enableEdgeToEdge
     import androidx.appcompat.app.AppCompatActivity
-    import androidx.core.view.ViewCompat
-    import androidx.core.view.WindowInsetsCompat
+    import jp.ac.neec.it.k023c0024.questionnaire_app.ConfirmDialogFragment
+    import jp.ac.neec.it.k023c0024.questionnaire_app.data.db.DatabaseHelper
+    import jp.ac.neec.it.k023c0024.questionnaire_app.R
 
     class NewCustomerConfirm : AppCompatActivity() {
         //データベースヘルパーオブジェクト

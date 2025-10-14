@@ -10,10 +10,8 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import jp.ac.neec.it.k023c0024.questionnaire_app.data.db.DatabaseHelper
 
 class ReEnterCustomerInformation : AppCompatActivity() {
     private val _helper = DatabaseHelper(this@ReEnterCustomerInformation)

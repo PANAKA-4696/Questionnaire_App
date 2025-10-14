@@ -30,10 +30,14 @@
 
 ## 使用技術
 - **言語**: Kotlin
-- **プラットフォーム**: Android
-- **データベース**: SQLite
-- **API**: Google Drive API (OAuth 2.0)
-- **ライブラリ**: Google Play Services (Auth), Gson, AndroidX Libraries
+- **UI**: Android View System (XML)
+- **アーキテクチャ**: Activity-Based (各画面をActivityとして実装)
+- **非同期処理**: Kotlin Coroutines
+- **API通信**:
+  - Google Drive API (OAuth 2.0)
+  - Google Auth Library for Android
+- **JSONパース**: Gson
+- **データベース**: SQLite (SQLiteOpenHelper)
 
 - ## セットアップ方法
 1. このリポジトリをクローンします。

@@ -16,34 +16,34 @@
         android:theme="@style/Theme.Questionnaire_App"
         tools:targetApi="31">
         <activity
-            android:name=".ReQuestionnaire2"
+            android:name=".questionnaire.ReQuestionnaire2"
             android:exported="false" />
         <activity
-            android:name=".ReQuestionnaire"
+            android:name=".questionnaire.ReQuestionnaire"
             android:exported="false" />
         <activity
-            android:name=".QuestionConfirmLogin"
+            android:name=".questionnaire.QuestionConfirmLogin"
             android:exported="false" />
         <activity
-            android:name=".QuestionConfirm"
+            android:name=".questionnaire.QuestionConfirm"
             android:exported="false" />
         <activity
-            android:name=".CustomerConfirm"
+            android:name=".customer.CustomerConfirm"
             android:exported="false" />
         <activity
-            android:name=".ReEnterCustomerInformation"
+            android:name=".customer.ReEnterCustomerInformation"
             android:exported="false" />
         <activity
-            android:name=".CustomerInformationConfirm"
+            android:name=".customer.CustomerInformationConfirm"
             android:exported="false" />
         <activity
-            android:name=".InfomationCheckLogin"
+            android:name=".customer.InfomationCheckLogin"
             android:exported="false" />
         <activity
             android:name=".questionnaire.Questionnaire2"
             android:exported="false" />
         <activity
-            android:name=".LoginCustomer"
+            android:name=".customer.LoginCustomer"
             android:exported="false" />
         <activity
             android:name=".customer.NewCustomerConfirm"

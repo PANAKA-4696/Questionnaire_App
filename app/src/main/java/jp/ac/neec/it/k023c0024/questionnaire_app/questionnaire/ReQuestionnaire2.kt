@@ -1,4 +1,4 @@
-package jp.ac.neec.it.k023c0024.questionnaire_app
+package jp.ac.neec.it.k023c0024.questionnaire_app.questionnaire
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import jp.ac.neec.it.k023c0024.questionnaire_app.R
 import jp.ac.neec.it.k023c0024.questionnaire_app.data.db.DatabaseHelper
 
 class ReQuestionnaire2 : AppCompatActivity() {

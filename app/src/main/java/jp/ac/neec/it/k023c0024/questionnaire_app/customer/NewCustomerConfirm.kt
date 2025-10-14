@@ -7,7 +7,6 @@
     import android.widget.TextView
     import android.widget.Toast
     import androidx.appcompat.app.AppCompatActivity
-    import jp.ac.neec.it.k023c0024.questionnaire_app.ConfirmDialogFragment
     import jp.ac.neec.it.k023c0024.questionnaire_app.data.db.DatabaseHelper
     import jp.ac.neec.it.k023c0024.questionnaire_app.R
 

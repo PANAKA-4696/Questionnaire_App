@@ -1,4 +1,4 @@
-package jp.ac.neec.it.k023c0024.questionnaire_app
+package jp.ac.neec.it.k023c0024.questionnaire_app.customer
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -7,6 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
+import jp.ac.neec.it.k023c0024.questionnaire_app.R
 import jp.ac.neec.it.k023c0024.questionnaire_app.data.db.DatabaseHelper
 
 class CustomerConfirm : AppCompatActivity() {

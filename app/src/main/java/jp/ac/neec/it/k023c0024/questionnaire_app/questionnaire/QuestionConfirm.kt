@@ -1,4 +1,4 @@
-package jp.ac.neec.it.k023c0024.questionnaire_app
+package jp.ac.neec.it.k023c0024.questionnaire_app.questionnaire
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import jp.ac.neec.it.k023c0024.questionnaire_app.R
 import jp.ac.neec.it.k023c0024.questionnaire_app.data.db.DatabaseHelper
 
 class QuestionConfirm : AppCompatActivity() {

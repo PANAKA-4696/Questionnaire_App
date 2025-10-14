@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginCustomer">
+    tools:context=".customer.LoginCustomer">
 
     <TextView
         android:id="@+id/tvLoginCustomerTitle"

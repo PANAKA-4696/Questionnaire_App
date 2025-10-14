@@ -1,4 +1,4 @@
-package jp.ac.neec.it.k023c0024.questionnaire_app
+package jp.ac.neec.it.k023c0024.questionnaire_app.customer
 
 import android.app.AlertDialog
 import android.app.Dialog
@@ -7,6 +7,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import jp.ac.neec.it.k023c0024.questionnaire_app.R
 import jp.ac.neec.it.k023c0024.questionnaire_app.main.MainActivity
 import jp.ac.neec.it.k023c0024.questionnaire_app.questionnaire.Questionnaire
 

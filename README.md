@@ -54,7 +54,10 @@
 5. Android Studioでビルドして実行します。
 
 ## アプリの使い方
-### 1. メイン画面
+
+<details>
+<summary>1. メイン画面</summary>
+
 ![メイン画面](https://github.com/user-attachments/assets/1a413eca-8144-4892-8411-db7d05eea408)
 
 - **新規登録**: 新規のお客様を追加するときのボタン(新規登録画面へ遷移)
@@ -62,7 +65,11 @@
 - **情報を見る**: 今入っている顧客情報を見るためのボタン(顧客情報画面へ遷移)
 - **GoogleDriveに保存/取得ボタン**: GoogleDriveに保存、GoogleDriveからデータを取得するボタン
 
-### 2. 新規登録画面
+</details>
+
+<details>
+<summary>2. 新規登録画面</summary>
+
 ![新規登録画面](https://github.com/user-attachments/assets/1c5a0c6c-a101-4812-843b-337b267a1a97)
 
 各項目を入力し、「確認画面へ」ボタンを押します。
@@ -70,7 +77,11 @@
 - **クリア**: 記入項目を全クリアするためのボタン
 - **確認画面**: 確認画面へ行くためのボタン(確認画面に遷移)
 
-### 3. 登録内容確認画面
+</details>
+
+<details>
+<summary>3. 登録内容確認画面</summary>
+
 ![登録内容確認画面](https://github.com/user-attachments/assets/93917a2b-3bb4-478c-a947-ef9ff3597378)
 
 - **登録**: この内容で登録する(保存する)ボタン
@@ -80,7 +91,11 @@
 
 項目は前の画面からデータを取得し表示しています。
 
-### 3.5. 登録完了フラグメント
+</details>
+
+<details>
+<summary>3.5. 登録完了フラグメント</summary>
+
 ![登録完了フラグメント]()
 
 - **トップ画面へ戻る**
@@ -89,7 +104,11 @@
 - **カルテへ**
 保存した情報を持って、カルテ画面にそのまま移動(カルテ画面に遷移)
 
-### 4. 既存顧客選択画面
+</details>
+
+<details>
+<summary>4. 既存顧客選択画面</summary>
+
 ![既存顧客選択画面](https://github.com/user-attachments/assets/a7165937-27f1-4162-aa7f-383879587bb8)
 
 - **リスト**
@@ -98,7 +117,11 @@ DBに保存された顧客がリストにフリガナ、IDで並びます。
 今後実装するもの
 -IDは連番でつけるため、最初に入れた人から順番にIDが割り振られます。
 
-### 5. カルテ画面
+</details>
+
+<details>
+<summary>5. カルテ画面</summary>
+
 ![カルテ画面](https://github.com/user-attachments/assets/8e90db63-42b9-49b8-94dc-f0b668c68635)
 
 - **次の画面へ**
@@ -109,7 +132,11 @@ DBに保存された顧客がリストにフリガナ、IDで並びます。
 問診票のメインの部分です。
 各項目を読み、しっかりと答えてもらう。
 
-### 6. カルテ画面2
+</details>
+
+<details>
+<summary>6. カルテ画面2</summary>
+
 ![カルテ画面2](https://github.com/user-attachments/assets/52180b30-9687-4c13-9457-a82646d143ea)
 
 - **内容の保存**
@@ -120,7 +147,11 @@ DBに保存された顧客がリストにフリガナ、IDで並びます。
 今後実装するもの
 -写真の部分を人の体を表すものにし、それに〇を書き込めるようにしたうえで、保存ボタンを押すことで丸がついた状態の写真を保存できるようにしたい。
 
-### 7. 顧客情報確認用選択画面
+</details>
+
+<details>
+<summary>7. 顧客情報確認用選択画面</summary>
+
 ![顧客情報確認用選択画面](https://github.com/user-attachments/assets/44f64aa6-17cc-4259-b25a-7912970d7cc1)
 
 - **リスト**
@@ -129,7 +160,11 @@ DBに保存された顧客がリストにフリガナ、IDで並びます。
 今後実装するもの
 -IDは連番でつけるため、最初に入れた人から順番にIDが割り振られます。
 
-### 8. 登録情報確認画面
+</details>
+
+<details>
+<summary>8. 登録情報確認画面</summary>
+
 ![登録情報確認画面](https://github.com/user-attachments/assets/2117cb16-3917-4788-b985-90a96b7259fc)
 
 - **再登録**
@@ -141,12 +176,18 @@ DBに保存された顧客がリストにフリガナ、IDで並びます。
 
 DBからデータを取得し表示しています。
 
-### 9. 保存・取得ボタン後
+</details>
+
+<details>
+<summary>9. 保存・取得ボタン後</summary>
+
 ![保存・取得ボタン後](https://github.com/user-attachments/assets/9c1b1abf-cf3d-483c-bd36-c0006e941dc1)
 
 - **アカウント選択**
 アカウントを選択し、Googleに接続することで、GoogleDriveに接続することが出来る。
 APIへの接続が必要なため、GoogleDriveAPIを利用し、GoogleAPI側でのOAuthの設定が必要である。
+
+</details>
 
 ... (以下、各画面について同様に説明) ...
 

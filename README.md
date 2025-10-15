@@ -94,7 +94,7 @@
 <details>
 <summary>3.5. 登録完了フラグメント</summary>
 
-![登録完了フラグメント](https://github.com/user-attachments/assets/c68a4192-35f1-460f-90e4-9646bda316c7)
+![登録完了フラグメント](https://github.com/user-attachments/assets/30047351-34dc-4f92-b761-2fe4b772d363)
 
 - **トップ画面へ戻る**
 保存し、トップに戻る場合はこのボタンを押下(メイン画面に遷移)

@@ -156,21 +156,22 @@
 <details>
 <summary>9. 登録内容修正画面</summary>
 
-![登録内容修正画面](https://github.com/user-attachments/assets/your-re-enter-customer-image.png) 既存の顧客情報が入力された状態で表示されます。内容を修正し、「確認画面へ」ボタンを押すと、登録内容確認画面へ遷移して更新を完了できます。
+![登録内容修正画面](https://github.com/user-attachments/assets/dda9827d-167a-40d0-8407-186c33821911)  
+既存の顧客情報が入力された状態で表示されます。内容を修正し、「確認画面へ」ボタンを押すと、登録内容確認画面へ遷移して更新を完了できます。
 
 </details>
 
 <details>
-<summary>10. 問診票一覧画面</summary>
+<summary>10. カルテ一覧画面</summary>
 
-![問診票一覧画面](https://github.com/user-attachments/assets/your-question-list-image.png) 特定のお客様の、過去の問診票が日付順に一覧表示されます。確認したい問診票をタップすると、その詳細画面へ遷移します。
+![問診票一覧画面](https://github.com/user-attachments/assets/d7e92ffe-99de-4d63-a6c3-c02e673d748f) 特定のお客様の、過去の問診票が日付順に一覧表示されます。確認したい問診票をタップすると、その詳細画面へ遷移します。
 
 </details>
 
 <details>
-<summary>11. 問診内容確認画面</summary>
+<summary>11. カルテ再入力画面</summary>
 
-![問診内容確認画面](https://github.com/user-attachments/assets/your-question-confirm-image.png) 選択した問診票の回答内容がすべて表示されます。
+![問診内容確認画面](https://github.com/user-attachments/assets/63e6e0a8-a60a-418f-b99e-c896bc71edfe) 選択した問診票の回答内容がすべて表示されます。
 
 - **再入力**: 内容を修正するための画面（問診内容再入力画面）へ遷移します。
 - **戻る**: 前の問診票一覧画面に戻ります。
@@ -178,9 +179,9 @@
 </details>
 
 <details>
-<summary>12. 問診内容再入力画面</summary>
+<summary>12. カルテ2佐生入力画面</summary>
 
-![問診内容再入力画面](https://github.com/user-attachments/assets/your-re-questionnaire-image.png) 既存の回答が入力された状態で表示されます。内容を修正し、次の画面で同意にチェックを入れると、問診内容が更新されます。
+![問診内容再入力画面](https://github.com/user-attachments/assets/d13a23a1-de80-4b40-914d-d257508dcb7e) 既存の回答が入力された状態で表示されます。内容を修正し、次の画面で同意にチェックを入れると、問診内容が更新されます。
 
 </details>
 

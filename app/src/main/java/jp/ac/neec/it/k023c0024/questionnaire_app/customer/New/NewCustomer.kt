@@ -1,4 +1,4 @@
-package jp.ac.neec.it.k023c0024.questionnaire_app.customer
+package jp.ac.neec.it.k023c0024.questionnaire_app.customer.New
 
 import android.content.Intent
 import android.os.Bundle

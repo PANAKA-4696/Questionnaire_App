@@ -1,4 +1,4 @@
-package jp.ac.neec.it.k023c0024.questionnaire_app.questionnaire
+package jp.ac.neec.it.k023c0024.questionnaire_app.questionnaire.Existing
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,6 +13,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import jp.ac.neec.it.k023c0024.questionnaire_app.R
 import jp.ac.neec.it.k023c0024.questionnaire_app.data.db.DatabaseHelper
+import jp.ac.neec.it.k023c0024.questionnaire_app.questionnaire.New.Questionnaire2
 
 class ReQuestionnaire : AppCompatActivity() {
     val _helper = DatabaseHelper(this@ReQuestionnaire)

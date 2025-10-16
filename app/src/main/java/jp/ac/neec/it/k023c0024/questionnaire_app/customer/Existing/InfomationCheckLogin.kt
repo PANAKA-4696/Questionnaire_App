@@ -1,4 +1,4 @@
-package jp.ac.neec.it.k023c0024.questionnaire_app.customer
+package jp.ac.neec.it.k023c0024.questionnaire_app.customer.Existing
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,23 +10,22 @@ import android.widget.SimpleAdapter
 import androidx.appcompat.app.AppCompatActivity
 import jp.ac.neec.it.k023c0024.questionnaire_app.R
 import jp.ac.neec.it.k023c0024.questionnaire_app.data.db.DatabaseHelper
-import jp.ac.neec.it.k023c0024.questionnaire_app.questionnaire.Questionnaire
 
-class LoginCustomer : AppCompatActivity() {
+class InfomationCheckLogin : AppCompatActivity() {
     //データベースヘルパーオブジェクト
-    private  val _helper = DatabaseHelper(this@LoginCustomer)
+    private  val _helper = DatabaseHelper(this@InfomationCheckLogin)
 
     private var _customerList: MutableList<MutableMap<String, String>> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login_customer)
+        setContentView(R.layout.activity_infomation_check_login)
 
         _customerList = createCustomerList()
-        val lvCustomer = findViewById<ListView>(R.id.lvCustomer)
+        val lvCustomer = findViewById<ListView>(R.id.lvInformationCheckLogin)
 
         var adapter = SimpleAdapter(
-            this@LoginCustomer,
+            this@InfomationCheckLogin,
             _customerList,
             android.R.layout.simple_list_item_2,
             arrayOf("id", "name"),
@@ -59,7 +58,7 @@ class LoginCustomer : AppCompatActivity() {
             val idxid = cursor.getColumnIndex("_id")
             val idxname = cursor.getColumnIndex("name")
             //カラムのインデックス値を元に実際のデータを取得
-            id = cursor.getLong(idxid).toString()//getLong()でLong型を、toString()で文字列型に変換
+            id = cursor.getString(idxid)
             name = cursor.getString(idxname)
             //取得したデータをリストに追加
             _customerList.add(mutableMapOf("id" to id, "name" to name))
@@ -78,9 +77,9 @@ class LoginCustomer : AppCompatActivity() {
         _customerList = createCustomerList()
 
         //リストビューに新しいリストをセットし直す
-        val lvCustomer = findViewById<ListView>(R.id.lvCustomer)
+        val lvCustomer = findViewById<ListView>(R.id.lvInformationCheckLogin)
         var adapter = SimpleAdapter(
-            this@LoginCustomer,
+            this@InfomationCheckLogin,
             _customerList,
             android.R.layout.simple_list_item_2,
             arrayOf("id", "name"),
@@ -98,12 +97,11 @@ class LoginCustomer : AppCompatActivity() {
             //マップから"id"というキーを使って、目的の顧客ID(文字列)を取得
             val customerID = item["id"]
 
-            // Questionnaireアクティビティへのインテントを作成
-            val intentQuestionnaire = Intent(this@LoginCustomer, Questionnaire::class.java)
-            //取得した顧客ID（文字列）をインテントに詰める
-            intentQuestionnaire.putExtra("id", customerID)
-            // Questionnaireアクティビティを起動
-            startActivity(intentQuestionnaire)
+            val intentCustomerInformation = Intent(this@InfomationCheckLogin, CustomerInformationConfirm::class.java)
+
+            intentCustomerInformation.putExtra("id", customerID)
+
+            startActivity(intentCustomerInformation)
             //現在の画面を終了
             finish()
         }

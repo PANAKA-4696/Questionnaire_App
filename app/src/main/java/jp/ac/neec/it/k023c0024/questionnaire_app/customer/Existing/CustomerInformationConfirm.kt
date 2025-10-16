@@ -1,4 +1,4 @@
-package jp.ac.neec.it.k023c0024.questionnaire_app.customer
+package jp.ac.neec.it.k023c0024.questionnaire_app.customer.Existing
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import jp.ac.neec.it.k023c0024.questionnaire_app.questionnaire.QuestionConfirmLogin
+import jp.ac.neec.it.k023c0024.questionnaire_app.questionnaire.Existing.QuestionConfirmLogin
 import jp.ac.neec.it.k023c0024.questionnaire_app.R
 import jp.ac.neec.it.k023c0024.questionnaire_app.data.db.DatabaseHelper
 

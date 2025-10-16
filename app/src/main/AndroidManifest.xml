@@ -16,43 +16,43 @@
         android:theme="@style/Theme.Questionnaire_App"
         tools:targetApi="31">
         <activity
-            android:name=".questionnaire.ReQuestionnaire2"
+            android:name=".questionnaire.Existing.ReQuestionnaire2"
             android:exported="false" />
         <activity
-            android:name=".questionnaire.ReQuestionnaire"
+            android:name=".questionnaire.Existing.ReQuestionnaire"
             android:exported="false" />
         <activity
-            android:name=".questionnaire.QuestionConfirmLogin"
+            android:name=".questionnaire.Existing.QuestionConfirmLogin"
             android:exported="false" />
         <activity
-            android:name=".questionnaire.QuestionConfirm"
+            android:name=".questionnaire.Existing.QuestionConfirm"
             android:exported="false" />
         <activity
-            android:name=".customer.CustomerConfirm"
+            android:name=".customer.Existing.CustomerConfirm"
             android:exported="false" />
         <activity
-            android:name=".customer.ReEnterCustomerInformation"
+            android:name=".customer.Existing.ReEnterCustomerInformation"
             android:exported="false" />
         <activity
-            android:name=".customer.CustomerInformationConfirm"
+            android:name=".customer.Existing.CustomerInformationConfirm"
             android:exported="false" />
         <activity
-            android:name=".customer.InfomationCheckLogin"
+            android:name=".customer.Existing.InfomationCheckLogin"
             android:exported="false" />
         <activity
-            android:name=".questionnaire.Questionnaire2"
+            android:name=".questionnaire.New.Questionnaire2"
             android:exported="false" />
         <activity
-            android:name=".customer.LoginCustomer"
+            android:name=".questionnaire.New.LoginCustomer"
             android:exported="false" />
         <activity
-            android:name=".customer.NewCustomerConfirm"
+            android:name=".customer.New.NewCustomerConfirm"
             android:exported="false" />
         <activity
-            android:name=".questionnaire.Questionnaire"
+            android:name=".questionnaire.New.Questionnaire"
             android:exported="false" />
         <activity
-            android:name=".customer.NewCustomer"
+            android:name=".customer.New.NewCustomer"
             android:exported="false" />
         <activity
             android:name=".main.MainActivity"

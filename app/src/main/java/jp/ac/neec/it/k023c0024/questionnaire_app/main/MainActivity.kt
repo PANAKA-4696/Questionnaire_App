@@ -25,9 +25,9 @@ import com.google.api.client.extensions.android.http.AndroidHttp
 import com.google.api.client.http.FileContent
 import com.google.api.services.drive.model.File
 import jp.ac.neec.it.k023c0024.questionnaire_app.data.db.DatabaseHelper
-import jp.ac.neec.it.k023c0024.questionnaire_app.customer.InfomationCheckLogin
-import jp.ac.neec.it.k023c0024.questionnaire_app.customer.LoginCustomer
-import jp.ac.neec.it.k023c0024.questionnaire_app.customer.NewCustomer
+import jp.ac.neec.it.k023c0024.questionnaire_app.customer.Existing.InfomationCheckLogin
+import jp.ac.neec.it.k023c0024.questionnaire_app.questionnaire.New.LoginCustomer
+import jp.ac.neec.it.k023c0024.questionnaire_app.customer.New.NewCustomer
 import jp.ac.neec.it.k023c0024.questionnaire_app.R
 
 class MainActivity : AppCompatActivity() {

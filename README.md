@@ -173,23 +173,33 @@
 <details>
 <summary>11. カルテ一覧画面</summary>
 
-![問診票一覧画面](https://github.com/user-attachments/assets/d7e92ffe-99de-4d63-a6c3-c02e673d748f)  
+![カルテ一覧画面](https://github.com/user-attachments/assets/d7e92ffe-99de-4d63-a6c3-c02e673d748f)  
 特定のお客様の、過去の問診票が日付順に一覧表示されます。確認したい問診票をタップすると、その詳細画面へ遷移します。
 
 </details>
 
 <details>
-<summary>12. カルテ再入力画面</summary>
+<summary>12. カルテ内容確認画面</summary>
+
+![カルテ内容確認画面](https://github.com/user-attachments/assets/5d3e0cad-4c6e-4d59-8d7f-ff95fe90ccd4) 
+選択した問診票に前回登録した内容を確認できます。
+
+- **問診票を修正する**: 内容を修正するための画面(カルテ再入力画面)へ遷移します。
+
+</details>
+
+<details>
+<summary>13. カルテ再入力画面</summary>
 
 ![カルテ再入力画面](https://github.com/user-attachments/assets/63e6e0a8-a60a-418f-b99e-c896bc71edfe)  
-確認したい問診票の詳細が前回入力されたっ項目が入力された状態で表示されます。
+選択した問診票の詳細について書いてあります。前回入力された項目が入力された状態で表示されます。
 
 - **次の画面へ**: 内容を修正するための画面（カルテ2再入力画面）へ遷移します。
 
 </details>
 
 <details>
-<summary>13. カルテ2再入力画面</summary>
+<summary>14. カルテ2再入力画面</summary>
 
 ![カルテ2再入力画面](https://github.com/user-attachments/assets/d13a23a1-de80-4b40-914d-d257508dcb7e)  
 前画面での修正内容を確認し、同意にチェックを入れると、問診内容が更新されます。
@@ -197,7 +207,7 @@
 </details>
 
 <details>
-<summary>14. Google Drive 保存・取得</summary>
+<summary>15. Google Drive 保存・取得</summary>
 
 ![保存・取得ボタン後](https://github.com/user-attachments/assets/9c1b1abf-cf3d-483c-bd36-c0006e941dc1)
 
@@ -243,7 +253,8 @@ graph TD;
         ReEnterCustomer -- "確認画面へ" --> CustomerConfirm["更新確認画面"];
         CustomerConfirm -- "DBへ更新" --> MainActivity;
         CustomerInfoConfirm -- "問診票" --> QuestionConfirmLogin["問診票一覧画面"];
-        QuestionConfirmLogin -- "問診票を選択" --> ReQuestionnaire["カルテ再入力画面1"];
+        QuestionConfirmLogin -- "問診票を選択" --> QuestionnaireConfirm["問診票確認画面"];
+        QuestionnaireConfirm -- "問診票を修正する" --> ReQuestionnaire["カルテ再入力画面1"];
         ReQuestionnaire -- "次の画面へ" --> ReQuestionnaire2["カルテ再入力画面2"];
         ReQuestionnaire2 -- "DBへ更新" --> MainActivity;
     end

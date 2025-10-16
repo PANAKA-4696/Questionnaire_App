@@ -127,4 +127,5 @@
     <string name="bt_re_question">問診票を修正する</string>
     <string name="bt_question_back">戻る</string>
     <string name="tv_re_questionnaire_time">施術時の日時</string>
+    <string name="tv_customer_confirm_title">更新内容確認画面</string>
 </resources>

@@ -207,6 +207,34 @@
 ![ER図](https://github.com/user-attachments/assets/d8e22406-de18-49ef-aa1c-afcb0cb7643c)
 
 ### 画面遷移図
+Mermaidを使った画面遷移図
+```mermaid
+graph TD;
+    subgraph "新規登録フロー"
+        MainActivity["メイン画面"] -- "新規登録" --> NewCustomer["新規登録画面"];
+        NewCustomer -- "確認画面へ" --> NewCustomerConfirm["新規登録/更新 確認画面"];
+        NewCustomerConfirm -- "登録" --> CompleteDialog["登録完了ダイアログ"];
+    end
+
+    subgraph "問診票フロー"
+        MainActivity -- "情報追記" --> LoginCustomer["既存顧客選択画面"];
+        LoginCustomer -- "顧客を選択" --> Questionnaire["カルテ画面1"];
+        CompleteDialog -- "カルテへ" --> Questionnaire;
+        Questionnaire -- "次の画面へ" --> Questionnaire2["カルテ画面2"];
+        Questionnaire2 -- "DBへ保存" --> MainActivity;
+    end
+
+    subgraph "情報確認・修正フロー"
+        MainActivity -- "情報を見る" --> InfomationCheckLogin["顧客情報確認用 選択画面"];
+        InfomationCheckLogin -- "顧客を選択" --> CustomerInfoConfirm["登録情報確認画面"];
+        CustomerInfoConfirm -- "再登録" --> ReEnterCustomer["登録内容修正画面"];
+        ReEnterCustomer -- "確認画面へ" --> NewCustomerConfirm;
+        CustomerInfoConfirm -- "問診票" --> QuestionConfirmLogin["問診票一覧画面"];
+        QuestionConfirmLogin -- "問診票を選択" --> QuestionConfirm["問診内容確認画面"];
+        QuestionConfirm -- "再入力" --> ReQuestionnaire["問診内容再入力画面"];
+        ReQuestionnaire -- "次の画面へ" --> ReQuestionnaire2["問診内容再入力画面2"];
+        ReQuestionnaire2 -- "DBへ更新" --> MainActivity;
+    end
 ![画面遷移図](https://github.com/user-attachments/assets/624d7e17-59ed-482b-b67f-6e5e188c81ef)
 
 ## いただいたFBと今後の展望

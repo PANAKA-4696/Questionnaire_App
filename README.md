@@ -225,6 +225,7 @@ graph TD;
         MainActivity["メイン画面"] -- "新規登録" --> NewCustomer["新規登録画面"];
         NewCustomer -- "確認画面へ" --> NewCustomerConfirm["新規登録/確認画面"];
         NewCustomerConfirm -- "登録" --> CompleteDialog["登録完了ダイアログ"];
+        CompleteDialog -- "メイン画面へ" --> MainActivity;
     end
 
     subgraph "問診票フロー"

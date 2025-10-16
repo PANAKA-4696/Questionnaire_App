@@ -30,10 +30,14 @@
 
 ## 使用技術
 - **言語**: Kotlin
-- **プラットフォーム**: Android
-- **データベース**: SQLite
-- **API**: Google Drive API (OAuth 2.0)
-- **ライブラリ**: Google Play Services (Auth), Gson, AndroidX Libraries
+- **UI**: Android View System (XML)
+- **アーキテクチャ**: Activity-Based (各画面をActivityとして実装)
+- **非同期処理**: Kotlin Coroutines
+- **API通信**:
+  - Google Drive API (OAuth 2.0)
+  - Google Auth Library for Android
+- **JSONパース**: Gson
+- **データベース**: SQLite (SQLiteOpenHelper)
 
 - ## セットアップ方法
 1. このリポジトリをクローンします。
@@ -50,34 +54,47 @@
 5. Android Studioでビルドして実行します。
 
 ## アプリの使い方
-### 1. メイン画面
+
+<details>
+<summary>1. メイン画面</summary>
+
 ![メイン画面](https://github.com/user-attachments/assets/1a413eca-8144-4892-8411-db7d05eea408)
 
-- **新規登録**: 新規のお客様を追加するときのボタン(新規登録画面へ遷移)
-- **情報追記**: 既存のお客様のカルテを記入するボタン(カルテ画面へ遷移)
-- **情報を見る**: 今入っている顧客情報を見るためのボタン(顧客情報画面へ遷移)
-- **GoogleDriveに保存/取得ボタン**: GoogleDriveに保存、GoogleDriveからデータを取得するボタン
+- **新規登録**: 新しいお客様の情報を入力する画面（新規登録画面）へ遷移します。
+- **情報追記**: 既存のお客様を選択し、問診票を記入する画面（既存顧客選択画面）へ遷移します。
+- **情報を見る**: 登録されているお客様の情報を確認する画面（顧客情報確認用選択画面）へ遷移します。
+- **GoogleDriveに保存/取得ボタン**: 全データをGoogle Driveへバックアップ、または復元します。
 
-### 2. 新規登録画面
+</details>
+
+<details>
+<summary>2. 新規登録画面</summary>
+
 ![新規登録画面](https://github.com/user-attachments/assets/1c5a0c6c-a101-4812-843b-337b267a1a97)
 
-各項目を入力し、「確認画面へ」ボタンを押します。
+お客様の個人情報を入力します。
 
-- **クリア**: 記入項目を全クリアするためのボタン
-- **確認画面**: 確認画面へ行くためのボタン(確認画面に遷移)
+- **クリア**: 入力項目をすべてリセットします。
+- **確認画面へ**: 入力内容を確認する画面（登録内容確認画面）へ遷移します。
 
-### 3. 登録内容確認画面
+</details>
+
+<details>
+<summary>3. 登録内容確認画面</summary>
+
 ![登録内容確認画面](https://github.com/user-attachments/assets/93917a2b-3bb4-478c-a947-ef9ff3597378)
 
-- **登録**: この内容で登録する(保存する)ボタン
-フラグメントが出てくるため、そこで、メイン画面かカルテの画面を選択し遷移できます。
+新規登録、または情報更新時に入力した内容の最終確認を行います。
 
-- **キャンセル**: 内容が違う場合のボタン(元の画面の新規登録画面に遷移)
+- **登録/更新**: 入力内容をデータベースに保存します。保存後、問診票を続けて入力するか、トップ画面に戻るかを選択するダイアログが表示されます。
+- **キャンセル**: 入力内容を破棄し、前の画面に戻ります。
 
-項目は前の画面からデータを取得し表示しています。
+</details>
 
-### 3.5. 登録完了フラグメント
-![登録完了フラグメント]()
+<details>
+<summary>3.5. 登録完了フラグメント</summary>
+
+![登録完了フラグメント](https://github.com/user-attachments/assets/30047351-34dc-4f92-b761-2fe4b772d363)
 
 - **トップ画面へ戻る**
 保存し、トップに戻る場合はこのボタンを押下(メイン画面に遷移)
@@ -85,66 +102,119 @@
 - **カルテへ**
 保存した情報を持って、カルテ画面にそのまま移動(カルテ画面に遷移)
 
-### 4. 既存顧客選択画面
+</details>
+
+<details>
+<summary>4. 既存顧客選択画面 (情報追記)</summary>
+
 ![既存顧客選択画面](https://github.com/user-attachments/assets/a7165937-27f1-4162-aa7f-383879587bb8)
 
-- **リスト**
-DBに保存された顧客がリストにフリガナ、IDで並びます。
+メイン画面の「情報追記」から遷移します。問診票を記入したいお客様を一覧から選択します。フリガナやIDで検索することも可能です。
 
-今後実装するもの
--IDは連番でつけるため、最初に入れた人から順番にIDが割り振られます。
+</details>
 
-### 5. カルテ画面
+<details>
+<summary>5. カルテ画面 (問診票入力)</summary>
+
 ![カルテ画面](https://github.com/user-attachments/assets/8e90db63-42b9-49b8-94dc-f0b668c68635)
 
-- **次の画面へ**
-質問事項の情報を保持した状態で次の画面へ遷移します。
-すべての項目を埋めないと次の画面へいけません
-(カルテ画面2へ遷移)
+お客様の症状などをヒアリングしながら入力します。すべての必須項目を入力すると「次の画面へ」ボタンが押せるようになります。
 
-問診票のメインの部分です。
-各項目を読み、しっかりと答えてもらう。
+</details>
 
-### 6. カルテ画面2
+<details>
+<summary>6. カルテ画面2 (免責事項)</summary>
+
 ![カルテ画面2](https://github.com/user-attachments/assets/52180b30-9687-4c13-9457-a82646d143ea)
 
-- **内容の保存**
-前ページでの回答と写真内容をチェックボックスの確認を得て、DBに保存するためのボタンです(保存し、メイン画面に遷移)
+免責事項を確認後、同意のチェックボックスにチェックを入れると「確認画面へ」ボタンが押せるようになります。
 
-免責事項を読み、同意のチェックボックスをクリックしないと問診票の登録ができません。
+</details>
 
-今後実装するもの
--写真の部分を人の体を表すものにし、それに〇を書き込めるようにしたうえで、保存ボタンを押すことで丸がついた状態の写真を保存できるようにしたい。
+<details>
+<summary>7. 顧客情報確認用選択画面 (情報を見る)</summary>
 
-### 7. 顧客情報確認用選択画面
 ![顧客情報確認用選択画面](https://github.com/user-attachments/assets/44f64aa6-17cc-4259-b25a-7912970d7cc1)
 
-- **リスト**
-DBに保存された顧客がリストにフリガナ、IDで並びます。
+メイン画面の「情報を見る」から遷移します。登録されているお客様の一覧が表示されます。確認したいお客様を選択すると、登録情報確認画面へ遷移します。
 
-今後実装するもの
--IDは連番でつけるため、最初に入れた人から順番にIDが割り振られます。
+</details>
 
-### 8. 登録情報確認画面
+<details>
+<summary>8. 登録情報確認画面</summary>
+
 ![登録情報確認画面](https://github.com/user-attachments/assets/2117cb16-3917-4788-b985-90a96b7259fc)
 
-- **再登録**
-この画面の内容で修正する箇所がある場合、登録内容修正画面に遷移する。(登録内容修正画面に遷移)
+選択したお客様の登録情報が表示されます。
 
-- **戻る**
-この内容で問題ない場合元の画面に戻るボタン
-(元の画面の顧客情報確認用選択画面に遷移)
+- **再登録**: 情報を修正するための画面（登録内容修正画面）へ遷移します。
+- **戻る**: 前の選択画面に戻ります。
+- **問診票**: このお客様の過去の問診票一覧画面へ遷移します。
 
-DBからデータを取得し表示しています。
+</details>
 
-### 9. 保存・取得ボタン後
+<details>
+<summary>9. 登録内容修正画面</summary>
+
+![登録内容修正画面](https://github.com/user-attachments/assets/dda9827d-167a-40d0-8407-186c33821911)  
+既存の顧客情報が入力された状態で表示されます。内容を修正し、「確認画面へ」ボタンを押すと、更新内容確認画面へ遷移します。
+
+</details>
+
+
+<details>
+<summary>10. 更新内容確認画面</summary>
+
+![更新内容確認画面](https://github.com/user-attachments/assets/e171e2dd-6c65-4853-991b-cf50e1178514)  
+修正した登録内容が表示されます。修正内容が正されていることを確認し、「更新する」ボタンを押すと、内容が更新されメイン画面へ遷移します。
+
+</details>
+
+<details>
+<summary>11. カルテ一覧画面</summary>
+
+![カルテ一覧画面](https://github.com/user-attachments/assets/d7e92ffe-99de-4d63-a6c3-c02e673d748f)  
+特定のお客様の、過去の問診票が日付順に一覧表示されます。確認したい問診票をタップすると、その詳細画面へ遷移します。
+
+</details>
+
+<details>
+<summary>12. カルテ内容確認画面</summary>
+
+![カルテ内容確認画面](https://github.com/user-attachments/assets/5d3e0cad-4c6e-4d59-8d7f-ff95fe90ccd4) 
+選択した問診票に前回登録した内容を確認できます。
+
+- **問診票を修正する**: 内容を修正するための画面(カルテ再入力画面)へ遷移します。
+
+</details>
+
+<details>
+<summary>13. カルテ再入力画面</summary>
+
+![カルテ再入力画面](https://github.com/user-attachments/assets/63e6e0a8-a60a-418f-b99e-c896bc71edfe)  
+選択した問診票の詳細について書いてあります。前回入力された項目が入力された状態で表示されます。
+
+- **次の画面へ**: 内容を修正するための画面（カルテ2再入力画面）へ遷移します。
+
+</details>
+
+<details>
+<summary>14. カルテ2再入力画面</summary>
+
+![カルテ2再入力画面](https://github.com/user-attachments/assets/d13a23a1-de80-4b40-914d-d257508dcb7e)  
+前画面での修正内容を確認し、同意にチェックを入れると、問診内容が更新されます。
+
+</details>
+
+<details>
+<summary>15. Google Drive 保存・取得</summary>
+
 ![保存・取得ボタン後](https://github.com/user-attachments/assets/9c1b1abf-cf3d-483c-bd36-c0006e941dc1)
 
-- **アカウント選択**
-アカウントを選択し、Googleに接続することで、GoogleDriveに接続することが出来る。
-APIへの接続が必要なため、GoogleDriveAPIを利用し、GoogleAPI側でのOAuthの設定が必要である。
+「GoogleDriveに保存」または「GoogleDriveから取得」ボタンを押すと、Googleアカウントの選択画面が表示されます。アカウントを選択して認証を行うことで、データのバックアップ・復元が実行されます。
 
-... (以下、各画面について同様に説明) ...
+</details>
+
 
 ## こだわった点
 このプロジェクトでは、**いかにお金をかけずにDX化を実現するか**にこだわりました。
@@ -158,13 +228,43 @@ APIへの接続が必要なため、GoogleDriveAPIを利用し、GoogleAPI側で
 ![ER図](https://github.com/user-attachments/assets/d8e22406-de18-49ef-aa1c-afcb0cb7643c)
 
 ### 画面遷移図
-![画面遷移図](https://github.com/user-attachments/assets/624d7e17-59ed-482b-b67f-6e5e188c81ef)
+Mermaidを使った画面遷移図
+```mermaid
+graph TD;
+    subgraph "新規登録フロー"
+        MainActivity["メイン画面"] -- "新規登録" --> NewCustomer["新規登録画面"];
+        NewCustomer -- "確認画面へ" --> NewCustomerConfirm["新規登録/確認画面"];
+        NewCustomerConfirm -- "登録" --> CompleteDialog["登録完了ダイアログ"];
+        CompleteDialog -- "メイン画面へ" --> MainActivity;
+    end
+
+    subgraph "問診票フロー"
+        MainActivity -- "情報追記" --> LoginCustomer["既存顧客選択画面"];
+        LoginCustomer -- "顧客を選択" --> Questionnaire["カルテ画面1"];
+        CompleteDialog -- "カルテへ" --> Questionnaire;
+        Questionnaire -- "次の画面へ" --> Questionnaire2["カルテ画面2"];
+        Questionnaire2 -- "DBへ保存" --> MainActivity;
+    end
+
+    subgraph "情報確認・修正フロー"
+        MainActivity -- "情報を見る" --> InfomationCheckLogin["顧客情報確認用 選択画面"];
+        InfomationCheckLogin -- "顧客を選択" --> CustomerInfoConfirm["登録情報確認画面"];
+        CustomerInfoConfirm -- "再登録" --> ReEnterCustomer["登録内容修正画面"];
+        ReEnterCustomer -- "確認画面へ" --> CustomerConfirm["更新確認画面"];
+        CustomerConfirm -- "DBへ更新" --> MainActivity;
+        CustomerInfoConfirm -- "問診票" --> QuestionConfirmLogin["問診票一覧画面"];
+        QuestionConfirmLogin -- "問診票を選択" --> QuestionnaireConfirm["問診票確認画面"];
+        QuestionnaireConfirm -- "問診票を修正する" --> ReQuestionnaire["カルテ再入力画面1"];
+        ReQuestionnaire -- "次の画面へ" --> ReQuestionnaire2["カルテ再入力画面2"];
+        ReQuestionnaire2 -- "DBへ更新" --> MainActivity;
+    end
+```
 
 ## いただいたFBと今後の展望
 実務でご活躍されているAndroidエンジニアの方から頂いたフィードバックを元に、以下の項目を修正・改善していきます  
-- [x] **READMEの作成** :ReadMEをしっかり作らないと説明書だけでは作成過程などをしっかり見てもらえない可能性がある。
-- [ ]**ファイル構造の見やすさ** :ファイル構造が画面ごとにまとまっていないため、この作品を見た人が理解しずらい、見るときに見づらいなどの可能性がある。
-- [ ]**Jetpack Composeへの対応** :授業で習ったやり方でこのアプリ開発を行っていたが、授業で習った内容が古い内容であり、現在の主流となっているUI手法として、Jetpack Composeが主流であるため、今風に変える必要がある。  (先に親に提供するため親が使用し始めて安定してきたタイミングで変更しようと考えています。)
+- [x] **READMEの作成** :ReadMEをしっかり作らないと説明書だけでは作成過程などをしっかり見てもらえない可能性がある。  
+- [x] **ファイル構造の見やすさ** :ファイル構造が画面ごとにまとまっていないため、この作品を見た人が理解しずらい、見るときに見づらいなどの可能性がある。  
+- [ ] **Jetpack Composeへの対応** :授業で習ったやり方でこのアプリ開発を行っていたが、授業で習った内容が古い内容であり、現在の主流となっているUI手法として、Jetpack Composeが主流であるため、今風に変える必要がある。  (先に親に提供するため親が使用し始めて安定してきたタイミングで変更しようと考えています。)  
 - [ ] **今後の学習課題**: 今回はAndroid View Systemで開発しましたが、現在の主流であるJetpack ComposeでのUI構築スキルや、最新の技術、主流を習得するため、簡単なアプリ作成などを通して学習を進めます。
   
 ## 製作者

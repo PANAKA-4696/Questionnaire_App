@@ -126,9 +126,11 @@ class CustomerConfirm : AppCompatActivity() {
                         Toast.makeText(this@CustomerConfirm, "更新しました", Toast.LENGTH_LONG).show()
 
                         //MainActivityに戻るためのIntentを作成
-                        val intent = Intent(this@CustomerConfirm, jp.ac.neec.it.k023c0024.questionnaire_app.main.MainActivity::class.java)
+                        val intent = Intent(this@CustomerConfirm, CustomerInformationConfirm::class.java)
                         //途中の画面(ReEnterCustomerInformationなど)をすべて消去するフラグを設定
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+                        //どの顧客の画面に戻るのかを伝えるために、IDを渡す
+                        intent.putExtra("id", idToUpdate)
                         startActivity(intent)
                         //この画面も閉じる
                         finish()

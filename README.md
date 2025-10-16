@@ -235,6 +235,7 @@ graph TD;
         ReQuestionnaire -- "次の画面へ" --> ReQuestionnaire2["問診内容再入力画面2"];
         ReQuestionnaire2 -- "DBへ更新" --> MainActivity;
     end
+```
 ![画面遷移図](https://github.com/user-attachments/assets/624d7e17-59ed-482b-b67f-6e5e188c81ef)
 
 ## いただいたFBと今後の展望

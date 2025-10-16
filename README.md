@@ -157,43 +157,54 @@
 <summary>9. 登録内容修正画面</summary>
 
 ![登録内容修正画面](https://github.com/user-attachments/assets/dda9827d-167a-40d0-8407-186c33821911)  
-既存の顧客情報が入力された状態で表示されます。内容を修正し、「確認画面へ」ボタンを押すと、登録内容確認画面へ遷移して更新を完了できます。
+既存の顧客情報が入力された状態で表示されます。内容を修正し、「確認画面へ」ボタンを押すと、更新内容確認画面へ遷移します。
+
+</details>
+
+
+<details>
+<summary>10. 更新内容確認画面</summary>
+
+![更新内容確認画面](https://github.com/user-attachments/assets/e171e2dd-6c65-4853-991b-cf50e1178514)  
+修正した登録内容が表示されます。修正内容が正されていることを確認し、「更新する」ボタンを押すと、内容が更新されメイン画面へ遷移します。
 
 </details>
 
 <details>
-<summary>10. カルテ一覧画面</summary>
+<summary>11. カルテ一覧画面</summary>
 
-![問診票一覧画面](https://github.com/user-attachments/assets/d7e92ffe-99de-4d63-a6c3-c02e673d748f) 特定のお客様の、過去の問診票が日付順に一覧表示されます。確認したい問診票をタップすると、その詳細画面へ遷移します。
-
-</details>
-
-<details>
-<summary>11. カルテ再入力画面</summary>
-
-![問診内容確認画面](https://github.com/user-attachments/assets/63e6e0a8-a60a-418f-b99e-c896bc71edfe) 選択した問診票の回答内容がすべて表示されます。
-
-- **再入力**: 内容を修正するための画面（問診内容再入力画面）へ遷移します。
-- **戻る**: 前の問診票一覧画面に戻ります。
+![問診票一覧画面](https://github.com/user-attachments/assets/d7e92ffe-99de-4d63-a6c3-c02e673d748f)  
+特定のお客様の、過去の問診票が日付順に一覧表示されます。確認したい問診票をタップすると、その詳細画面へ遷移します。
 
 </details>
 
 <details>
-<summary>12. カルテ2佐生入力画面</summary>
+<summary>12. カルテ再入力画面</summary>
 
-![問診内容再入力画面](https://github.com/user-attachments/assets/d13a23a1-de80-4b40-914d-d257508dcb7e) 既存の回答が入力された状態で表示されます。内容を修正し、次の画面で同意にチェックを入れると、問診内容が更新されます。
+![カルテ再入力画面](https://github.com/user-attachments/assets/63e6e0a8-a60a-418f-b99e-c896bc71edfe)  
+確認したい問診票の詳細が前回入力されたっ項目が入力された状態で表示されます。
+
+- **次の画面へ**: 内容を修正するための画面（カルテ2再入力画面）へ遷移します。
 
 </details>
 
 <details>
-<summary>13. Google Drive 保存・取得</summary>
+<summary>13. カルテ2再入力画面</summary>
+
+![カルテ2再入力画面](https://github.com/user-attachments/assets/d13a23a1-de80-4b40-914d-d257508dcb7e)  
+前画面での修正内容を確認し、同意にチェックを入れると、問診内容が更新されます。
+
+</details>
+
+<details>
+<summary>14. Google Drive 保存・取得</summary>
 
 ![保存・取得ボタン後](https://github.com/user-attachments/assets/9c1b1abf-cf3d-483c-bd36-c0006e941dc1)
 
 「GoogleDriveに保存」または「GoogleDriveから取得」ボタンを押すと、Googleアカウントの選択画面が表示されます。アカウントを選択して認証を行うことで、データのバックアップ・復元が実行されます。
 
 </details>
-... (以下、各画面について同様に説明) ...
+
 
 ## こだわった点
 このプロジェクトでは、**いかにお金をかけずにDX化を実現するか**にこだわりました。
@@ -212,7 +223,7 @@ Mermaidを使った画面遷移図
 graph TD;
     subgraph "新規登録フロー"
         MainActivity["メイン画面"] -- "新規登録" --> NewCustomer["新規登録画面"];
-        NewCustomer -- "確認画面へ" --> NewCustomerConfirm["新規登録/更新 確認画面"];
+        NewCustomer -- "確認画面へ" --> NewCustomerConfirm["新規登録/確認画面"];
         NewCustomerConfirm -- "登録" --> CompleteDialog["登録完了ダイアログ"];
     end
 
@@ -228,15 +239,14 @@ graph TD;
         MainActivity -- "情報を見る" --> InfomationCheckLogin["顧客情報確認用 選択画面"];
         InfomationCheckLogin -- "顧客を選択" --> CustomerInfoConfirm["登録情報確認画面"];
         CustomerInfoConfirm -- "再登録" --> ReEnterCustomer["登録内容修正画面"];
-        ReEnterCustomer -- "確認画面へ" --> NewCustomerConfirm;
+        ReEnterCustomer -- "確認画面へ" --> CustomerConfirm["更新確認画面"];
+        CustomerConfirm -- "DBへ更新" --> MainActivity;
         CustomerInfoConfirm -- "問診票" --> QuestionConfirmLogin["問診票一覧画面"];
-        QuestionConfirmLogin -- "問診票を選択" --> QuestionConfirm["問診内容確認画面"];
-        QuestionConfirm -- "再入力" --> ReQuestionnaire["問診内容再入力画面"];
-        ReQuestionnaire -- "次の画面へ" --> ReQuestionnaire2["問診内容再入力画面2"];
+        QuestionConfirmLogin -- "問診票を選択" --> ReQuestionnaire["カルテ再入力画面1"];
+        ReQuestionnaire -- "次の画面へ" --> ReQuestionnaire2["カルテ再入力画面2"];
         ReQuestionnaire2 -- "DBへ更新" --> MainActivity;
     end
 ```
-![画面遷移図](https://github.com/user-attachments/assets/624d7e17-59ed-482b-b67f-6e5e188c81ef)
 
 ## いただいたFBと今後の展望
 実務でご活躍されているAndroidエンジニアの方から頂いたフィードバックを元に、以下の項目を修正・改善していきます  

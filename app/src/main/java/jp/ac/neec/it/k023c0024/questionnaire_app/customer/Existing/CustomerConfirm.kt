@@ -1,5 +1,6 @@
 package jp.ac.neec.it.k023c0024.questionnaire_app.customer.Existing
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
@@ -123,6 +124,13 @@ class CustomerConfirm : AppCompatActivity() {
 
                     if (affectedRows > 0) {
                         Toast.makeText(this@CustomerConfirm, "更新しました", Toast.LENGTH_LONG).show()
+
+                        //MainActivityに戻るためのIntentを作成
+                        val intent = Intent(this@CustomerConfirm, jp.ac.neec.it.k023c0024.questionnaire_app.main.MainActivity::class.java)
+                        //途中の画面(ReEnterCustomerInformationなど)をすべて消去するフラグを設定
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+                        startActivity(intent)
+                        //この画面も閉じる
                         finish()
                     } else {
                         Toast.makeText(this@CustomerConfirm, "更新に失敗しました", Toast.LENGTH_LONG).show()

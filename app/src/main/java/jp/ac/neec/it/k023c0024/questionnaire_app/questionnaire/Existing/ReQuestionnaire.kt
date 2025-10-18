@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import jp.ac.neec.it.k023c0024.questionnaire_app.R
 import jp.ac.neec.it.k023c0024.questionnaire_app.data.db.DatabaseHelper
@@ -185,17 +186,25 @@ class ReQuestionnaire : AppCompatActivity() {
             val Question4 = findViewById<EditText>(R.id.etReQuestionnaireQuestion4).text.toString()
             val Question5 = findViewById<EditText>(R.id.etReQuestionnaireQuestion5).text.toString()
 
-            val rgQuestion6 = findViewById<RadioGroup>(R.id.rgQuestionnaireQuestion6)
-            val question6Id = rgQuestion6.checkedRadioButtonId
-            val Question6 = findViewById<RadioButton>(question6Id).text.toString()
+            // --- ラジオボタンの安全な取得 ---
+            var Question6 = "" // 初期値を設定
+            val rgQuestion6 = findViewById<RadioGroup>(R.id.rgReQuestionnaireQuestion6)
+            val checkedRadioButtonId = rgQuestion6.checkedRadioButtonId
+            if (checkedRadioButtonId != -1) {
+                val selectedRadioButton = findViewById<RadioButton>(checkedRadioButtonId)
+                Question6 = selectedRadioButton.text.toString()
+            } else {
+                //エラー表示して return する
+                Toast.makeText(this@ReQuestionnaire, "Q6を選択してください", Toast.LENGTH_SHORT).show()
+                return
+            }
 
-            val etComment = findViewById<EditText>(R.id.etQuestionnaireComment).text.toString()
+            val etComment = findViewById<EditText>(R.id.etReQuestionnaireComment).text.toString()
 
             val time = findViewById<TextView>(R.id.tvReQuestionnaireNowDayTime).text.toString()
 
 
-            val ClickQuestionnaireNextListener =
-                Intent(this@ReQuestionnaire, Questionnaire2::class.java)
+            val ClickQuestionnaireNextListener = Intent(this@ReQuestionnaire, Questionnaire2::class.java)
 
             ClickQuestionnaireNextListener.putExtra("time", time)
             ClickQuestionnaireNextListener.putExtra("id", id)

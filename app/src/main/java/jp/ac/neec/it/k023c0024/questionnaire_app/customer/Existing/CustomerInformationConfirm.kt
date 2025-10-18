@@ -141,7 +141,7 @@ class CustomerInformationConfirm : AppCompatActivity() {
         btCustomerInformationConfirmReEnter.setOnClickListener(ClickCustomerInformationConfirmReEnterListener())
 
         val btCustomerInformationCondfirmBack = findViewById<Button>(R.id.btCustomerInformationCondfirmBack)
-        btCustomerInformationCondfirmBack.setOnClickListener(ClickCustomerInformationCondfirmBackListener())
+        btCustomerInformationCondfirmBack.setOnClickListener(ClickCustomerInformationConfirmBackListener())
 
         val btQuestion = findViewById<Button>(R.id.btQuestion)
         btQuestion.setOnClickListener(ClickQuestionListener())
@@ -171,7 +171,7 @@ class CustomerInformationConfirm : AppCompatActivity() {
         }
     }
 
-    private inner class ClickCustomerInformationCondfirmBackListener : View.OnClickListener {
+    private inner class ClickCustomerInformationConfirmBackListener : View.OnClickListener {
         override fun onClick(v: View?) {
             finish()
         }

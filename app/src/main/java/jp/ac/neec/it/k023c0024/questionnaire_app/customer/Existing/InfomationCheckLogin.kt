@@ -102,8 +102,6 @@ class InfomationCheckLogin : AppCompatActivity() {
             intentCustomerInformation.putExtra("id", customerID)
 
             startActivity(intentCustomerInformation)
-            //現在の画面を終了
-            finish()
         }
     }
 

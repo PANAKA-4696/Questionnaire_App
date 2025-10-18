@@ -30,7 +30,6 @@ class ReQuestionnaire2 : AppCompatActivity() {
 
                 val timeToUpdate = intent.getStringExtra("time")
                 val idString= intent.getStringExtra("id")
-                val idToUpdate = idString?.toIntOrNull()
 
                 //DBに保存するロジックは変更なし
                 val Question1 = intent.getStringExtra("Question1")
@@ -41,6 +40,8 @@ class ReQuestionnaire2 : AppCompatActivity() {
                 val Question6 = intent.getStringExtra("Question6")
                 val etComment = intent.getStringExtra("etComment")
 
+                //Stringから変換
+                val idToUpdate: Long? = idString?.toLongOrNull()
                 val db = _helper.writableDatabase
 
                 try{
@@ -57,7 +58,7 @@ class ReQuestionnaire2 : AppCompatActivity() {
                         stmt.bindString(6, Question6)
                         stmt.bindString(7, etComment)
                         stmt.bindString(8, timeToUpdate)
-                        stmt.bindLong(9, idToUpdate.toLong())
+                        stmt.bindLong(9, idToUpdate)
 
                         //UPDATEを実行し、影響のあった行数を取得
                         val affectedRows = stmt.executeUpdateDelete()

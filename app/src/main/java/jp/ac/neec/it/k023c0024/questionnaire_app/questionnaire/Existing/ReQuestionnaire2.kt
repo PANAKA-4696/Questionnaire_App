@@ -29,7 +29,8 @@ class ReQuestionnaire2 : AppCompatActivity() {
             if (cb_requestionnaire2.isChecked) {
 
                 val timeToUpdate = intent.getStringExtra("time")
-                val idToUpdate = intent.getStringExtra("id")
+                val idString= intent.getStringExtra("id")
+                val idToUpdate = idString?.toIntOrNull()
 
                 //DBに保存するロジックは変更なし
                 val Question1 = intent.getStringExtra("Question1")
@@ -56,7 +57,7 @@ class ReQuestionnaire2 : AppCompatActivity() {
                         stmt.bindString(6, Question6)
                         stmt.bindString(7, etComment)
                         stmt.bindString(8, timeToUpdate)
-                        stmt.bindString(9, idToUpdate)
+                        stmt.bindLong(9, idToUpdate.toLong())
 
                         //UPDATEを実行し、影響のあった行数を取得
                         val affectedRows = stmt.executeUpdateDelete()

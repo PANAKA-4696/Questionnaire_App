@@ -1,6 +1,7 @@
 package jp.ac.neec.it.k023c0024.questionnaire_app.questionnaire.Existing
 
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
@@ -56,7 +57,7 @@ class ReQuestionnaire2 : AppCompatActivity() {
                         stmt.bindString(4, Question4)
                         stmt.bindString(5, Question5)
                         stmt.bindString(6, Question6)
-                        stmt.bindString(7, etComment)
+                        stmt.bindString(7, etComment ?: "")//コメントはnullの場合空文字をバインド
                         stmt.bindString(8, timeToUpdate)
                         stmt.bindLong(9, idToUpdate)
 
@@ -72,7 +73,9 @@ class ReQuestionnaire2 : AppCompatActivity() {
                     }else{
                         Toast.makeText(this@ReQuestionnaire2, "更新に失敗しました", Toast.LENGTH_LONG).show()
                     }
-
+                }catch (e:Exception){
+                    Toast.makeText(this@ReQuestionnaire2, "回答に失敗しました", Toast.LENGTH_LONG).show()
+                    Log.e("ReQuestionnaire2", "Database update error", e)
                 }finally {
                     db.close()
                 }

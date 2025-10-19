@@ -204,7 +204,7 @@ class ReQuestionnaire : AppCompatActivity() {
             val time = findViewById<TextView>(R.id.tvReQuestionnaireNowDayTime).text.toString()
 
 
-            val ClickQuestionnaireNextListener = Intent(this@ReQuestionnaire, Questionnaire2::class.java)
+            val ClickQuestionnaireNextListener = Intent(this@ReQuestionnaire, ReQuestionnaire2::class.java)
 
             ClickQuestionnaireNextListener.putExtra("time", time)
             ClickQuestionnaireNextListener.putExtra("id", id)

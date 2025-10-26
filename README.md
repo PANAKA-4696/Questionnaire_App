@@ -265,7 +265,7 @@ graph TD;
 - [x] **READMEの作成** :ReadMEをしっかり作らないと説明書だけでは作成過程などをしっかり見てもらえない可能性がある。  
 - [x] **ファイル構造の見やすさ** :ファイル構造が画面ごとにまとまっていないため、この作品を見た人が理解しずらい、見るときに見づらいなどの可能性がある。  
 - [ ] **Jetpack Composeへの対応** :授業で習ったやり方でこのアプリ開発を行っていたが、授業で習った内容が古い内容であり、現在の主流となっているUI手法として、Jetpack Composeが主流であるため、今風に変える必要がある。  (先に親に提供するため親が使用し始めて安定してきたタイミングで変更しようと考えています。)  
-- [ ] **今後の学習課題**: 今回はAndroid View Systemで開発しましたが、現在の主流であるJetpack ComposeでのUI構築スキルや、最新の技術、主流を習得するため、簡単なアプリ作成などを通して学習を進めます。　現在練習中のGitHubリポジトリ(https://github.com/PANAKA-4696/PracticeToDoApp)
+- [ ] **今後の学習課題**: 今回はAndroid View Systemで開発しましたが、現在の主流であるJetpack ComposeでのUI構築スキルや、最新の技術、主流を習得するため、簡単なアプリ作成などを通して学習を進めます。  現在練習中のGitHubリポジトリ(https://github.com/PANAKA-4696/PracticeToDoApp)
 
 
 ## 製作者
@@ -279,3 +279,6 @@ graph TD;
 情報の追記頻度が遅めのためverが違うことがありますご了承ください。
 
 [➡️ Questionnaire説明書はこちら](https://docs.google.com/presentation/d/1xqYt9AdNYIFBNOu1SfC3jbIsnh-Z6TQV/edit?usp=drive_link&ouid=100060518070943536625&rtpof=true&sd=true)
+
+Jetpack Comporseを使うためのToDoアプリを作成しました。今後このToDoアプリでの開発を活かしてこのアプリをアップデートしていこうと考えておりますので見ていただけると良いと思います。  
+[➡️ Jetpack Comporseを使ったToDoアプリはこちら](https://github.com/PANAKA-4696/PracticeToDoApp)

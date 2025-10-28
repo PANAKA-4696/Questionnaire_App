@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
+import android.widget.EditText
 import android.widget.ListView
 import android.widget.SimpleAdapter
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +17,13 @@ class InfomationCheckLogin : AppCompatActivity() {
     private  val _helper = DatabaseHelper(this@InfomationCheckLogin)
 
     private var _customerList: MutableList<MutableMap<String, String>> = mutableListOf()
+
+    //Adapterをメンバー変数にしておく
+    private lateinit var _adapter: SimpleAdapter
+
+    //EditTextもメンバー変数に
+    private lateinit var etKana: EditText
+    private lateinit var etId: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +42,11 @@ class InfomationCheckLogin : AppCompatActivity() {
 
         lvCustomer.adapter = adapter
         lvCustomer.onItemClickListener = ListItemClickListener()
+
+        //検索リスナーの追加
+        setupSearchListeners()
+        //初期リスト表示
+        performSearch()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
@@ -73,20 +86,8 @@ class InfomationCheckLogin : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        //最新のデータベース内容を取得
-        _customerList = createCustomerList()
-
-        //リストビューに新しいリストをセットし直す
-        val lvCustomer = findViewById<ListView>(R.id.lvInformationCheckLogin)
-        var adapter = SimpleAdapter(
-            this@InfomationCheckLogin,
-            _customerList,
-            android.R.layout.simple_list_item_2,
-            arrayOf("id", "name"),
-            intArrayOf(android.R.id.text1, android.R.id.text2)
-        )
-
-        lvCustomer.adapter = adapter
+        // 画面に戻ってきたときにリストを再検索して更新
+        performSearch()
 
     }
 
@@ -116,5 +117,38 @@ class InfomationCheckLogin : AppCompatActivity() {
             returnVal = super.onOptionsItemSelected(item)
         }
         return returnVal
+    }
+
+    //EditTextにTextWatcherを設定する関数
+    private fun setupSearchListeners(){
+        // TextWatcherオブジェクトを作成（中身はafterTextChangedで定義）
+        val textWatcher = object : android.text.TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: android.text.Editable?) {
+                // テキストが変更されたら検索を実行
+                performSearch()
+            }
+        }
+
+        // 各EditTextにリスナーを設定
+        etKana.addTextChangedListener(textWatcher)
+        etId.addTextChangedListener(textWatcher)
+    }
+
+    //現在のEditTextの内容でデータベースを検索し、ListViewを更新する関数
+    private fun performSearch() {
+        val kanaQuery = etKana.text.toString()
+        val idQuery = etId.text.toString()
+
+        // データベースから検索結果を取得
+        val searchResult = searchCustomers(kanaQuery, idQuery)
+
+        // ListViewに表示しているリスト(_customerList)の中身を入れ替える
+        _customerList.clear()
+        _customerList.addAll(searchResult)
+
+        // Adapterにデータが変更されたことを通知してListViewを再描画
+        _adapter.notifyDataSetChanged()
     }
 }

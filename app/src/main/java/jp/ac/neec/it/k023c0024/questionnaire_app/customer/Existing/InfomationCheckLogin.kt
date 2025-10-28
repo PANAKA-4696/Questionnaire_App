@@ -151,4 +151,44 @@ class InfomationCheckLogin : AppCompatActivity() {
         // Adapterにデータが変更されたことを通知してListViewを再描画
         _adapter.notifyDataSetChanged()
     }
+
+    //カナとIDで顧客を検索する関数 (createCustomerListの代わり)
+    private fun searchCustomers(kanaQuery: String, idQuery: String): List<MutableMap<String, String>> {
+        val resultList: MutableList<MutableMap<String, String>> = mutableListOf()
+        val db = _helper.readableDatabase
+
+        // WHERE句と選択引数を動的に構築
+        var selection = ""
+        val selectionArgs = mutableListOf<String>()
+
+        if (kanaQuery.isNotEmpty()) {
+            selection += "kana LIKE ?" // カナの部分一致検索
+            selectionArgs.add("%$kanaQuery%") // LIKE検索用のワイルドカードを追加
+        }
+
+        if (idQuery.isNotEmpty()) {
+            if (selection.isNotEmpty()) {
+                selection += " AND " // カナ条件があればANDで繋ぐ
+            }
+            selection += "_id = ?" // ID完全一致検索
+            selectionArgs.add(idQuery)
+        }
+
+        // SQLクエリの準備 (WHERE句がない場合は全件検索)
+        val sql = "SELECT _id, name FROM customer" + if (selection.isNotEmpty()) " WHERE $selection" else ""
+        // 安全なrawQueryの実行
+        val cursor = db.rawQuery(sql, selectionArgs.toTypedArray())
+
+        while (cursor.moveToNext()) {
+            val idxId = cursor.getColumnIndex("_id")
+            val idxName = cursor.getColumnIndex("name")
+            val id = cursor.getLong(idxId).toString()
+            val name = cursor.getString(idxName)
+            resultList.add(mutableMapOf("id" to id, "name" to name))
+        }
+        cursor.close()
+        // db.close() // readableDatabase は通常閉じなくて良い
+
+        return resultList
+    }
 }

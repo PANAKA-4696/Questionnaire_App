@@ -29,8 +29,9 @@ class InfomationCheckLogin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_infomation_check_login)
 
-        _customerList = createCustomerList()
         val lvCustomer = findViewById<ListView>(R.id.lvInformationCheckLogin)
+        etKana = findViewById(R.id.etInformationCheckLoginKana)
+        etId = findViewById(R.id.etInformationCheckLoginID)
 
         var adapter = SimpleAdapter(
             this@InfomationCheckLogin,

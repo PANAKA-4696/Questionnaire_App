@@ -76,16 +76,11 @@ class InfomationCheckLogin : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean{
-        //戻り値用の変数を初期値trueで用意
-        var returnVal = true
-        //選択されたメニューが「戻る」の場合、アクティビティを終了
-        if(item.itemId == android.R.id.home){
+        if (item.itemId == android.R.id.home) {
             finish()
-        }else{
-            //それ以外の場合、戻り値用の変数をfalseに設定
-            returnVal = super.onOptionsItemSelected(item)
+            return true // 処理が完了したことを示す
         }
-        return returnVal
+        return super.onOptionsItemSelected(item)
     }
 
     //EditTextにTextWatcherを設定する関数

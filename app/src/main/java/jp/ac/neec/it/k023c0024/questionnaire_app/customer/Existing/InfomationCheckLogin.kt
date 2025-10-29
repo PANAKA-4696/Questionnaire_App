@@ -34,7 +34,7 @@ class InfomationCheckLogin : AppCompatActivity() {
         etKana = findViewById(R.id.etInformationCheckLoginKana)
         etId = findViewById(R.id.etInformationCheckLoginID)
 
-        var adapter = SimpleAdapter(
+        _adapter = SimpleAdapter(
             this@InfomationCheckLogin,
             _customerList,
             android.R.layout.simple_list_item_2,
@@ -42,7 +42,7 @@ class InfomationCheckLogin : AppCompatActivity() {
             intArrayOf(android.R.id.text1, android.R.id.text2)
         )
 
-        lvCustomer.adapter = adapter
+        lvCustomer.adapter = _adapter
         lvCustomer.onItemClickListener = ListItemClickListener()
 
         //検索リスナーの追加

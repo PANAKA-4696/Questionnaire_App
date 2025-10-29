@@ -2,6 +2,7 @@ package jp.ac.neec.it.k023c0024.questionnaire_app.customer.Existing
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextWatcher
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
@@ -86,7 +87,7 @@ class InfomationCheckLogin : AppCompatActivity() {
     //EditTextにTextWatcherを設定する関数
     private fun setupSearchListeners(){
         // TextWatcherオブジェクトを作成（中身はafterTextChangedで定義）
-        val textWatcher = object : android.text.TextWatcher {
+        val textWatcher = object : TextWatcher { // android.text.TextWatcher を指定
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
             override fun afterTextChanged(s: android.text.Editable?) {
@@ -119,40 +120,38 @@ class InfomationCheckLogin : AppCompatActivity() {
     //カナとIDで顧客を検索する関数 (createCustomerListの代わり)
     private fun searchCustomers(kanaQuery: String, idQuery: String): List<MutableMap<String, String>> {
         val resultList: MutableList<MutableMap<String, String>> = mutableListOf()
-        val db = _helper.readableDatabase
 
-        // WHERE句と選択引数を動的に構築
-        var selection = ""
-        val selectionArgs = mutableListOf<String>()
+        // ★ DBアクセスはuseブロックを使うと安全 (自動でcloseされる)
+        _helper.readableDatabase.use { db ->
+            var selection = ""
+            val selectionArgs = mutableListOf<String>()
 
-        if (kanaQuery.isNotEmpty()) {
-            selection += "kana LIKE ?" // カナの部分一致検索
-            selectionArgs.add("%$kanaQuery%") // LIKE検索用のワイルドカードを追加
-        }
-
-        if (idQuery.isNotEmpty()) {
-            if (selection.isNotEmpty()) {
-                selection += " AND " // カナ条件があればANDで繋ぐ
+            if (kanaQuery.isNotEmpty()) {
+                selection += "kana LIKE ?"
+                selectionArgs.add("%$kanaQuery%")
             }
-            selection += "_id = ?" // ID完全一致検索
-            selectionArgs.add(idQuery)
-        }
+            if (idQuery.isNotEmpty()) {
+                if (selection.isNotEmpty()) {
+                    selection += " AND "
+                }
+                // ★ IDは数値なので、文字列ではなく数値として比較する方が確実だが、
+                //    今のリスト構造(Map<String, String>)に合わせるため文字列で検索
+                selection += "_id = ?"
+                selectionArgs.add(idQuery)
+            }
 
-        // SQLクエリの準備 (WHERE句がない場合は全件検索)
-        val sql = "SELECT _id, name FROM customer" + if (selection.isNotEmpty()) " WHERE $selection" else ""
-        // 安全なrawQueryの実行
-        val cursor = db.rawQuery(sql, selectionArgs.toTypedArray())
+            val sql = "SELECT _id, name FROM customer" + if (selection.isNotEmpty()) " WHERE $selection" else ""
+            val cursor = db.rawQuery(sql, selectionArgs.toTypedArray())
 
-        while (cursor.moveToNext()) {
-            val idxId = cursor.getColumnIndex("_id")
-            val idxName = cursor.getColumnIndex("name")
-            val id = cursor.getLong(idxId).toString()
-            val name = cursor.getString(idxName)
-            resultList.add(mutableMapOf("id" to id, "name" to name))
-        }
-        cursor.close()
-        // db.close() // readableDatabase は通常閉じなくて良い
-
+            cursor.use { // カーソルもuseブロックで自動クローズ
+                while (it.moveToNext()) {
+                    // getColumnIndexOrThrow を使うとカラムが存在しない場合に例外が発生して安全
+                    val id = it.getLong(it.getColumnIndexOrThrow("_id")).toString()
+                    val name = it.getString(it.getColumnIndexOrThrow("name"))
+                    resultList.add(mutableMapOf("id" to id, "name" to name))
+                }
+            }
+        } // dbはここで自動的にcloseされる
         return resultList
     }
 }

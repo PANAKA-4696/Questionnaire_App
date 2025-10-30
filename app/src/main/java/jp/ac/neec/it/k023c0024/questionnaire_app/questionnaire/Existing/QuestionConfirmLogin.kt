@@ -47,38 +47,6 @@ class QuestionConfirmLogin : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    private fun createQuestionList(): MutableList<MutableMap<String, String>> {
-        //既存のリストをクリアする
-        _questionList.clear()
-
-        //データベースヘルパーオブジェクトからデータベース接続オブジェクトを取得
-        val db = _helper.readableDatabase
-        //主キー二より検索SQL文字列の用意
-        val sql = "SELECT * FROM questionnaire"
-        //SQLの実行
-        val cursor = db.rawQuery(sql, null)
-        //データベースから取得した値を格納する変数の用意。データが無かった時のための初期値も用意
-        var date = ""
-        var id = ""
-
-        //SQL実行の戻り値でカーソルオブジェクトをループさせてデータベース内のデータを取得
-        while(cursor.moveToNext()){
-            //カラムのインデックス値を取得
-            val idxid = cursor.getColumnIndex("_id")
-            val idxdate = cursor.getColumnIndex("time")
-            //カラムのインデックス値を元に実際のデータを取得
-            id = cursor.getLong(idxid).toString()
-            date = cursor.getString(idxdate)
-            //取得したデータをリストに追加
-            _questionList.add(mutableMapOf("id" to id, "date" to date))
-        }
-
-        //カーソルを閉じる
-        cursor.close()
-
-        return _questionList
-    }
-
     override fun onResume() {
         super.onResume()
         // データを再読み込み

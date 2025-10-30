@@ -2,6 +2,8 @@ package jp.ac.neec.it.k023c0024.questionnaire_app.questionnaire.Existing
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
@@ -49,10 +51,8 @@ class QuestionConfirmLogin : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        // データを再読み込み
-        createQuestionList()
-        // ★改善点：Adapterにデータの変更を通知する
-        _adapter.notifyDataSetChanged()
+        //データの再読み込み
+        performSearch()
     }
 
     private inner class ListItemClickListener : AdapterView.OnItemClickListener {
@@ -60,7 +60,7 @@ class QuestionConfirmLogin : AppCompatActivity() {
             //_questionListから、タップした行のデータを指定
             val item = _questionList[position]
             //マップから"id"というキーを使って、目的の顧客ID(文字列)を取得
-            val questionID = item["id",]
+            val questionID = item["id"]
             val date = item["date"]
 
             val intentQuestionConfirm = Intent(this@QuestionConfirmLogin, QuestionConfirm::class.java)
@@ -82,4 +82,18 @@ class QuestionConfirmLogin : AppCompatActivity() {
         }
         return returnVal
     }
+
+    //EditTextにTextWatcherを設定する関数
+    private fun setupSearchListeners(){
+        val textWatcher = object : TextWatcher{
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int){}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int){}
+            override fun afterTextChanged(s: android.text.Editable?){
+                performSearch()
+            }
+        }
+        etDate.addTextChangedListener(textWatcher)
+    }
+
+
 }

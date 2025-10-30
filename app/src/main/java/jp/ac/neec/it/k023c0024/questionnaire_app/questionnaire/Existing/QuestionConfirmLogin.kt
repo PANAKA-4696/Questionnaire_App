@@ -95,5 +95,18 @@ class QuestionConfirmLogin : AppCompatActivity() {
         etDate.addTextChangedListener(textWatcher)
     }
 
+    //現在のEditTextの内容でデータベースを検索し、ListViewを更新する関数
+    private fun performSearch(){
+        val dateQuery = etDate.text.toString()
 
+        //データベースから検索結果を取得
+        val searchResult = searchQuestions(dateQuery)
+
+        //ListViewに表示しているリスト(_questionList)の中身を入れ替える
+        _questionList.clear()
+        _questionList.addAll(searchResult)
+
+        //Adapterにデータが変更されたことを通知してListViewを再描画
+        _adapter.notifyDataSetChanged()
+    }
 }

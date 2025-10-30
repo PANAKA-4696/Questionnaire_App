@@ -109,4 +109,33 @@ class QuestionConfirmLogin : AppCompatActivity() {
         //Adapterにデータが変更されたことを通知してListViewを再描画
         _adapter.notifyDataSetChanged()
     }
+
+    //日付で問診票を検索する関数 (createQuestionListの代わり)
+    private fun searchQuestions(dateQuery: String): List<MutableMap<String, String>> {
+        val resultList: MutableList<MutableMap<String, String>> = mutableListOf()
+        _helper.readableDatabase.use { db ->
+            var selection: String? = null
+            var selectionArgs: Array<String>? = null
+
+            if (dateQuery.isNotEmpty()) {
+                selection = "time LIKE ?" // time (日付) の部分一致検索
+                selectionArgs = arrayOf("%$dateQuery%")
+            }
+
+            // SQLクエリの準備
+            val sql =
+                "SELECT _id, time FROM questionnaire" + if (selection != null) " WHERE $selection" else ""
+            val cursor = db.rawQuery(sql, selectionArgs)
+
+            cursor.use {
+                while (it.moveToNext()) {
+                    val id = it.getLong(it.getColumnIndexOrThrow("_id")).toString()
+                    val date = it.getString(it.getColumnIndexOrThrow("time"))
+                    // ★ Adapterのキーに合わせて "date" を使用
+                    resultList.add(mutableMapOf("id" to id, "date" to date))
+                }
+            }
+        }
+        return resultList
+    }
 }

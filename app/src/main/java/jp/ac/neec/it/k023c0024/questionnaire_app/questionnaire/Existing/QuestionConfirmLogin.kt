@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
+import android.widget.EditText
 import android.widget.ListView
 import android.widget.SimpleAdapter
 import androidx.appcompat.app.AppCompatActivity
@@ -17,12 +18,15 @@ class QuestionConfirmLogin : AppCompatActivity() {
     private val _questionList: MutableList<MutableMap<String, String>> = mutableListOf()
     //Adapterをメンバー変数として保持
     private lateinit var _adapter: SimpleAdapter
+    //日付検索用のEditTextをメンバー変数に追加
+    private lateinit var etDate: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question_confirm_login)
 
         val lvQuestion = findViewById<ListView>(R.id.lvQuestionConfirmLogin)
+        etDate = findViewById(R.id.etQuestionLoginDate)
 
         //Adapterをここで初期化
         _adapter = SimpleAdapter(
@@ -35,6 +39,10 @@ class QuestionConfirmLogin : AppCompatActivity() {
 
         lvQuestion.adapter = _adapter
         lvQuestion.onItemClickListener = ListItemClickListener()
+
+        //検索リスナーと初期リスト表示を追加
+        setupSearchListeners()
+        performSearch()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
